@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PageController;
 use App\Http\Requests\StorePageControllerRequest;
 use App\Http\Requests\UpdatePageControllerRequest;
+use Illuminate\Http\Request;
 
-class PageControllerController extends Controller
+class PageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        
+      return view('page.homepage');
+        
     }
 
     /**
