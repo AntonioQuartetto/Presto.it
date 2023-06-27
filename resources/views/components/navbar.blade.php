@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inserisci annuncio</a>
+            <a class="nav-link active" aria-current="page" href="{{route('create-announcement')}}">Inserisci annuncio</a>
           </li>     
           @auth
           <li class="nav-item"><b class="nav-link text-warning">Benvenuto {{ Auth::user()->name }}</b></li>
