@@ -8,6 +8,6 @@ class AnnouncementController extends Controller
 {
     public function create()
     {
-        //
+        return view('announcement.create');
     }
 }
