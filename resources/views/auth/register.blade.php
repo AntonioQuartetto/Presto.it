@@ -1,7 +1,7 @@
 <x-template>
 
-    <div class="card-body p-md-5 shadow">
-    <div class="row">
+    <div class="card-body p-md-5 my-5">
+    <div class="row justify-content-center p-5 shadow">
         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
             <p class="text-center h1 fw-bold mb-5 mt-4">Registrati</p>
@@ -79,6 +79,10 @@
                 </div>
 
             </form>
+
+        </div>
+        <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+            <img src="{{Storage::url('\images\announcementsHeader.jpg')}}" class="img-fluid border border-2 border-dark rounded" alt="Open">
 
         </div>
     </div>
