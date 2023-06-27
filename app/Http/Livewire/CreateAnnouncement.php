@@ -18,6 +18,14 @@ class CreateAnnouncement extends Component
          'body' => $this->body,
          'price' => $this->price,
         ]);
+        
+        $this->clear();
+    }
+
+    public function clear(){
+        $this->title='';
+        $this->body='';
+        $this->price='';
     }
 
     public function render()
