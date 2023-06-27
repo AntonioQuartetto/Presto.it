@@ -11,6 +11,17 @@ class CreateAnnouncement extends Component
     public $body;
     public $price;
 
+    protected $rules=[
+        'title'=>'required|min:4',
+        'body'=>'required|min:8',
+        'price'=>'required|numeric',
+    ];
+
+    protected $messages=[
+     'required'=>'Campo obbligatorio',
+     'min'=>'Caratteri insufficienti',
+    ];
+
     public function store() {
         Announcement::create(
         [
@@ -19,7 +30,14 @@ class CreateAnnouncement extends Component
          'price' => $this->price,
         ]);
         
+        session()->flash('message','Annuncio inserito con successo!');
+
+
         $this->clear();
+    }
+
+    public function updated($propertyName){
+     $this->validateOnly($propertyName);
     }
 
     public function clear(){
