@@ -9,13 +9,14 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Inserisci annuncio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active">Disabled</a>
-          </li>
+          </li>     
+          @auth
+          <li class="nav-item"><b class="nav-link text-warning">Benvenuto {{ Auth::user()->name }}</b></li>
+          <li class="btn-user">
+          <a class="nav-link active" href="{{route('logout')}}" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
+            <form id="form-logout" method="POST" action="{{ route('logout') }}" class="d-none">@csrf</form>
+          <li>      
+          @else
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Area personale</a>
             <ul class="dropdown-menu">
@@ -23,6 +24,7 @@
               <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
             </ul>
           </li>
+          @endauth
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
