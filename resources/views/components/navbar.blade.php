@@ -20,8 +20,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Area personale</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Accedi</a></li>
-              <li><a class="dropdown-item" href="#">Registrati</a></li>
+              <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+              <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
             </ul>
           </li>
         </ul>

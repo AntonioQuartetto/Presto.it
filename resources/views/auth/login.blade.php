@@ -21,7 +21,7 @@
                 @endif
 
               <div class="d-flex flex-row align-items-center mb-4">
-                <label class="form-outline flex-fill mb-0 p-3"><b>Email address</b></label>
+                <label class="form-outline flex-fill mb-0 p-3"><b>Email</b></label>
                 <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
                 
                 @error('email') <span class="small text-danger">{{ $message }}</span> @enderror
@@ -30,17 +30,16 @@
 
               <div class="d-flex flex-row align-items-center mb-4">
               <label class="form-outline flex-fill mb-0 p-3"><b>Password</b></label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="password" placeholder="**********">
                 @error('password') <span class="small text-danger">{{ $message }}</span> @enderror
               </div>
                
-
+              
               <div class="d-grid my-3">
                 <button class="btn-user fw-bold py-2" type="submit">Accedi</button>
               </div>
               <div class="d-grid my-2">
-                Non sei registrato?
-                <a href="{{route('register')}}" class="btn-user fw-bold py-2 text-center" type="submit">Registrati</a>
+                <a href="{{route('register')}}" class="btn-user fw-bold py-2 text-center" type="submit">Non sei registrato?</a>
               </div>
 
             </form>
