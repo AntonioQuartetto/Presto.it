@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Announcement;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class CreateAnnouncement extends Component
@@ -12,50 +13,43 @@ class CreateAnnouncement extends Component
     public $body;
     public $price;
     public $category;
-
+    
     protected $rules=[
         'title'=>'required|min:4',
         'body'=>'required|min:8',
         'price'=>'required|numeric',
         'category'=>'required',
     ];
-
+    
     protected $messages=[
-     'required'=>'Campo obbligatorio',
-     'min'=>'Caratteri insufficienti',
+        'required'=>'Campo obbligatorio',
+        'min'=>'Caratteri insufficienti',
     ];
-
+    
     public function store() {
         $this->validate();
-        $category=Category::find($this->category);
-        //dd($category);
-        $category->announcements()->create([
+        $category=Category::find($this->category); 
+        $announcement=$category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,
             'price' => $this->price,
-        ]);
-        
-        // Announcement::create(
-        // [
-        //  'title' => $this->title,
-        //  'body' => $this->body,
-        //  'price' => $this->price,
-        // ]);      
+        ]); 
+        Auth::user()->announcements()->save($announcement);     
         session()->flash('message','Annuncio inserito con successo!');
         $this->clear();
     }
-
+    
     public function updated($propertyName){
-     $this->validateOnly($propertyName);
+        $this->validateOnly($propertyName);
     }
-
+    
     public function clear(){
         $this->title='';
         $this->body='';
         $this->price='';
         $this->category='';
     }
-
+    
     public function render()
     {
         return view('livewire.create-announcement');
