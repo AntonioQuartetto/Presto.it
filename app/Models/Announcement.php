@@ -11,7 +11,7 @@ class Announcement extends Model
 
     protected $fillable = ['title','body','price'];
 
-    public function categories(){
+    public function category(){
 
         return $this->belongsTo(Category::class);
     }

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Announcement;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorePageControllerRequest;
 use App\Http\Requests\UpdatePageControllerRequest;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -13,8 +15,10 @@ class PageController extends Controller
 
     public function index()
     {
-        
-      return view('page.homepage');
+     
+     $announcements= Announcement::take(6)->get()->sortByDesc('created_at');
+    
+    return view('page.homepage', compact('announcements'));
         
     }
 
