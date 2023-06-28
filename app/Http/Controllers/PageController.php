@@ -41,9 +41,10 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PageController $pageController)
+    public function categoryShow(Category $category)
     {
-        //
+        
+        return view('page.categoryShow', compact('category'));
     }
 
     /**

@@ -18,3 +18,4 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/', [PageController::class, 'index'])->name('page.homepage');
 Route::get('/annuncio',[AnnouncementController::class, 'create'])->name('create-announcement');
 Route::get('/show',[AnnouncementController::class, 'show'])->name('page.show');
+Route::get('/categoria/{category}', [PageController::class, 'categoryShow'])->name('categoryShow');
