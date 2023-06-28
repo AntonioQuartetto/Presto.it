@@ -25,15 +25,6 @@
             </ul>
           </li>
           @endauth
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
-            <ul class="dropdown-menu">
-             @foreach ($categories as $category)
-               <li><a href="{{route('categoryShow', compact('category'))}}" class="dropdown-item">{{$category->name}}</a></li>
-               <li><hr class="dropdown-divider"></li>
-             @endforeach
-            </ul>
-          </li>
         </ul>
         
         <form class="d-flex" role="search">
