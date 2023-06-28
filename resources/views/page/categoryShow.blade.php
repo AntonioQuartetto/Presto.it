@@ -27,8 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    @empty
-
+                    @empty 
                         <div class="col-12">
                             <p class="h1">Non sono presenti Annunci</p>
                             <p class="h2">Pubblicane uno: <a href="{{route('create-announcement')}}">Inserisci  Annuncio</a></p>

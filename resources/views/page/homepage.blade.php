@@ -20,7 +20,7 @@
                                 <h5 class="card-title">{{$announcement->title}}</h5>
                                 <p class="card-text">{{$announcement->body}}</p>
                                 <p class="card-text">{{$announcement->price}}</p>
-                                <a href="#" class="btn btn-primary shadow">Visualizza</a>
+                                <a href="{{route('announcement.show',['announcement' => $announcement])}}" class="btn btn-primary shadow">Dettagli</a>
                                 <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-succes">Categoria:{{$announcement->category->name ?? 'Nessuna Categoria'}}</a>
                                <p class="card-footer">Pubblicato il:{{$announcement->created_at->format('d-m-Y')}}</p>
                             </div>
