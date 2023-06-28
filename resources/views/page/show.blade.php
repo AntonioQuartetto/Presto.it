@@ -11,7 +11,7 @@
                 <p>Autore: </p>
                 <p>Numero Pagine: </p>
                 <ul>
-                    @foreach ($categories->$announcements as $announcement)
+                    @foreach ($categories as $category)
                     <li>{{$category->name}}</li>
                     @endforeach
                 </ul>
