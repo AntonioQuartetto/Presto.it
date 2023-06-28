@@ -51,14 +51,9 @@
     <div class="container">    
         <div class="row">
             <div class="col-12 text-center">
-                <h1>
-                    
-                    PRESTO.IT
-                    
-                </h1>
-                <p class="h2 my-2 fw-bold">
+                <div class="h2 my-2 fw-bold">
                     Annunci
-                </p>
+                </div>
                 <div class="row">
                     @foreach ($announcements as $announcement)
                     <div class="col-12 col-md-4 my-4">
