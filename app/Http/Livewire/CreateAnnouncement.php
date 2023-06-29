@@ -14,7 +14,7 @@ class CreateAnnouncement extends Component
     public $title;
     public $body;
     public $price;
-    public $image;
+    // public $image;
     public $category;
     
     protected $rules=[
@@ -22,7 +22,7 @@ class CreateAnnouncement extends Component
         'body'=>'required|min:8',
         'price'=>'required|numeric',
         'category'=>'required',
-        'image' => 'image|max:1024',
+        // 'image' => 'mimes:bmp,png,jpeg, jpg',
     ];
     
     protected $messages=[
@@ -38,12 +38,13 @@ class CreateAnnouncement extends Component
 
     public $photo;
 
-    public function store(CreateAnnouncement $request) {
-        dd($request);
+    public function store() {
+        // dd($request);
 
-        $this->validate([
-            'image' => 'image|max:1024',
-        ]);
+        $this->validate(
+            
+            // ['image' => 'mimes:png,jpg,pdf',]
+    );
  
                
 
@@ -70,6 +71,7 @@ class CreateAnnouncement extends Component
     }
     
     public function updated($propertyName){
+        
         $this->validateOnly($propertyName);
     }
     
@@ -78,7 +80,7 @@ class CreateAnnouncement extends Component
         $this->body='';
         $this->price='';
         $this->category='';
-        $this->photo->store('images');
+        // $this->photo->store('images');
     }
     
     public function render()
