@@ -1,0 +1,26 @@
+:root {
+    --main : #00b98e;
+    --main-dark : #02ab83;
+    --orange-hub : #ff8400;
+    --white : #EFFDF5;
+    --dark : #0e2e50;
+    --neutral : #666565;
+}
+
+
+
+
+.sez-cerca-custom {
+    position: relative;
+    background-color: var(--orange-hub);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-custom-cerca {
+    background-color: var(--dark);
+    padding: 8px 15px;
+    border-radius: 15px;
+    color: var(--white);
+}
