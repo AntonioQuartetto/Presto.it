@@ -31,31 +31,62 @@
         </div>      
     </div>  
 
-    <!-- sezione annunci -->
-    <div class="container">    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sezione annunci -->
+
+      <div class="container">
+      
         <div class="row">
-            <div class="col-12 text-center">
-                <div class="h2 my-2 fw-bold">
-                    Annunci
-                </div>
-                <div class="row">
-                    @foreach ($announcements as $announcement)
-                    <div class="col-12 col-md-4 my-4">
-                        <div class="card shadow" style="width:18rem">
-                            <img src="{{Storage::url('\images\No-Image-Placeholder.png')}}" alt="" class="card-img-top p-3 rounded">
-                            <div class="card-body">
+        
+            @foreach ($announcements as $announcement)
+            <div class="col-12 col-md-4 my-4 d-flex justify-content-center">
+
+                <a href="{{route('announcement.show',['announcement' => $announcement])}}" >
+
+                    
+                        <div class="card">
+                            <div class="card-inner">
+                                    <div class="card-front">
+                                            <img src="{{Storage::url('\images\No-Image-Placeholder.png')}}" alt="" class="card-img-top p-3 rounded">
+                                    </div>
+                            <div class="card-back">
                                 <h5 class="card-title">{{$announcement->title}}</h5>
-                                <p class="card-text">{{$announcement->body}}</p>
+                                            {{-- <p class="card-text">{{$announcement->body}}</p> --}}
                                 <p class="card-text">{{$announcement->price}}</p>
-                                <a href="{{route('announcement.show',['announcement' => $announcement])}}" class="btn btn-primary shadow">Dettagli</a>
-                                <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-succes">Categoria:{{$announcement->category->name ?? 'Nessuna Categoria'}}</a>
-                                <p class="card-footer">Pubblicato il:{{$announcement->created_at->format('d-m-Y')}}</p>
+                                            
+                            <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-succes">Categoria:{{$announcement->category->name ?? 'Nessuna Categoria'}}</a>
+                                            {{-- <p class="card-footer">Pubblicato il:{{$announcement->created_at->format('d-m-Y')}}</p> --}}
+                        </div>
+                        </div>
+                    </div>
+                    
+
+                </a>
+
+                
+            </div>
+            @endforeach
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-2">
+                              {{$announcements->links()}}
                             </div>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-            </div>
         </div>
-    </div>   
+      
+      </div>
+
+
 </x-template>
