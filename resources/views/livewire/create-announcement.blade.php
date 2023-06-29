@@ -58,8 +58,11 @@
              @error('category')
                 <p class="text-danger mt-1">*{{$message}}</p>
             @enderror
+            <div class="mb-3 text-center">
+            <input type="file" wire:model="photo" name="image">
+            <div wire:loading wire:target="photo">Uploading...</div>
+            </div>
         </div>
         <button type="submit">Inserisci annuncio</button>    
     </form>
 </div>
-
