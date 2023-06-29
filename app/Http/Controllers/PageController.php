@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StorePageControllerRequest;
 use App\Http\Requests\UpdatePageControllerRequest;
 
+
+
 class PageController extends Controller
 {
    
