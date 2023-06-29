@@ -8,10 +8,14 @@
         @livewireStyles
         @vite(['resources\css\app.css', 'resources\js\app.js'])
     
-    <body>
+    <body class="body-custom">
 
         <x-navbar />
 
+
+        <x-header />
+
+        
         <main class="controller min-vh-100">
 
             {{$slot}}
