@@ -38,16 +38,19 @@
       
         <div class="row">
 
-            <div class="col-12 text-center">
-                <div class="h2 my-2 fw-bold">
-                    Annunci
-                </div>
-                <div class="row">
-                    @foreach ($announcements as $announcement)
-                    <div class="col-12 col-md-4 my-4">
-                        <div class="card shadow" style="width:18rem">
-                            <img src="{{Storage::url('\images\dafaultimage.png')}}" alt="" class="card-img-top p-3 rounded">
-                            <div class="card-body">
+        
+            @foreach ($announcements as $announcement)
+            <div class="col-12 col-md-4 my-4 d-flex justify-content-center">
+
+                <a href="{{route('announcement.show',['announcement' => $announcement])}}" >
+
+                    
+                        <div class="card">
+                            <div class="card-inner">
+                                    <div class="card-front">
+                                            <img src="{{Storage::url('\images\No-Image-Placeholder.png')}}" alt="" class="card-img-top p-3 rounded">
+                                    </div>
+                            <div class="card-back">
 
                                 <h5 class="card-title">{{$announcement->title}}</h5>
                                             {{-- <p class="card-text">{{$announcement->body}}</p> --}}
