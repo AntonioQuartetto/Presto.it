@@ -6,12 +6,15 @@ use App\Models\Announcement;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class CreateAnnouncement extends Component
 {
+    use WithFileUploads;
     public $title;
     public $body;
     public $price;
+    public $image;
     public $category;
     
     protected $rules=[
@@ -19,6 +22,7 @@ class CreateAnnouncement extends Component
         'body'=>'required|min:8',
         'price'=>'required|numeric',
         'category'=>'required',
+        'image' => 'image|max:1024',
     ];
     
     protected $messages=[
@@ -31,17 +35,38 @@ class CreateAnnouncement extends Component
         'category.required' => 'Categoria obbligatoria' 
     ];
     
-    public function store() {
-        $this->validate();
+
+    public $photo;
+
+    public function store(CreateAnnouncement $request) {
+        dd($request);
+
+        $this->validate([
+            'image' => 'image|max:1024',
+        ]);
+ 
+               
+
+        // $path_image='';
+        // if ($request->hasFile('image') && $request->file('image')->isValid()){
+        //     $path_name = $request->file('image')->getClientOriginalName();
+        //     //$path_extension = $request->file('image')->getClientOriginalExtension();
+        //     $path_image = $request->file('image')->storeAs('public/images' , $path_name);
+        // }
+  
+
         $category=Category::find($this->category); 
         $announcement=$category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,
             'price' => $this->price,
+            // 'image'=>$photo,
         ]); 
         Auth::user()->announcements()->save($announcement);     
         session()->flash('message','Annuncio inserito con successo!');
         $this->clear();
+
+        
     }
     
     public function updated($propertyName){
@@ -53,6 +78,7 @@ class CreateAnnouncement extends Component
         $this->body='';
         $this->price='';
         $this->category='';
+        $this->photo->store('images');
     }
     
     public function render()
