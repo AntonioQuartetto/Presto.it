@@ -14,6 +14,7 @@
                     @endforeach
                 </ul>
             </div>
+
             <div class="col-12 col-md-3">  
                 <input type="text" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca per Nome">               
             </div>         
@@ -29,6 +30,7 @@
             --}}
         </div>      
     </div>  
+
     <!-- sezione annunci -->
     <div class="container">    
         <div class="row">
