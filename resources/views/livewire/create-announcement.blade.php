@@ -25,7 +25,7 @@
 
         <div class="form-group">
           <label for="exampleFormControlInput1">Titolo</label>
-          <input wire:model="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Inserisci il titolo">
+          <input wire:model.lazy="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Inserisci il titolo">
           @error('title')
               <p class="text-danger mt-1">*{{$message}}</p>
           @enderror
@@ -33,7 +33,7 @@
 
         <div class="form-group mt-3">
             <label for="exampleFormControlInput1">Prezzo</label>
-            <input wire:model="price" type="text" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
+            <input wire:model.lazy="price" type="number" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
             @error('price')
                 <p class="text-danger mt-1">*{{$message}}</p>
             @enderror
@@ -41,7 +41,7 @@
 
         <div class="form-group mt-4">
           <label for="exampleFormControlTextarea1">Inserisci descrizione</label>
-          <textarea wire:model="body" type="text" class="form-control @error('body') is-invalid @enderror" rows="3"></textarea>
+          <textarea wire:model.lazy="body" type="text" class="form-control @error('body') is-invalid @enderror" rows="3"></textarea>
             @error('body')
                 <p class="text-danger mt-1">*{{$message}}</p>
             @enderror
@@ -58,9 +58,11 @@
              @error('category')
                 <p class="text-danger mt-1">*{{$message}}</p>
             @enderror
-            <div class="mb-3 text-center">
+            {{-- <div class="mb-3 text-center " x-on:livewire-upload-progress="progress = $event.detail.progress">
+
             <input type="file" wire:model="photo" name="image">
-            <div wire:loading wire:target="photo">Uploading...</div>
+            
+            <div wire:loading wire:target="photo">Uploading...</div> --}}
             </div>
         </div>
         <button type="submit">Inserisci annuncio</button>    
