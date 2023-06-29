@@ -15,7 +15,7 @@
                     @forelse($category->announcements as $announcement)
                     <div class="col-12 col-md-4 my-4">
                         <div class="card shadow" style="width:18rem">
-                            <img src="{{Storage::url('\images\announcementsHeader.jpg')}}" alt="" class="card-img-top p-3 rounded">
+                            <img src="{{Storage::url('\images\dafaultimage.png')}}" alt="" class="card-img-top p-3 rounded">
                             <div class="card-body">
                                 <h5 class="card-title">{{$announcement->title}}</h5>
                                 <p class="card-text">{{$announcement->body}}</p>

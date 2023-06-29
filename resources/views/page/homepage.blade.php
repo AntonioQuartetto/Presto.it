@@ -31,18 +31,7 @@
         </div>      
     </div>  
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <!-- sezione annunci -->
 
       <div class="container">
@@ -84,6 +73,7 @@
                             </div>
                         </div>
                     </div>
+
         </div>
       
       </div>
