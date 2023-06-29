@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePageControllerRequest;
 use App\Http\Requests\UpdatePageControllerRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
