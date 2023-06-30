@@ -1,6 +1,6 @@
 <x-template>
     <div class="card-body p-md-5 my-5">
-        <div class="row justify-content-center p-5 shadow">
+        <div class="row justify-content-center p-5 section_custom">
             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">      
                 <p class="text-center h1 fw-bold mb-5 mt-4">Registrati</p>        
                 <form action="{{ route('register') }}" method="POST">

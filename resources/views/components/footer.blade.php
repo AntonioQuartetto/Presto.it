@@ -5,13 +5,12 @@
   <footer class="py-5">
     <div class="row">
       <div class="col-6 col-md-6 mb-3">
-        <h5>Section</h5>
+        <h5>Chi Siamo</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+          <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/ciro-giacovelli-juniordev/" target="blank" class="nav-link p-0">Ciro</a></li>
+          <li class="nav-item mb-2"><a href="#" target="blank" class="nav-link p-0">Simone</a></li>
+          <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/mattia-cau-11091a247/" target="blank" class="nav-link p-0">Mattia</a></li>
+          <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/antonio-quartetto-dev/" target="blank" class="nav-link p-0">Antonio</a></li>
         </ul>
       </div>
 
