@@ -20,7 +20,11 @@
             </div>
 
             <div class="col-12 col-md-3">
-                <input type="text" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca per Nome">
+                <form action="{{route('announcement.search')}}" method="GET" class="d-felx">
+                    <input type="search" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca" aria-label="Search" name="searched">
+                    <button class="btn btn-dark" type="submit">Cerca</button>
+                </form>
+                
             </div>
             <div class="col-12 col-md-3">
                 <input type="number" class="rounded p-2" id="price-min" placeholder="Price Min.">
@@ -55,14 +59,15 @@
                         <div class="card">
                             <div class="card-inner">
                                 <div class="card-front">
-                                    <img src="{{ Storage::url('\images\No-Image-Placeholder.png') }}" alt=""
+                                    <img src="{{ Storage::url('\images\dafaultimage.png') }}" alt=""
                                         class="card-img-top p-3 rounded">
                                 </div>
                                 <div class="card-back container d-flex justify-content-evenly align-items-center">
 
+
                                     <h5 class="card-title">{{ $announcement->title }}</h5>
 
-                                    <span class="badge bg-success">{{ $announcement->price }}</span>
+                                    <span class="badge bg-success"> € {{ $announcement->price }}</span>
 
                                     {{-- <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-succes">Categoria:{{$announcement->category->name ?? 'Nessuna Categoria'}}</a> --}}
                                     {{-- <p class="card-footer">Pubblicato il:{{$announcement->created_at->format('d-m-Y')}}</p> --}}

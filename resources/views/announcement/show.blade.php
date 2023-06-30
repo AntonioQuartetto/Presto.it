@@ -49,10 +49,14 @@
             <div class="col-md-6">
                 <a>
                 <h1 class="display-5 fw-bolder">{{$announcement->title}}</h1>
-                <p><b>Prezzo</b>:<span>{{$announcement->price}}</span></p>
+                <p><b>Prezzo</b>:<span>€ {{$announcement->price}}</span></p>
                 <p><b>Descrizione</b>: {{$announcement->body}}</p>
                 <p><b>Categoria</b>: {{$announcement->category->name}}</p>
+<<<<<<< HEAD
 
+=======
+                <p><b>Pubblicato il</b>: {{$announcement->created_at->format('d-m-Y')}}</p>
+>>>>>>> 949a6504e1eaf15de8bd18d2d2a4ded237c166c7
             <a href="{{ route('page.homepage') }}" class="btn btn-dark">Torna Indietro</a>
             <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">Modifica Annuncio</a>
 
