@@ -47,7 +47,7 @@
             <div class="col-md-6">
                 <a>
                 <h1 class="display-5 fw-bolder">{{$announcement->title}}</h1>
-                <p><b>Prezzo</b>:<span>{{$announcement->price}}</span></p>
+                <p><b>Prezzo</b>:<span>€ {{$announcement->price}}</span></p>
                 <p><b>Descrizione</b>: {{$announcement->body}}</p>
                 <p><b>Categoria</b>: {{$announcement->category->name}}</p>
             <a href="{{ route('page.homepage') }}" class="btn btn-dark">Torna Indietro</a>
