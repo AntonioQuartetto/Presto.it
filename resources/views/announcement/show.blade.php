@@ -52,6 +52,7 @@
                 <p><b>Prezzo</b>:<span>€ {{$announcement->price}}</span></p>
                 <p><b>Descrizione</b>: {{$announcement->body}}</p>
                 <p><b>Categoria</b>: {{$announcement->category->name}}</p>
+                <p><b>Pubblicato il</b>: {{$announcement->created_at->format('d-m-Y')}}</p>
             <a href="{{ route('page.homepage') }}" class="btn btn-dark">Torna Indietro</a>
             </div>
         </div>
