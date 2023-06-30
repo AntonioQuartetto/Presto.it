@@ -22,7 +22,7 @@
             <div class="col-12 col-md-3">
                 <form action="{{route('announcement.search')}}" method="GET" class="d-felx">
                     <input type="search" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca" aria-label="Search" name="searched">
-                    <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    <button class="btn btn-dark" type="submit">Cerca</button>
                 </form>
                 
             </div>
