@@ -16,6 +16,7 @@ class CreateAnnouncement extends Component
     public $price;
     // public $image;
     public $category;
+    public $photo;
     
     protected $rules=[
         'title'=>'required|min:4',
@@ -36,7 +37,6 @@ class CreateAnnouncement extends Component
     ];
     
 
-    public $photo;
 
     public function store() {
         // dd($request);

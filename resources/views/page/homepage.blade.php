@@ -34,6 +34,11 @@
 
     <!-- sezione annunci -->
 
+     @if (session('success')) 
+                <span class="badge text-bg-success">
+                    {{session('success')}}
+                </span>
+            @endif
     <div class="container">
         <div class="text-center mb-2">
             <h2>I Nostri Annunci</h2>

@@ -44,6 +44,11 @@ public function __construct(){
         return view('announcement.show',compact('announcement'));
 
     }
+
+    public function edit(Announcement $announcement)
+    {
+        return view('announcement.edit', compact('announcement'));
+    }
   
 
 }

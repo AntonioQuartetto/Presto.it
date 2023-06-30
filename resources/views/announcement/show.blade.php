@@ -52,7 +52,10 @@
                 <p><b>Prezzo</b>:<span>{{$announcement->price}}</span></p>
                 <p><b>Descrizione</b>: {{$announcement->body}}</p>
                 <p><b>Categoria</b>: {{$announcement->category->name}}</p>
+
             <a href="{{ route('page.homepage') }}" class="btn btn-dark">Torna Indietro</a>
+            <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">Modifica Annuncio</a>
+
             </div>
         </div>
     </div>
