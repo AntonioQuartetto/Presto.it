@@ -9,7 +9,7 @@
                     Annunci
                 </p>
                 <div class="row">
-                    @forelse($category->announcements as $announcement)
+                    @forelse($announcements as $announcement)
                     <div class="col-12 col-md-4 my-4">
                         <div class="card shadow" style="width:18rem">
                             <img src="{{Storage::url('\images\dafaultimage.png')}}" alt="" class="card-img-top p-3 rounded">
@@ -29,7 +29,7 @@
                             <p class="h2">Pubblicane uno: <a href="{{route('announcement.create')}}">Inserisci  Annuncio</a></p>
                         </div>
                     @endforelse
-                  
+                 
                 </div>
             </div>
         </div>
