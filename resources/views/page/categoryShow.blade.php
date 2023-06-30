@@ -1,6 +1,6 @@
 <x-template>
 
-    <div class="container">
+    <div class="container section_custom p-5">
         <div class="row">
             <div class="col-12 text-center">
                 <h1>
