@@ -64,7 +64,7 @@ class EditAnnouncement extends Component
             
         ]);
 
-        return redirect()->to("/annuncio/{category_id}/dettagli");
+        return redirect()->route('announcement.show', ['announcement' => $this->announcement->id]);
     }
 
     public function render()
