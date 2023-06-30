@@ -10,7 +10,7 @@
         </div>
     @endif
     
-    <form wire:submit.prevent="store" class="mt-4">
+    <form wire:submit.prevent="store" class="mt-4 ">
         @csrf
 
           @if ($errors->any())
