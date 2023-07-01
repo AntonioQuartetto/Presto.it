@@ -60,6 +60,7 @@ public function __construct(){
         if(!(Auth::user()->id == $announcement->user_id)){
             abort(401);
         };
+        
         return view('announcement.edit', compact('announcement'));
     }
   

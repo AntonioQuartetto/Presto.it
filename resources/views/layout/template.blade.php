@@ -13,12 +13,15 @@
 
     <x-navbar />
 
-    <x-header/>
+    <x-header />
 
-    
+
     <main class="controller main_custom">
 
-        <x-filters />
+
+        @if (Route::currentRouteName() != 'announcement.create' && Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
+            <x-filters />
+        @endif
 
         {{ $slot }}
 
