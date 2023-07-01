@@ -19,6 +19,7 @@ class Announcement extends Model
             'id' => $this->id,
             'title' => $this->title,
             'body' => $this->body,
+            // 'price'=> (float) $this->price,
             'category' => $category,
         ];
         return $array;

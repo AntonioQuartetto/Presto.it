@@ -18,19 +18,17 @@
                     @endforeach
                 </ul>
             </div>
-
-            <div class="col-12 col-md-3">
-                <form action="{{route('announcement.search')}}" method="GET" class="d-felx">
-                    <input type="search" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca" aria-label="Search" name="searched">
-                    <button class="btn btn-dark" type="submit">Cerca</button>
-                </form>
-                
-            </div>
             <div class="col-12 col-md-3">
                 <input type="number" class="rounded p-2" id="price-min" placeholder="Price Min.">
             </div>
             <div class="col-12 col-md-3">
                 <input type="number" class="rounded p-2" id="price-max" placeholder="Price Max.">
+            </div>
+            <div class="col-12 col-md-3">
+                <form action="{{route('announcement.search')}}" method="GET" class="d-felx">
+                    <input type="search" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca" aria-label="Search" name="searched">
+                    <button class="btn btn-dark" type="submit">Cerca</button>
+                </form>
             </div>
         </div>
     </div>
