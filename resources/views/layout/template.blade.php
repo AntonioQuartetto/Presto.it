@@ -13,9 +13,10 @@
 
     <x-navbar />
 
+    <x-header/>
 
-    <main class="controller section_custom">
-        <x-header />
+    
+    <main class="controller main_custom">
 
         <x-filters />
 

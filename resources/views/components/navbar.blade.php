@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
     <div class="container">
 
-        <div>
-            <a class="navbar-brand" href="{{ route('page.homepage') }}">Presto.it</a>
-        </div>
+        <a class="navbar-brand" href="{{ route('page.homepage') }}">
+            <x-logo />
+        </a>
 
         <div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -17,17 +17,17 @@
                             href="{{ route('announcement.index') }}">Annunci</a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle active text-center" href="#" data-bs-toggle="dropdown"
-                        aria-expanded="false">Categorie</a>
-                    <ul class="dropdown-menu">
-                        @foreach ($categories as $category)
-                            <li><a href="{{ route('categoryShow', compact('category')) }}"
-                                    class="dropdown-item">{{ $category->name }}</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                        @endforeach
-                    </ul>
+                        <a class="nav-link dropdown-toggle active text-center" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Categorie</a>
+                        <ul class="dropdown-menu">
+                            @foreach ($categories as $category)
+                                <li><a href="{{ route('categoryShow', compact('category')) }}"
+                                        class="dropdown-item">{{ $category->name }}</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
 
                     @auth
