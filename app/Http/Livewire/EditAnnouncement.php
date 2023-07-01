@@ -20,7 +20,7 @@ class EditAnnouncement extends Component
     protected $rules=[
         'title'=>'required|min:4',
         'body'=>'required|min:8',
-        'price'=>'required|numeric',
+        'price'=> 'integer|digits_between:1,20',
         'category' => 'required'
         // 'image' => 'mimes:bmp,png,jpeg, jpg',
     ];
