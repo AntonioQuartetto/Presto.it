@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Presto.it</title>
-        @livewireStyles
-        @vite(['resources\css\app.css', 'resources\js\app.js'])
-    
-    <body class="body-custom">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <x-navbar />
+    <title>Presto.it</title>
+    @livewireStyles
+    @vite(['resources\css\app.css', 'resources\js\app.js'])
 
-        
-        <main class="controller section_custom">
-             <x-header />
-            {{$slot}}
+<body class="body-custom">
 
-        </main>
-        
-        <x-footer />
-        @livewireScripts
-    </body>
+    <x-navbar />
+
+
+    <main class="controller section_custom">
+        <x-header />
+
+        <x-filters />
+
+        {{ $slot }}
+
+    </main>
+
+    <x-footer />
+    @livewireScripts
+</body>
+
 </html>
