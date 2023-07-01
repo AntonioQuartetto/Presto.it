@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -12,7 +13,7 @@ class AnnouncementController extends Controller
     
 public function __construct(){
 
-        $this->middleware('auth')->except('homepage');
+        $this->middleware('auth')->except('show');
     }
 
 
@@ -47,6 +48,10 @@ public function __construct(){
 
     public function edit(Announcement $announcement)
     {
+
+        if(!(Auth::user()->id == $announcement->user_id)){
+            abort(401);
+        };
         return view('announcement.edit', compact('announcement'));
     }
   

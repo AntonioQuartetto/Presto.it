@@ -23,8 +23,11 @@ Route::get('/categoria/{category}', [PageController::class, 'categoryShow'])->na
 /*-- Route degli annunci--*/
 Route::get('/annuncio',[AnnouncementController::class, 'create'])->name('announcement.create');
 Route::get('/annuncio/{announcement}/dettagli',[AnnouncementController::class, 'show'])->name('announcement.show');
-
 Route::get('/annuncio/{announcement}/edit',[AnnouncementController::class, 'edit'])->name('announcement.edit');
+
+
+
+
 
 Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->name('announcement.search');
 

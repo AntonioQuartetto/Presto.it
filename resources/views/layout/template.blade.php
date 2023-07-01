@@ -12,12 +12,9 @@
 
         <x-navbar />
 
-
-        <x-header />
-
         
-        <main class="controller min-vh-100">
-
+        <main class="controller section_custom">
+             <x-header />
             {{$slot}}
 
         </main>

@@ -1,5 +1,5 @@
 
-<div class="container section_custom">
+<div class="container">
 
     <div class="row  d-flex justify-content-around">
         @foreach ($categories as $category)
