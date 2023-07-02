@@ -1,28 +1,84 @@
 :root {
-    --main : #00b98e;
-    --main-dark : #02ab83;
-    --orange-hub : #ff8400;
-    --white : #EFFDF5;
-    --dark : #0e2e50;
-    --neutral : #666565;
+  --main : #00b98e;
+  --main-dark : #02ab83;
+  --orange-hub : #ff8400;
+  --white : #EFFDF5;
+  --dark : #0e2e50;
+  --blac-opacity : rgba(0, 0, 0, 0.782);
+}
+
+
+/*-- BODY_CUSTOM--*/
+
+.body-custom{
+  background-image: url('/storage/app/public/images/modern-black-friday-super-sale-background-with-shop-icons_1361-1799.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  
+}
+
+
+
+/*--- NAVBAR-CUSTOM ---*/
+
+.navbar-dark{
+  font-family:'Times New Roman', Times, serif;
+}
+
+/*-- HEADER CUSTOM--*/
+
+header {
+  position: relative;
+  height: 400px;
+  background-image: url('/storage/app/public/images/header.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items:start;
+  padding: 20px 60px;
+  color: #fff;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: var(--orange-hub);
+}
+
+p {
+  font-size: 16px;
 }
 
 
 
 
 .sez-cerca-custom {
-    position: relative;
-    background-color: var(--orange-hub);
-    border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  background-color: var(--orange-hub);
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
 }
 
 .btn-custom-cerca {
-    background-color: var(--dark);
-    padding: 8px 15px;
-    border-radius: 15px;
-    color: var(--white);
+  background-color: var(--dark);
+  padding: 8px 15px;
+  border-radius: 15px;
+  color: var(--white);
 }
 
 
@@ -30,42 +86,59 @@
 /*CARD CUSTOM*/
 
 .card {
-    width: 200px;
-    height: 200px;
-    perspective: 1000px; /* Definisce la prospettiva per l'effetto 3D */
-  }
-  
-  .card-inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s; /* Aggiunge una transizione fluida all'effetto flip */
-    transform-style: preserve-3d; /* Abilita l'effetto 3D */
-  }
-  
-  .card:hover .card-inner {
-    transform: rotateY(180deg); /* Ruota la carta di 180 gradi al passaggio del mouse */
-  }
-  
-  .card-front,
-  .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Nasconde il lato posteriore della carta */
-  }
-  
-  .card-front {
-    background-color: var(--orange-hub);
-    overflow: hidden;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px; /* Definisce la prospettiva per l'effetto 3D */
+}
 
-  }
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s; /* Aggiunge una transizione fluida all'effetto flip */
+  transform-style: preserve-3d; /* Abilita l'effetto 3D */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Ruota la carta di 180 gradi al passaggio del mouse */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Nasconde il lato posteriore della carta */
+}
+
+.card-front {
+  background-color: var(--orange-hub);
+  overflow: hidden;
   
-  .card-back {
-    background-color: var(--orange-hub);
-    transform: rotateY(180deg); /* Ruota il lato posteriore di 180 gradi */
-  }
+}
 
-  .card-back a{
-    text-decoration: none;
-  }
+.card-back {
+  background-color: var(--orange-hub);
+  transform: rotateY(180deg); /* Ruota il lato posteriore di 180 gradi */
+}
 
+.card-back a{
+  text-decoration: none;
+}
+
+/*--section custom--*/
+
+.main_custom{
+  background-color: rgba(0, 0, 0, 0.782);
+  box-shadow: 1px -1px 10px var(--orange-hub);
+  border-radius: 3%;
+  margin: 30px;
+  padding: 20px;
+}
+
+/*-- btn-user--*/
+
+.btn-user{
+  text-decoration: none;
+  color: var(--orange-hub);
+
+}

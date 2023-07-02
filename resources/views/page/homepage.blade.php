@@ -1,4 +1,5 @@
 <x-template>
+<<<<<<< HEAD
      <!--Sezione cerca-->
     <div class="container my-5 justify-content-between sez-cerca-custom">      
         <h2 class="mb-4 text-center">
@@ -77,6 +78,12 @@
         </div>
       
       </div>
+=======
+>>>>>>> 30bee4b23fa06cc7cf4a0f1cd0fa5ec20c2d6a22
+
+
+
+    <x-categories />
 
 
 </x-template>

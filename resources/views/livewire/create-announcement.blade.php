@@ -10,7 +10,7 @@
         </div>
     @endif
     
-    <form wire:submit.prevent="store" class="mt-4">
+    <form wire:submit.prevent="store" class="mt-4 ">
         @csrf
 
           @if ($errors->any())
@@ -33,7 +33,7 @@
 
         <div class="form-group mt-3">
             <label for="exampleFormControlInput1">Prezzo</label>
-            <input wire:model.lazy="price" type="number" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
+            <input wire:model.lazy="price" type="number" step="0.5" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
             @error('price')
                 <p class="text-danger mt-1">*{{$message}}</p>
             @enderror

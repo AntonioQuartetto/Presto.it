@@ -1,5 +1,7 @@
 <x-template>
 
+
+<div class="container">
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
@@ -47,12 +49,18 @@
             <div class="col-md-6">
                 <a>
                 <h1 class="display-5 fw-bolder">{{$announcement->title}}</h1>
-                <p><b>Prezzo</b>:<span>{{$announcement->price}}</span></p>
+                <p><b>Prezzo</b>:<span>€ {{$announcement->price}}</span></p>
                 <p><b>Descrizione</b>: {{$announcement->body}}</p>
                 <p><b>Categoria</b>: {{$announcement->category->name}}</p>
-            <a href="{{ route('page.homepage') }}" class="btn btn-dark">Torna Indietro</a>
+                <p><b>Pubblicato il</b>: {{$announcement->created_at->format('d-m-Y')}}</p>
+                <p><b>Aggiunto da</b>: {{$announcement->user->name}}</p>
+            <a href="{{ route('announcement.index') }}" class="btn btn-dark">Torna Indietro</a>
+            <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">Modifica Annuncio</a>
+
             </div>
         </div>
     </div>
 </section>
+</div>
+
 </x-template>

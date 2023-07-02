@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -12,9 +13,17 @@ class AnnouncementController extends Controller
     
 public function __construct(){
 
-        $this->middleware('auth')->except('homepage');
+        $this->middleware('auth')->except('index','show');
     }
 
+
+    public function index(){
+
+             //$announcements= Announcement::take(6)->get()->sortByDesc('created_at');
+     $announcements= Announcement::orderBy('created_at', 'desc')->paginate(6);
+     //$pagination = Announcement::paginate(6);
+    return view('announcement.index', compact('announcements'));
+    }
 
     public function create(Announcement $request)
     {
@@ -43,6 +52,16 @@ public function __construct(){
         
         return view('announcement.show',compact('announcement'));
 
+    }
+
+    public function edit(Announcement $announcement)
+    {
+
+        if(!(Auth::user()->id == $announcement->user_id)){
+            abort(401);
+        };
+        
+        return view('announcement.edit', compact('announcement'));
     }
   
 
