@@ -1,10 +1,12 @@
 
 <div class="container">
 
-    <div class="row  d-flex justify-content-around">
+    <div class="row d-flex justify-content-center">
         @foreach ($categories as $category)
-            <div class="col-12 col-md-4 p-5 text-center rounded">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
 
+                <div class="card_categories">
+                    
                 @switch($category)
                     @case($category->name == 'Motori')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -134,7 +136,7 @@
                     <a href="{{ route('categoryShow', compact('category')) }}"
                         class="dropdown-item">{{ $category->name }}</a>
                 </div>
-
+                </div>
 
             </div>
         @endforeach
