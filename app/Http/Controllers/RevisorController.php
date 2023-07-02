@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ReviewerController extends Controller
+class RevisorController extends Controller
 {
     public function create(){
 
-        return view('reviewer.create');
+        return view('revisor.create');
     }
 }

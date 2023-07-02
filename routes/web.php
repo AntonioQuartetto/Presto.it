@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\ReviewerController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +31,4 @@ Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->
 
 /*--Route Rewiewers--*/
 
-Route::get('/lavora-con-noi', [ReviewerController::class, 'create'])->name('reviewer.create');
+Route::get('/lavora-con-noi', [RevisorController::class, 'create'])->name('revisor.create');

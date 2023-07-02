@@ -53,7 +53,7 @@ header {
   color: #fff;
 }
 
-h1 {
+.header-overlay h1 {
   font-size: 50px;
   margin-bottom: 20px;
   color: var(--orange-hub);

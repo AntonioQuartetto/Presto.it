@@ -19,10 +19,10 @@
                             href="{{ route('announcement.index') }}">Annunci</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() == 'reviewer.create')
+                        <a class="nav-link @if (Route::currentRouteName() == 'revisor.create')
                             active text-warning
                         @endif" aria-current="page"
-                            href="{{ route('reviewer.create') }}">Lavora con noi</a>
+                            href="{{ route('revisor.create') }}">Lavora con noi</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow')

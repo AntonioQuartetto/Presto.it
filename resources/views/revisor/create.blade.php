@@ -3,7 +3,7 @@
    <div class="container p-5">
      <div class="row">
         <div class="col-12">
-        <livewire:reviewer-create-form/>
+        <livewire:revisor-create-form/>
         </div>
     </div>
     </div>
