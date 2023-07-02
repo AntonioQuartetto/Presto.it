@@ -13,11 +13,15 @@
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
+                        <a class="nav-link @if (Route::currentRouteName() == 'announcement.index')
+                            active text-warning
+                        @endif" aria-current="page"
                             href="{{ route('announcement.index') }}">Annunci</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active text-center" href="#" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow')
+                            active text-warning
+                        @endif" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">Categorie</a>
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
