@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\ReviewerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,9 @@ Route::get('/annuncio',[AnnouncementController::class, 'index'])->name('announce
 Route::get('/annuncio/crea',[AnnouncementController::class, 'create'])->name('announcement.create');
 Route::get('/annuncio/{announcement}/dettagli',[AnnouncementController::class, 'show'])->name('announcement.show');
 Route::get('/annuncio/{announcement}/edit',[AnnouncementController::class, 'edit'])->name('announcement.edit');
-
-
-
-
-
 Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->name('announcement.search');
 
+
+/*--Route Rewiewers--*/
+
+Route::get('/lavora-con-noi', [ReviewerController::class, 'create'])->name('reviewer.create');
