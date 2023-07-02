@@ -93,8 +93,13 @@ p {
   height: 200px;
   margin-bottom: 20px;
   text-align: center;
-  
-  
+  transition: all 500ms ease;
+}
+
+.card_categories:hover{
+
+  transform: scale(1.05);
+  transition: all 500 ease;
 }
 
 
