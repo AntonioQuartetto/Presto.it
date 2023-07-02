@@ -72,9 +72,8 @@ class PageController extends Controller
     public function searchAnnouncaments(Request $request){
         
 
-         $announcements= Announcement::search($request->searched)->paginate(10);
-
-        
+    $announcements= Announcement::search($request->searched)->paginate(10);
+     
       
          return view('announcement.search', compact('announcements'));
     }
