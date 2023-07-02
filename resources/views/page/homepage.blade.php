@@ -47,7 +47,7 @@
                         <div class="card">
                             <div class="card-inner">
                                     <div class="card-front">
-                                            <img src="{{Storage::url('\images\No-Image-Placeholder.png')}}" alt="" class="card-img-top p-3 rounded">
+                                            <img src="{{Storage::url('\images\dafaultimage.png')}}" alt="" class="card-img-top p-3 rounded">
                                     </div>
                             <div class="card-back">
                                 <h5 class="card-title">{{$announcement->title}}</h5>
