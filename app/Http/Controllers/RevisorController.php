@@ -12,12 +12,14 @@ class RevisorController extends Controller
       return view('revisor.index',compact('announcement_to_check'));
     }
     
-    public function acceptAnnouncements() {
-        
+    public function acceptAnnouncements(Announcement $announcement) {
+        $announcement->setAccepted(true);
+        return redirect()->back()->with('message', 'Annuncio approvato');
     }
 
-    public function rejectAnnouncements() {
-        
+    public function rejectAnnouncements(Announcement $announcement) {
+      $announcement->setAccepted(false);
+      return redirect()->back()->with('message', 'Annuncio rifiutato');
     }
 
     public function create(){

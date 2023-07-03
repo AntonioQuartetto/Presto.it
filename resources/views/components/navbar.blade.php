@@ -54,7 +54,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
                                 href="{{ route('revisor.index') }}">Annunci da revisionare
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <span class="position-absolute top-75 start-75 translate-middle badge rounded-pill bg-danger">
                                     {{App\Models\Announcement::toBeRevisionedCount()}}
                                     <span class="visually-hidden">
                                         Messaggi non letti
@@ -86,9 +86,7 @@
                         </li>
                     @endauth
 
-                </ul>
-            </li>
-            @endauth
+          
         </ul>
     </div>
 </div>
