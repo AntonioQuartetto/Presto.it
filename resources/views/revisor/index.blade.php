@@ -59,7 +59,7 @@
                     <p><b>Descrizione</b>: {{$announcement_to_check->body}}</p>
                     <p><b>Categoria</b>: {{$announcement_to_check->category->name}}</p>
                     <p><b>Pubblicato il</b>: {{$announcement_to_check->created_at->format('d-m-Y')}}</p>
-                    <p><b>Aggiunto da</b>: {{$announcement_to_check->user->name}}</p>  
+                    
                     <div class="row">
                       <div class="col-12 col-md-6">
                         <form action="{{route('revisor.accept_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
