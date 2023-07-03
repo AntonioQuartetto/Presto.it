@@ -1,6 +1,3 @@
-
-
-
 <div class="container bg-dark">
   <footer class="py-5">
     <div class="row">
@@ -13,7 +10,6 @@
           <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/antonio-quartetto-dev/" target="blank" class="nav-link p-0">Antonio</a></li>
         </ul>
       </div>
-
       <div class="col-6 col-md-6 mb-3">
         <form>
           <h5>Subscribe to our newsletter</h5>
@@ -26,7 +22,6 @@
         </form>
       </div>
     </div>
-
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>© 2023 BugCreators, Inc. All rights reserved.</p>
     </div>

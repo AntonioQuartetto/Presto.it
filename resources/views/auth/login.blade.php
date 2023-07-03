@@ -26,7 +26,6 @@
                                         <span class="small text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
                             </div>
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
