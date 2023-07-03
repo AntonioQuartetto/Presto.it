@@ -12,8 +12,11 @@
 <body class="body-custom">
 
     <x-navbar />
-
-    <x-header />
+        @if (Route::currentRouteName() == 'page.homepage'){
+            <x-header />
+        }
+        @endif
+    
 
 
     <main class="controller main_custom">
