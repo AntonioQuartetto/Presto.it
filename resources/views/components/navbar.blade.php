@@ -50,7 +50,21 @@
                                     class="bi bi-person-fill" viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                                 </svg>
-                            </b></li>
+                            </b>
+                        </li>
+                        @if (Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="{{ route('revisor.index') }}">Annunci da revisionare
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{App\Models\Announcement::toBeRevisionedCount()}}
+                                    <span class="visually-hidden">
+                                        Messaggi non letti
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        @endif
                         <li class="btn-user">
                             <a class="nav-link active" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
