@@ -13,9 +13,9 @@
 
     <x-navbar />
     @if (Route::currentRouteName() == 'page.homepage')
-        {
+        
         <x-header />
-        }
+        
     @endif
 
 
@@ -23,7 +23,10 @@
     <main class="controller main_custom">
         @if (Route::currentRouteName() != 'announcement.create' &&
                 Route::currentRouteName() != 'login' &&
-                Route::currentRouteName() != 'register')
+                Route::currentRouteName() != 'register' &&
+                Route::currentRouteName() != 'revisor.create'
+                )
+                
             <x-filters />
         @endif
         {{ $slot }}
