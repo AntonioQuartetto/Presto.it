@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class isRevisor
 {
-
     /**
      * Handle an incoming request.
      *

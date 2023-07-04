@@ -5,7 +5,7 @@
     </h2>
     <div class="row">
         <div class="col-12 col-md-3">
-            <a class="nav-link dropdown-toggle active text-center mt-2" href="#" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle active text-center mt-2 rounded p-2 bg-white text-dark" href="#" data-bs-toggle="dropdown"
                 aria-expanded="false">Categorie</a>
             <ul class="dropdown-menu">
                 @foreach ($categories as $category)
@@ -23,7 +23,6 @@
             <input type="search" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca" aria-label="Search"
                 name="searched"> 
             <button class="btn btn-dark" type="submit">Cerca</button>
-            
         </form>
     </div>
 </div>

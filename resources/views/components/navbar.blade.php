@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " aria-label="Eighth navbar example">
     <div class="container"> 
         <a class="navbar-brand" href="{{ route('page.homepage') }}">
             <x-logo />
@@ -38,7 +38,6 @@
                         </ul>
                     </li>            
                     @auth
-
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
                                 href="{{ route('announcement.create') }}">Inserisci annuncio</a>
@@ -85,11 +84,8 @@
                             </ul>
                         </li>
                     @endauth
-
-          
         </ul>
     </div>
 </div>
-
 </div>
 </nav>
