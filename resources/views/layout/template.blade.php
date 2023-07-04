@@ -13,9 +13,9 @@
 
     <x-navbar />
     @if (Route::currentRouteName() == 'page.homepage')
-        {
+        
         <x-header />
-        }
+        
     @endif
 
 
