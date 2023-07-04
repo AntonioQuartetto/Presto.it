@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
+
+  public function __construct(){
+
+    $this->middleware('auth');
+}
     public function index() {
       $announcement_to_check=Announcement::where('is_accepted',null)->first();
       return view('revisor.index',compact('announcement_to_check'));

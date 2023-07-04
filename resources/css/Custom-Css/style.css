@@ -67,7 +67,7 @@ header {
 }
 
 
-
+/*-- Filtri --*/
 
 .sez-cerca-custom {
   background-color: var(--orange-hub);
@@ -152,7 +152,7 @@ header {
 .main_custom{
   background-color: rgba(0, 0, 0, 0.782);
   box-shadow: 1px -1px 10px var(--orange-hub);
-  border-radius: 3%;
+  border-radius: 15px;
   margin: 30px;
   padding: 20px;
 }

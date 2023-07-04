@@ -11,8 +11,16 @@
            
         </div>
     </div>
-    <hr class="">
-    <x-categories />
+    <hr>
+    
+<div class="container">
+    <div class="text-center my-4 p-3">
+        <h3>Esplora le nostre sezioni</h3>
+    </div>
+    <div>
+        <x-categories />
+    </div>
+</div>
 
 
 </x-template>

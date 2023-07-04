@@ -2,9 +2,6 @@
     <div class="container p-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>
-                    PRESTO.IT
-                </h1>
                 <p class="h2 my-2 fw-bold">
                     Annunci per la cateogria {{ $category->name }}
                 </p>
