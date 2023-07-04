@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " aria-label="Eighth navbar example">
     <div class="container">
         <a class="navbar-brand" href="{{ route('page.homepage') }}">
             <x-logo />
@@ -43,6 +43,8 @@
                                             d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                                     </svg>
                                 </b>
+
+
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" aria-current="page"
@@ -53,7 +55,8 @@
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li>
-                                        <a class="dropdown-item" aria-current="page" href="{{ route('revisor.index') }}">Annunci
+                                        <a class="dropdown-item" aria-current="page"
+                                            href="{{ route('revisor.index') }}">Annunci
                                             da revisionare
                                             <span
                                                 class="position-absolute top-75 start-75 translate-middle badge rounded-pill bg-danger">
@@ -78,7 +81,7 @@
                             </ul>
 
                         </li>
-                        @else
+                    @else
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active text-warning" href="#" data-bs-toggle="dropdown"
                                 aria-expanded="false">

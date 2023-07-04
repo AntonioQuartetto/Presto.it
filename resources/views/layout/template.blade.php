@@ -31,5 +31,4 @@
     <x-footer />
     @livewireScripts
 </body>
-
 </html>

@@ -1,24 +1,17 @@
 <x-template>
-
-
-
-
     <!-- sezione annunci -->
-
     @if (session('success'))
-        <span class="badge text-bg-success">
-            {{ session('success') }}
-        </span>
+    <span class="badge text-bg-success">
+        {{ session('success') }}
+    </span>
     @endif
     <div class="container">
         <div class="text-center mb-2">
             <h2>I Nostri Annunci</h2>
         </div>
         <div class="row">
-
-
             @foreach ($announcements as $announcement)
-               <x-card :$announcement/>
+            <x-card :$announcement/>
             @endforeach
             <div class="container">
                 <div class="row justify-content-center">
@@ -27,11 +20,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
-
-
 </x-template>
