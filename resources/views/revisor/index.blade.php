@@ -1,4 +1,9 @@
 <x-template>
+  @if (session()->has('message'))
+  <div class="bg-success text-dark p-3 text-center">
+      {{session('message')}}
+  </div>
+  @endif
   <div class="container-fluid p-5 bg-gradient bg-success shadow mb-4">
     <div class="row">
       <div class="col-12 text-light p-5">
@@ -59,7 +64,7 @@
                     <p><b>Descrizione</b>: {{$announcement_to_check->body}}</p>
                     <p><b>Categoria</b>: {{$announcement_to_check->category->name}}</p>
                     <p><b>Pubblicato il</b>: {{$announcement_to_check->created_at->format('d-m-Y')}}</p>
-                    
+                 
                     <div class="row">
                       <div class="col-12 col-md-6">
                         <form action="{{route('revisor.accept_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">

@@ -8,6 +8,11 @@
     @vite(['resources\css\app.css', 'resources\js\app.js'])
 <body class="body-custom">
     <x-navbar />
+    @if (session()->has('access.denied'))
+    <div>
+        {{session('access.denied')}}
+    </div>
+    @endif
         @if (Route::currentRouteName() == 'page.homepage'){
             <x-header />
         }
