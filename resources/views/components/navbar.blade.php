@@ -14,10 +14,7 @@
                         <a class="nav-link @if (Route::currentRouteName() == 'announcement.index') active text-warning @endif"
                             aria-current="page" href="{{ route('announcement.index') }}">Annunci</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif"
-                            aria-current="page" href="{{ route('revisor.create') }}">Lavora con noi</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
                             href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
@@ -50,6 +47,7 @@
                                 <li><a class="dropdown-item" aria-current="page"
                                         href="{{ route('announcement.create') }}">Inserisci annuncio</a>
                                 </li>
+
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -67,6 +65,13 @@
                                             </span>
                                         </a>
                                     </li>
+                                @else
+                                    @if (!Auth::user()->is_revisor)
+                                        <li class="nav-item">
+                                            <a class="dropdown-item"
+                                                aria-current="page" href="{{ route('revisor.create') }}">Lavora con noi</a>
+                                        </li>
+                                    @endif
                                 @endif
                                 <li>
                                     <hr class="dropdown-divider">
