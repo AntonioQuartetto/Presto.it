@@ -30,7 +30,7 @@ Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->
 
 
 /*--Route Rewiewers--*/
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
-Route::get('/lavora-con-noi', [RevisorController::class, 'create'])->name('revisor.create');
-Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncements'])->name('revisor.accept_announcements');
-Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncements'])->name('revisor.reject_announcements');
+Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
+Route::get('/lavora-con-noi', [RevisorController::class, 'create'])->middleware('isRevisor')->name('revisor.create');
+Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncements'])->middleware('isRevisor')->name('revisor.accept_announcements');
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncements'])->middleware('isRevisor')->name('revisor.reject_announcements');

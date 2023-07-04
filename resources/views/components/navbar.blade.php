@@ -1,46 +1,44 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
-    <div class="container">
-
+    <div class="container"> 
         <a class="navbar-brand" href="{{ route('page.homepage') }}">
             <x-logo />
-        </a>
-
+        </a>  
         <div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
-                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExample07">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() == 'announcement.index')
-                            active text-warning
-                        @endif" aria-current="page"
-                            href="{{ route('announcement.index') }}">Annunci</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() == 'revisor.create')
-                            active text-warning
-                        @endif" aria-current="page"
-                            href="{{ route('revisor.create') }}">Lavora con noi</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow')
-                            active text-warning
-                        @endif" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">Categorie</a>
-                        <ul class="dropdown-menu">
-                            @foreach ($categories as $category)
-                                <li><a href="{{ route('categoryShow', compact('category')) }}"
-                                        class="dropdown-item">{{ $category->name }}</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
+            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::currentRouteName() == 'announcement.index')
+                    active text-warning
+                    @endif" aria-current="page"
+                    href="{{ route('announcement.index') }}">Annunci</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::currentRouteName() == 'revisor.create')
+                    active text-warning
+                    @endif" aria-current="page"
+                    href="{{ route('revisor.create') }}">Lavora con noi</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow')
+                    active text-warning
+                    @endif" href="#" data-bs-toggle="dropdown"
+                    aria-expanded="false">Categorie</a>
+                    <ul class="dropdown-menu">
+                        @foreach ($categories as $category)
+                        <li><a href="{{ route('categoryShow', compact('category')) }}"
+                            class="dropdown-item">{{ $category->name }}</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             @endforeach
                         </ul>
-                    </li>
-
+                    </li>            
                     @auth
+
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
                                 href="{{ route('announcement.create') }}">Inserisci annuncio</a>
@@ -56,7 +54,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
                                 href="{{ route('revisor.index') }}">Annunci da revisionare
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <span class="position-absolute top-75 start-75 translate-middle badge rounded-pill bg-danger">
                                     {{App\Models\Announcement::toBeRevisionedCount()}}
                                     <span class="visually-hidden">
                                         Messaggi non letti
@@ -87,9 +85,11 @@
                             </ul>
                         </li>
                     @endauth
-                </ul>
-            </div>
-        </div>
 
+          
+        </ul>
     </div>
+</div>
+
+</div>
 </nav>

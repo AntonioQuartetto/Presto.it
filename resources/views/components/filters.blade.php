@@ -17,13 +17,13 @@
                 @endforeach
             </ul>
         </div>
-
         <form action="{{ route('announcement.search') }}" method="GET" class="d-felx">
             <input type="number" class="rounded p-2" id="price-max" placeholder="Price Max." name="priceMax">
             <input type="number" class="rounded p-2" id="price-min" placeholder="Price Min." name="priceMin">
             <input type="search" class="rounded p-2" id="cerca-per-nome" placeholder="Cerca" aria-label="Search"
-                name="searched">
+                name="searched"> 
             <button class="btn btn-dark" type="submit">Cerca</button>
+            
         </form>
     </div>
 </div>

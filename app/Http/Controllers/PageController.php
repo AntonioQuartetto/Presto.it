@@ -73,8 +73,27 @@ class PageController extends Controller
         
 
     $announcements= Announcement::search($request->searched)->paginate(10);
-     
-      
          return view('announcement.search', compact('announcements'));
     }
 }
+
+
+// #where()
+
+// $collection = collect([
+//     ['product' => 'Desk', 'price' => 200],
+//     ['product' => 'Chair', 'price' => 100],
+//     ['product' => 'Bookcase', 'price' => 150],
+//     ['product' => 'Door', 'price' => 100],
+// ]);
+ 
+// $filtered = $collection->where('price', 100);
+ 
+// $filtered->all();
+ 
+/*
+    [
+        ['product' => 'Chair', 'price' => 100],
+        ['product' => 'Door', 'price' => 100],
+    ]
+*/

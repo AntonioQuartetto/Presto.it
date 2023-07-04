@@ -1,12 +1,8 @@
-
 <div class="container">
-
     <div class="row d-flex justify-content-center">
         @foreach ($categories as $category)
             <div class="col-12 col-md-4 d-flex justify-content-center">
-
-                <div class="card_categories">
-                    
+                <div class="card_categories">   
                 @switch($category)
                     @case($category->name == 'Motori')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -15,7 +11,6 @@
                                 d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Informatica')
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -25,7 +20,6 @@
                             </svg>
                         </div>
                     @break
-
                     @case($category->name == 'Libri')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-book-half" viewBox="0 0 16 16">
@@ -33,7 +27,6 @@
                                 d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Giochi')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-joystick" viewBox="0 0 16 16">
@@ -43,7 +36,6 @@
                                 d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Immobili')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-houses" viewBox="0 0 16 16">
@@ -51,7 +43,6 @@
                                 d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708L5.793 1Zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708L8.793 2Zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207l-4.5-4.5Z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Telefoni')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-phone" viewBox="0 0 16 16">
@@ -60,7 +51,6 @@
                             <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Arredamento')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-bookshelf" viewBox="0 0 16 16">
@@ -68,7 +58,6 @@
                                 d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Accessori')
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-earbuds" viewBox="0 0 16 16">
@@ -76,7 +65,6 @@
                                 d="M6.825 4.138c.596 2.141-.36 3.593-2.389 4.117a4.432 4.432 0 0 1-2.018.054c-.048-.01.9 2.778 1.522 4.61l.41 1.205a.52.52 0 0 1-.346.659l-.593.19a.548.548 0 0 1-.69-.34L.184 6.99c-.696-2.137.662-4.309 2.564-4.8 2.029-.523 3.402 0 4.076 1.948zm-.868 2.221c.43-.112.561-.993.292-1.969-.269-.975-.836-1.675-1.266-1.563-.43.112-.561.994-.292 1.969.269.975.836 1.675 1.266 1.563zm3.218-2.221c-.596 2.141.36 3.593 2.389 4.117a4.434 4.434 0 0 0 2.018.054c.048-.01-.9 2.778-1.522 4.61l-.41 1.205a.52.52 0 0 0 .346.659l.593.19c.289.092.6-.06.69-.34l2.536-7.643c.696-2.137-.662-4.309-2.564-4.8-2.029-.523-3.402 0-4.076 1.948zm.868 2.221c-.43-.112-.561-.993-.292-1.969.269-.975.836-1.675 1.266-1.563.43.112.561.994.292 1.969-.269.975-.836 1.675-1.266 1.563z" />
                         </svg>
                     @break
-
                     @case($category->name == 'Elettrodomestici')
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                             viewBox="0 0 50.000000 50.000000" preserveAspectRatio="xMidYMid meet">
@@ -103,7 +91,6 @@
                             </g>
                         </svg>
                     @break
-
                     @case($category->name == 'Sport')
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                             viewBox="0 0 50.000000 50.000000" preserveAspectRatio="xMidYMid meet">
@@ -128,20 +115,14 @@
                             </g>
                         </svg>
                     @break
-
                     @default
                 @endswitch
-
                 <div>
                     <a href="{{ route('categoryShow', compact('category')) }}"
                         class="dropdown-item">{{ $category->name }}</a>
                 </div>
                 </div>
-
             </div>
         @endforeach
-
     </div>
-
-
 </div>
