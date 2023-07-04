@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark " aria-label="Eighth navbar example">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('page.homepage') }}">
+        <a class="navbar-brand animate__animated animate__slideInLeft" href="{{ route('page.homepage') }}">
             <x-logo />
         </a>
         <div>
@@ -46,7 +46,7 @@
 
 
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu bg-warning">
                                 <li><a class="dropdown-item" aria-current="page"
                                         href="{{ route('announcement.create') }}">Inserisci annuncio</a>
                                 </li>
