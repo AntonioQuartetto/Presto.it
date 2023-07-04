@@ -9,6 +9,7 @@
           <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/mattia-cau-11091a247/" target="blank" class="nav-link p-0"><i class="bi bi-linkedin me-2"></i>Mattia</a></li>
           <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/antonio-quartetto-dev/" target="blank" class="nav-link p-0"><i class="bi bi-linkedin me-2"></i>Antonio</a></li>
         </ul>
+        
       </div>
       <div class="col-6 col-md-6 mb-3">
         <form>
@@ -22,7 +23,7 @@
         </form>
       </div>
     </div>
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 mt-4 border-top">
       <p>© 2023 BugCreators, Inc. All rights reserved.</p>
     </div>
   </footer>
