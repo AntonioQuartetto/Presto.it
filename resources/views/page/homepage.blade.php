@@ -1,6 +1,6 @@
 <x-template>
 
-
+   
     <x-categories />
 
 
