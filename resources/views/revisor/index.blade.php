@@ -1,13 +1,22 @@
 <x-template>
+@if (Session::has('modifyAnnouncement'))
+   <form action="{{route('revisor.rewind_announcements')}}" method="POST">
+    @csrf
+    @method('PATCH')
+    
+    <h3>Hai sbagliato? Clicca qua-> <button type="submit" class="btn btn-danger shadow">Annulla</button></div></h3>
+    
+  </form>
+@endif
   @if (session()->has('message'))
-  <div class="bg-success text-dark p-3 text-center">
-      {{session('message')}}
+  <div class="bg-warning text-dark p-3 text-center">
+    {{session('message')}}
   </div>
   @endif
-  <div class="container-fluid p-5 bg-gradient bg-success shadow mb-4">
+  <div class="container-fluid p-5 bg-gradient bg-success shadow">
     <div class="row">
-      <div class="col-12 text-light p-5">
-        {{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}
+      <div class="col-12 text-light p-2">
+        {{$announcement_to_check ? 'Ecco gli annunci da revisionare' : 'Non ci sono annunci da revisionare'}}
       </div>
     </div>
   </div>
@@ -64,7 +73,7 @@
                     <p><b>Descrizione</b>: {{$announcement_to_check->body}}</p>
                     <p><b>Categoria</b>: {{$announcement_to_check->category->name}}</p>
                     <p><b>Pubblicato il</b>: {{$announcement_to_check->created_at->format('d-m-Y')}}</p>
-                 
+                    
                     <div class="row">
                       <div class="col-12 col-md-6">
                         <form action="{{route('revisor.accept_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
@@ -79,16 +88,11 @@
                         <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
                       </div> 
                     </form>
-                  <form action="{{route('revisor.rewind_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
-                  @csrf
-                  @method('PATCH')
-                  <button type="submit" class="btn btn-success shadow">Annulla</button>
-                </div> 
-              </form>
-                </div>
 
-        </div>
-      </section>
-    </div>       
-  @endif          
-</x-template>
+                </div>
+                
+              </div>
+            </section>
+          </div>       
+          @endif          
+        </x-template>

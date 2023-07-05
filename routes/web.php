@@ -40,6 +40,6 @@ Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('is
 Route::get('/lavora-con-noi', [RevisorController::class, 'create'])->name('revisor.create');
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncements'])->middleware('isRevisor')->name('revisor.accept_announcements');
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncements'])->middleware('isRevisor')->name('revisor.reject_announcements');
-Route::patch('/annulla/annuncio/{announcement}', [RevisorController::class, 'rewindAnnouncements'])->middleware('isRevisor')->name('revisor.rewind_announcements');
+Route::patch('/annulla/annuncio', [RevisorController::class, 'rewindAnnouncements'])->middleware('isRevisor')->name('revisor.rewind_announcements');
 Route::get('/revisor/richiesta', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
