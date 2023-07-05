@@ -79,7 +79,14 @@
                         <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
                       </div> 
                     </form>
+                  <form action="{{route('revisor.rewind_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
+                  @csrf
+                  @method('PATCH')
+                  <button type="submit" class="btn btn-success shadow">Annulla</button>
+                </div> 
+              </form>
                 </div>
+
         </div>
       </section>
     </div>       

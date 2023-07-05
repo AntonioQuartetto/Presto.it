@@ -32,6 +32,28 @@ class RevisorController extends Controller
       return redirect()->back()->with('message', 'Annuncio rifiutato');
     }
 
+
+
+    public function rewindAnnouncements(Announcement $announcements_id) {
+    
+        // Recupera l'ultimo record su cui il revisore ha eseguito un'attività
+        $ultimoRecord = Announcement::where('announcement_id', $announcements_id)->orderBy('id', 'desc')->first();
+                              
+        if ($ultimoRecord) {
+          
+            // Inverti lo stato del record per annullare l'ultima attività
+            $ultimoRecord->is_accepted = !$ultimoRecord->is_accepted;
+            $ultimoRecord->save();
+    
+            return "Ultima attività del revisore annullata con successo.";
+        }
+        dd($ultimoRecord);
+        return "Nessuna attività del revisore da annullare.";
+    }
+    
+
+
+
     public function create(){
 
         return view('revisor.create');
@@ -44,4 +66,9 @@ class RevisorController extends Controller
       Artisan::call('app:make-user-revisor', ["email"=>$user->email]);
       return redirect('/')->with('message','Complimenti! L\'utente è diventato revisore');
     }
+    
+
+
+
+
 }
