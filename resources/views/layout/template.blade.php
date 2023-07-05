@@ -24,13 +24,16 @@
         @if (Route::currentRouteName() != 'announcement.create' &&
                 Route::currentRouteName() != 'login' &&
                 Route::currentRouteName() != 'register' &&
-                Route::currentRouteName() != 'revisor.create'
+                Route::currentRouteName() != 'revisor.create' &&
+                Route::currentRouteName() != 'profile.index'
                 )
                 
             <x-filters />
         @endif
         {{ $slot }}
     </main>
+
+    
     <x-footer />
     @livewireScripts
 </body>
