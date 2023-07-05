@@ -1,4 +1,4 @@
-<div class="col-12 col-md-4 my-4 d-flex justify-content-center">
+<div class="col-12 col-md-4 my-4 d-flex justify-content-center ">
     <a href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
         <div class="card">
             <div class="card-inner">

@@ -28,6 +28,10 @@
                             @endforeach
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif" aria-current="page" href="{{ route('revisor.create') }}">Lavora con
+                            noi</a>
+                    </li>
                     @auth
 
                         <li class="nav-item dropdown">
@@ -57,11 +61,10 @@
                                         href="{{ route('announcement.create') }}">Inserisci annuncio</a>
                                 </li>
 
-
+                                @if (Auth::user()->is_revisor)
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                @if (Auth::user()->is_revisor)
                                     <li>
                                         <a class="dropdown-item" aria-current="page"
                                             href="{{ route('revisor.index') }}">Annunci
@@ -75,13 +78,6 @@
                                             </span>
                                         </a>
                                     </li>
-                                @else
-                                    @if (!Auth::user()->is_revisor)
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" aria-current="page"
-                                                href="{{ route('revisor.create') }}">Lavora con noi</a>
-                                        </li>
-                                    @endif
                                 @endif
                                 <li>
                                     <hr class="dropdown-divider">
