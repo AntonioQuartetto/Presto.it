@@ -18,6 +18,16 @@
   .profile .info {
     font-size: 20px;
   }
+  .profile .info h2 {
+
+    position: relative;
+  }
+  .profile .info span {
+
+    position: absolute;
+    top: -7px;
+    left: 160px;
+  }
   
   .profile .info h2 {
     margin: 0;
