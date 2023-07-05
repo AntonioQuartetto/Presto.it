@@ -25,6 +25,7 @@
                 Route::currentRouteName() != 'login' &&
                 Route::currentRouteName() != 'register' &&
                 Route::currentRouteName() != 'revisor.create' &&
+                Route::currentRouteName() != 'revisor.index' &&
                 Route::currentRouteName() != 'profile.index'
                 )
                 
