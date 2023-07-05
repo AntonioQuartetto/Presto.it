@@ -15,8 +15,9 @@ class PageController extends Controller
    
     public function index()
     {
-  
-    return view('page.homepage');
+        $announcements= Announcement::orderBy('created_at', 'asc')->paginate(6)->reverse();
+
+    return view('page.homepage', compact('announcements'));
 
         
     }
