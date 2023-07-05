@@ -1,0 +1,28 @@
+
+/*-- Style del PROFILO UTENTE --*/
+
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile .info {
+    font-size: 20px;
+  }
+  
+  .profile .info h2 {
+    margin: 0;
+  }
+  
+  .profile .info p {
+    margin: 5px 0;
+  }

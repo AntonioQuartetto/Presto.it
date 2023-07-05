@@ -7,20 +7,21 @@ use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePageControllerRequest;
 use App\Http\Requests\UpdatePageControllerRequest;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
    
+
     public function index()
     {
-        $announcements= Announcement::orderBy('created_at', 'asc')->paginate(6)->reverse();
+        $announcements= Announcement::orderBy('created_at', 'desc')->paginate(6);
 
     return view('page.homepage', compact('announcements'));
 
         
     }
+
 
     /**
      * Show the form for creating a new resource.
