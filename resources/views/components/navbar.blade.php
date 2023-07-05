@@ -44,9 +44,19 @@
 
                             </a>
                             <ul class="dropdown-menu bg-warning">
+
+                                <li><a class="dropdown-item" aria-current="page"
+                                        href="{{ route('profile.index') }}">Profilo</a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
                                 <li><a class="dropdown-item" aria-current="page"
                                         href="{{ route('announcement.create') }}">Inserisci annuncio</a>
                                 </li>
+
 
                                 <li>
                                     <hr class="dropdown-divider">
@@ -68,8 +78,8 @@
                                 @else
                                     @if (!Auth::user()->is_revisor)
                                         <li class="nav-item">
-                                            <a class="dropdown-item"
-                                                aria-current="page" href="{{ route('revisor.create') }}">Lavora con noi</a>
+                                            <a class="dropdown-item" aria-current="page"
+                                                href="{{ route('revisor.create') }}">Lavora con noi</a>
                                         </li>
                                     @endif
                                 @endif
