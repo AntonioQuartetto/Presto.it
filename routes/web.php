@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RevisorController;
 
 /*
@@ -19,6 +20,11 @@ use App\Http\Controllers\RevisorController;
 /*-- Route delle Page --*/
 Route::get('/', [PageController::class, 'index'])->name('page.homepage');
 Route::get('/categoria/{category}', [PageController::class, 'categoryShow'])->name('categoryShow');
+
+
+/*-- Route Profile --*/
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
 
 /*-- Route degli annunci--*/
