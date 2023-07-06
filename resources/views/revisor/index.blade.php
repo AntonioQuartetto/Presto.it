@@ -1,25 +1,25 @@
 <x-template>
-@if (Session::has('modifyAnnouncement'))
-   <form action="{{route('revisor.rewind_announcements')}}" method="POST">
-    @csrf
-    @method('PATCH')
-    
-    <h3>Hai sbagliato? Clicca qua-> <button type="submit" class="btn btn-danger shadow">Annulla</button></div></h3>
-    
-  </form>
-@endif
+  
+  <div class="container-fluid p-5 bg-gradient my-bg shadow">
+    <div class="row">
+      <div class="col-12 text-light p-1 fs-3 text-center ">
+        {{$announcement_to_check ? 'Ci sono alcuni annunci da revisionare ' : 'Non ci sono annunci da revisionare'}}
+      </div>
+    </div>
+  </div>
   @if (session()->has('message'))
   <div class="bg-warning text-dark p-3 text-center">
     {{session('message')}}
   </div>
   @endif
-  <div class="container-fluid p-5 bg-gradient bg-success shadow">
-    <div class="row">
-      <div class="col-12 text-light p-2">
-        {{$announcement_to_check ? 'Ecco gli annunci da revisionare' : 'Non ci sono annunci da revisionare'}}
-      </div>
-    </div>
-  </div>
+  @if (Session::has('modifyAnnouncement'))
+  <form action="{{route('revisor.rewind_announcements')}}" method="POST" class="text-center mt-5">
+    @csrf
+    @method('PATCH')
+    <h3>Hai sbagliato? Clicca qua-> <button type="submit" class="btn btn-danger shadow">Annulla</button></div></h3>
+  </form>
+  @endif
+  
   @if ($announcement_to_check)
   <div class="container">
     <section class="py-5">
@@ -74,25 +74,35 @@
                     <p><b>Categoria</b>: {{$announcement_to_check->category->name}}</p>
                     <p><b>Pubblicato il</b>: {{$announcement_to_check->created_at->format('d-m-Y')}}</p>
                     
-                    <div class="row">
-                      <div class="col-12 col-md-6">
+                    <div class="row mt-5">
+                      <div class="col-12 col-md-6 text-center">
                         <form action="{{route('revisor.accept_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
                           @csrf
                           @method('PATCH')
                           <button type="submit" class="btn btn-success shadow">Accetta</button>
                         </div> 
-                      </form>
-                      <form action="{{route('revisor.reject_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
-                      </div> 
-                    </form>
-
-                </div>
-                
-              </div>
-            </section>
-          </div>       
-          @endif          
-        </x-template>
+                        <div class="col-12 col-md-6">
+                        </form>
+                        <form action="{{route('revisor.reject_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
+                          @csrf
+                          @method('PATCH')
+                          <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                        </div> 
+                      </form></div>
+                      
+                      
+                    </div>
+                    
+                  </div>
+                </section>
+              </div>       
+              @endif  
+              <ul>
+                <h3>Ricordati solamente alcune regole:</h3>
+                <li>Sii il meno soggettivo possibile;</li>
+                <li>Rifiuta se nell'annuncio è presente un linguaggio inapropiato;</li>
+                <li>Rifiuta se non viene rispettata la nostra policy o la legge;</li>
+                <li>Rifiuta annunci dove non è presente il prezzo o un titolo sensato;</li>
+                <li>Accetta solamente se sei sicuro che tutto il resto venga rispettato.</li>
+              </ul>       
+            </x-template>
