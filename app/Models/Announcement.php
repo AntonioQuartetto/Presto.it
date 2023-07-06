@@ -11,6 +11,9 @@ class Announcement extends Model
     use HasFactory, Searchable;
 
     protected $fillable = ['title','body','price','image', 'category_id'];
+    protected $casts = [
+        'price' => 'decimal:2'
+    ];
 
     public function toSearchableArray()
     {
@@ -19,7 +22,7 @@ class Announcement extends Model
             'id' => $this->id,
             'title' => $this->title,
             'body' => $this->body,
-            'price'=> (float) $this->price,
+            'price'=>  $this->price,
             'category' => $category,
         ];
         return $array;
