@@ -53,6 +53,6 @@
                 <div wire:loading wire:target="photo">Uploading...</div> --}}
             </div>
         </div>
-        <button type="submit">Inserisci annuncio</button>    
+        <button type="submit" class="btn btn-warning">Inserisci annuncio</button>    
     </form>
 </div>

@@ -131,17 +131,20 @@ header {
   width: 100%;
   height: 100%;
   backface-visibility: hidden; /* Nasconde il lato posteriore della carta */
+  
 }
 
 .card-front {
   background-color: var(--orange-hub);
   overflow: hidden;
-  
+  height: 75%;
 }
 
 .card-back {
   background-color: var(--orange-hub);
   transform: rotateY(180deg); /* Ruota il lato posteriore di 180 gradi */
+  height: 75%;
+  
 }
 
 .card-back a{
@@ -164,4 +167,21 @@ header {
   text-decoration: none;
   color: var(--orange-hub);
 
+}
+.my-ul{
+  display: flex;
+  gap: 1rem;
+
+}
+.my-li{
+  display: block;
+  transition: .3s;
+
+}
+.my-ul:hover .my-li{
+  filter: blur(5px);
+  
+}
+.my-ul .my-li:hover {
+  filter: blur(0px);
 }

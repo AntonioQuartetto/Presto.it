@@ -9,13 +9,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarsExample07">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="my-li nav-item ">
                         <a class="nav-link @if (Route::currentRouteName() == 'announcement.index') active text-warning @endif"
                             aria-current="page" href="{{ route('announcement.index') }}">Annunci</a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown my-li">
                         <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
                             href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
                         <ul class="dropdown-menu">
@@ -28,13 +28,13 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-li">
                         <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif" aria-current="page" href="{{ route('revisor.create') }}">Lavora con
                             noi</a>
                     </li>
                     @auth
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown my-li">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <b class="text-warning">Benvenuto {{ Auth::user()->name }}
