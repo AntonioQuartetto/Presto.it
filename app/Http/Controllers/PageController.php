@@ -82,7 +82,7 @@ $articoliFiltrati = DB::table('announcements')
     ->where('price', '<=', $prezzoMassimo)
     ->get();
 
-    dd($prezzoMassimo, $prezzoMinimo);
+    //dd($prezzoMassimo, $prezzoMinimo);
     $announcements= Announcement::search($request->searched)->paginate(10);
          return view('announcement.search', compact('announcements'));
     }
