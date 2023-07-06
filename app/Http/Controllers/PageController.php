@@ -74,40 +74,27 @@ class PageController extends Controller
     }
 
     public function searchAnnouncaments(Request $request){
-    $prezzoMinimo = $request; // Imposta il prezzo minimo desiderato
-    $prezzoMassimo = $request; // Imposta il prezzo massimo desiderato
+    // $announcements="";
+        
+    $prezzoMinimo = $request->priceMin ? $request->priceMin : 0; // Imposta il prezzo minimo desiderato
+    $prezzoMassimo = $request->priceMax ? $request->priceMax : PHP_INT_MAX; // Imposta il prezzo massimo desiderato
+// dd($prezzoMinimo);
+// if (!empty ($request->search)){
+$announcements= Announcement::search($request->searched)->paginate(10);
+$listaannunci = collect([]);
+foreach ($announcements->getCollection() as $annuncio) {
+if ($annuncio->price<=$prezzoMassimo && $annuncio->price>=$prezzoMinimo) {
+$listaannunci->add($annuncio);
+}};
+$announcements->setCollection($listaannunci);
 
-$articoliFiltrati = DB::table('announcements')
-    ->where('price', '>=', $prezzoMinimo)
-    ->where('price', '<=', $prezzoMassimo)
-    ->get();
+    //     }
+    // else{
+    //     $announcements= Announcement::where($request->searched)
+    //     ->where('prezzo', '>=', $prezzoMinimo)
+    //     ->where('prezzo', '<=', $prezzoMassimo);
+    // }
 
-    //dd($prezzoMassimo, $prezzoMinimo);
-    $announcements= Announcement::search($request->searched)->paginate(10);
          return view('announcement.search', compact('announcements'));
     }
-}
-
-
-
-
-
-// #where()
-
-// $collection = collect([
-//     ['product' => 'Desk', 'price' => 200],
-//     ['product' => 'Chair', 'price' => 100],
-//     ['product' => 'Bookcase', 'price' => 150],
-//     ['product' => 'Door', 'price' => 100],
-// ]);
- 
-// $filtered = $collection->where('price', 100);
- 
-// $filtered->all();
- 
-/*
-    [
-        ['product' => 'Chair', 'price' => 100],
-        ['product' => 'Door', 'price' => 100],
-    ]
-*/
+};
