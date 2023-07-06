@@ -53,7 +53,13 @@
                     <p><b>Pubblicato il</b>: {{$announcement->created_at->format('d-m-Y')}}</p>
                     <p><b>Aggiunto da</b>: {{$announcement->user->name}}</p>
                     <a href="{{ route('announcement.index') }}" class="btn btn-dark">Torna Indietro</a>
-                    <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">Modifica Annuncio</a>
+                    @auth
+                    @if (Auth::user()->id == $announcement->user_id)
+                     <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">Modifica Annuncio</a> 
+                    @endif
+                        
+                    @endauth
+                   
                   </div>
                 </div>
               </div>

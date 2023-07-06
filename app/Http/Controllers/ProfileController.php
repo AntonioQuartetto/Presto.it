@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,8 @@ class ProfileController extends Controller
     public function index(){
 
         $user = Auth::user();
+        $announcements = Announcement::where('user_id', Auth::user()->id)->get();
 
-        return view('profile.profile', compact('user'));
+        return view('profile.profile', compact('user', 'announcements'));
     }
 }
