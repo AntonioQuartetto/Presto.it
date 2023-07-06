@@ -107,7 +107,7 @@ header {
 /*CARD CUSTOM*/
 
 .card {
-  background-color: var(--blac-opacity);
+  background: none;
   width: 200px;
   height: 200px;
   perspective: 1000px; /* Definisce la prospettiva per l'effetto 3D */

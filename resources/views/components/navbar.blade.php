@@ -34,7 +34,7 @@
                         </li>
                         @auth
                         
-                        <li class="nav-item dropdown my-li">
+                        <li class="nav-item dropdown my-li z-1">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <b class="text-warning">Benvenuto {{ Auth::user()->name }}
