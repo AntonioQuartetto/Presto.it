@@ -3,7 +3,7 @@
   <div class="container-fluid p-5 bg-gradient my-bg shadow">
     <div class="row">
       <div class="col-12 text-light p-1 fs-3 text-center ">
-        {{$announcement_to_check ? 'Ci sono alcuni annunci da revisionare ' : 'Non ci sono annunci da revisionare'}}
+        {{$announcement_to_check ? 'Annunci da revisionare ' : 'Nessun annuncio da revisionare'}}
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
   <form action="{{route('revisor.rewind_announcements')}}" method="POST" class="text-center mt-5">
     @csrf
     @method('PATCH')
-    <h3>Hai sbagliato? Clicca qua-> <button type="submit" class="btn btn-danger shadow">Annulla</button></div></h3>
+    <h3>Vuoi annullare il tuo annuncio? Clicca qui! <button type="submit" class="btn btn-danger shadow">Annulla</button></div></h3>
   </form>
   @endif
   
@@ -100,7 +100,7 @@
               <ul>
                 <h3>Ricordati solamente alcune regole:</h3>
                 <li>Sii il meno soggettivo possibile;</li>
-                <li>Rifiuta se nell'annuncio è presente un linguaggio inapropiato;</li>
+                <li>Rifiuta se nell'annuncio è presente un linguaggio inappropiato;</li>
                 <li>Rifiuta se non viene rispettata la nostra policy o la legge;</li>
                 <li>Rifiuta annunci dove non è presente il prezzo o un titolo sensato;</li>
                 <li>Accetta solamente se sei sicuro che tutto il resto venga rispettato.</li>
