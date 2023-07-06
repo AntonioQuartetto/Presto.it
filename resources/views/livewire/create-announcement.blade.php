@@ -18,21 +18,21 @@
         @endif
         <div class="form-group">
             <label for="exampleFormControlInput1">Titolo</label>
-            <input wire:model.lazy="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Inserisci il titolo">
+            <input wire:model.debounce.1200ms="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Inserisci il titolo">
             @error('title')
             <p class="text-danger mt-1">*{{$message}}</p>
             @enderror
         </div>
         <div class="form-group mt-3">
             <label for="exampleFormControlInput1">Prezzo</label>
-            <input wire:model.lazy="price" type="number" step="0.5" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
+            <input wire:model.debounce.1200ms="price" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
             @error('price')
             <p class="text-danger mt-1">*{{$message}}</p>
             @enderror
         </div>
         <div class="form-group mt-4">
             <label for="exampleFormControlTextarea1">Inserisci descrizione</label>
-            <textarea wire:model.lazy="body" type="text" class="form-control @error('body') is-invalid @enderror" rows="3"></textarea>
+            <textarea wire:model.debounce.1200ms="body" type="text" class="form-control @error('body') is-invalid @enderror" rows="3"></textarea>
             @error('body')
             <p class="text-danger mt-1">*{{$message}}</p>
             @enderror

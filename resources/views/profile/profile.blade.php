@@ -24,9 +24,35 @@
                     <p>Descrizione del profilo utente Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
             </div>
-        
+
         </div>
-        
+
+
+        <div class="row">
+
+            <div class="container">
+                <div class="text-center mb-2">
+                    <h2>I Tuoi Annunci</h2>
+                </div>
+                <div class="row">
+                    @forelse ($announcements as $announcement)
+                        <x-card :$announcement />
+                    @empty
+                        <div class="col-12">
+                            <p class="h1">Non hai aggiunto nessun Annunci</p>
+                            <p class="h2">Pubblicane uno: <a href="{{ route('announcement.create') }}">Inserisci
+                                    Annuncio</a></p>
+                        </div>
+                    @endforelse
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
 
     </div>
 </x-template>

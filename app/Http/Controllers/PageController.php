@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePageControllerRequest;
 use App\Http\Requests\UpdatePageControllerRequest;
-use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -73,11 +74,22 @@ class PageController extends Controller
     }
 
     public function searchAnnouncaments(Request $request){
-        
+    $prezzoMinimo = $request; // Imposta il prezzo minimo desiderato
+    $prezzoMassimo = $request; // Imposta il prezzo massimo desiderato
+
+$articoliFiltrati = DB::table('announcements')
+    ->where('price', '>=', $prezzoMinimo)
+    ->where('price', '<=', $prezzoMassimo)
+    ->get();
+
+    dd($prezzoMassimo, $prezzoMinimo);
     $announcements= Announcement::search($request->searched)->paginate(10);
          return view('announcement.search', compact('announcements'));
     }
 }
+
+
+
 
 
 // #where()

@@ -21,7 +21,7 @@ class CreateAnnouncement extends Component
     protected $rules=[
         'title'=>'required|min:4',
         'body'=>'required|min:8',
-        'price'=>'required|integer|digits_between:1,20',
+        'price'=>'required|numeric',
         'category'=>'required',
         // 'image' => 'mimes:bmp,png,jpeg, jpg',
     ];
@@ -32,7 +32,7 @@ class CreateAnnouncement extends Component
         'body.required' => 'Descrizione obbligatoria',
         'body.min' => 'Caratteri insufficienti',
         'price.required' => 'Prezzo obbligatorio',
-        'price.integer' => 'Solo numeri consentiti',
+        'price.numeric' => 'Solo numeri consentiti',
         'category.required' => 'Categoria obbligatoria' 
     ];
     
