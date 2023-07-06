@@ -43,7 +43,7 @@ class RevisorController extends Controller
     Session::remove('modifyAnnouncement');
     Session::save();
     
-    return redirect()->back()->with('message', 'Modiffiche annullate');
+    return redirect()->back()->with('message', 'Annuncio annullato!');
   }
   
   public function create(){
