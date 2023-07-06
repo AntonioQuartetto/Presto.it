@@ -74,7 +74,7 @@ class PageController extends Controller
     }
     
     public function searchAnnouncaments(Request $request){
-        // $announcements="";
+        
         
         $prezzoMinimo = $request->priceMin ? $request->priceMin : 0; 
         $prezzoMassimo = $request->priceMax ? $request->priceMax : PHP_INT_MAX;
