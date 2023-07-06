@@ -52,7 +52,7 @@ class RevisorController extends Controller
   
   public function becomeRevisor(){
     Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
-    return redirect()->back()->with('message','Richiesta inviata');
+    return redirect()->route('profile.index')->with('message','Richiesta per diventare revisore inviata. Riceverai una mail per l\'esito.');
   }
   
   public function makerevisor(User $user){

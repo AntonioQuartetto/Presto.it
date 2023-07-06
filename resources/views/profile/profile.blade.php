@@ -1,6 +1,11 @@
 <x-template>
 
     <div class="container container-fluid">
+        @if (session()->has('message'))
+            <div class="bg-warning text-white m-3 p-3 text-center">
+                {{ session('message') }}
+            </div>
+        @endif
         <div class="profile row">
             <div class="col-12 col-md-3">
                 <img src="{{ Storage::url('\images\placeholder-profile.jpg') }}" alt="Avatar">
