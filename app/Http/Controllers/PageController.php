@@ -18,8 +18,7 @@ class PageController extends Controller
         $announcements= Announcement::orderBy('created_at', 'desc')->paginate(6);
         
         return view('page.homepage', compact('announcements'));
-        
-        
+ 
     }
     
     
@@ -110,5 +109,10 @@ class PageController extends Controller
         
         
         return view('announcement.search', compact('announcements'));
+    }
+
+    public function setLanguage($lang){
+        session()->put('locale', $lang);
+        return redirect()->back();
     }
 };
