@@ -7,7 +7,9 @@
                 </p>
                 <div class="row">
                     @forelse($category->announcements as $announcement)
-                    <x-card :$announcement/>
+                        @if ($announcement->is_accepted)
+                            <x-card :$announcement />
+                        @endif
                     @empty
                         <div class="col-12">
                             <p class="h1">Non sono presenti Annunci</p>
