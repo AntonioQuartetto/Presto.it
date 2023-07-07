@@ -78,8 +78,8 @@ class PageController extends Controller
         
     $prezzoMinimo = $request->priceMin ? $request->priceMin : 0; // Imposta il prezzo minimo desiderato
     $prezzoMassimo = $request->priceMax ? $request->priceMax : PHP_INT_MAX; // Imposta il prezzo massimo desiderato
-// dd($prezzoMinimo);
-// if (!empty ($request->search)){
+// // dd($prezzoMinimo);
+if (empty ($request->searched)){
 $announcements= Announcement::search($request->searched)->paginate(10);
 $listaannunci = collect([]);
 foreach ($announcements->getCollection() as $annuncio) {
@@ -88,12 +88,14 @@ $listaannunci->add($annuncio);
 }};
 $announcements->setCollection($listaannunci);
 
-    //     }
-    // else{
-    //     $announcements= Announcement::where($request->searched)
-    //     ->where('prezzo', '>=', $prezzoMinimo)
-    //     ->where('prezzo', '<=', $prezzoMassimo);
-    // }
+        }
+    else{
+        $announcements= Announcement::where($request->searched)
+        ->where('prezzo', '>=', $prezzoMinimo)
+        ->where('prezzo', '<=', $prezzoMassimo);
+    }
+
+
 
          return view('announcement.search', compact('announcements'));
     }
