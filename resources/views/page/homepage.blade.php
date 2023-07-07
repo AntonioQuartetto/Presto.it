@@ -6,7 +6,9 @@
         </div>
         <div class="row">
             @foreach ($announcements as $announcement)
-            <x-card :$announcement/>
+             @if ($announcement->is_accepted)
+                <x-card :$announcement/>
+            @endif
             @endforeach
            
         </div>
