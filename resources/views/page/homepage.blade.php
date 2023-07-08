@@ -1,5 +1,5 @@
 <x-template>
-    <h2>{{__('ui.allAnnouncements')}}</h2>
+    <h2 class="text-center">{{__('ui.allAnnouncements')}}</h2>
     <div class="container my-3">
         <div class="text-center mb-2">
             <h2>Ultimi Annunci</h2>

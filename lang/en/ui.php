@@ -1,3 +1,3 @@
 <?php
 
-return ['allAnnouncements' => 'here \'s all our announcemnements!'];
+return ['allAnnouncements' => 'Here \'s all our announcements!'];
