@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="{{ Storage::url('\images\dafaultimage.png') }}" alt=""
+                    <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($aunnouncement->images()->first()->path) : ('\images\dafaultimage.png') }}" alt=""
                     class="card-img-top  rounded">
                 </div>
                 <div class="card-back container d-flex justify-content-evenly align-items-center">

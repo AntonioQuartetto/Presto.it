@@ -57,13 +57,13 @@
 {{-- x-on:livewire-upload-progress="progress = $event.detail.progress" --}}
 
 <div class="mb-3 text-center">
-    <input type="file" wire:model="temporary_images" name="images" multiple
+    <input wire:model="temporary_images" type="file" name="images" multiple
         class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="img">
     @error('temporary_images.*')
         <p class="text-danger mt-1">*{{ $message }}</p>
     @enderror
 
-    <div wire:loading wire:target="image">Uploading...</div>
+    {{-- <div wire:loading wire:target="image">Uploading...</div> --}}
 </div>
 @if (!empty($images))
     <div class="row">

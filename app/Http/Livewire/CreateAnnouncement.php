@@ -72,6 +72,8 @@ class CreateAnnouncement extends Component
         $this->validate();
 
         $category=Category::find($this->category); 
+        $this->announcement->user()->associate(Auth::user());
+        $this->announcement->save();
         $announcement=$category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,
@@ -84,8 +86,9 @@ class CreateAnnouncement extends Component
                     'path' => $image->store('images', 'public') //controllare percorso
                 ]);
             }
+            
         }
-
+       
      
         Auth::user()->announcements()->save($announcement);     
         session()->flash('message','Annuncio inserito con successo, sarà pubblicato dopo la revisione!');

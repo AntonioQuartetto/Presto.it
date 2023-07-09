@@ -33,7 +33,15 @@
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
+              {{-- @if ($annoncement_to_check->images)
               <div class="carousel-inner">
+              @foreach ($annoncement_to_check->images as $image)
+                <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
+                  <img src="{{Storage::url($image->path)}}"  class="img-fluid p-3 rounded" alt="">
+                </div>
+             @endforeach
+             @endif --}}
+             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
                   <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="">
                   <div class="carousel-caption d-none d-md-block">
