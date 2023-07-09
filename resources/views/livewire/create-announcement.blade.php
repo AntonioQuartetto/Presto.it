@@ -28,7 +28,7 @@
         <div class="form-group mt-3">
 
             <label for="exampleFormControlInput1">{{__('ui.announcementShow')}}</label>
-            <input wire:model.debounce.1200ms="price" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_4')}}Inserisci il prezzo">
+            <input wire:model.debounce.1200ms="price" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_4')}}">
 
             @error('price')
                 <p class="text-danger mt-1">*{{ $message }}</p>
