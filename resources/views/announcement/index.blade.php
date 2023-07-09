@@ -7,7 +7,7 @@
     @endif
     <div class="container">
         <div class="text-center mb-2">
-            <h2>I Nostri Annunci</h2>
+            <h2>{{__('ui.announcementIndex')}}</h2>
         </div>
         <div class="row">
             @foreach ($announcements as $announcement)

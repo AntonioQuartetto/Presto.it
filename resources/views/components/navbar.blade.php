@@ -17,12 +17,12 @@
                         <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="my-li nav-item ">
                                 <a class="nav-link @if (Route::currentRouteName() == 'announcement.index') active text-warning @endif"
-                                aria-current="page" href="{{ route('announcement.index') }}">Annunci</a>
+                                aria-current="page" href="{{ route('announcement.index') }}">{{__('ui.announcementSearch')}}</a>
                             </li>
                             
                             <li class="nav-item dropdown my-li z-1">
                                 <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
-                                href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+                                href="#" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.componetsFilters_2')}}</a>
                                 <ul class="dropdown-menu">
                                     @foreach ($categories as $category)
                                     <li><a href="{{ route('categoryShow', compact('category')) }}"
@@ -35,15 +35,14 @@
                                 </li>
                                 
                                 <li class="nav-item my-li">
-                                    <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif" aria-current="page" href="{{ route('revisor.create') }}">Lavora con
-                                        noi</a>
+                                    <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif" aria-current="page" href="{{ route('revisor.create') }}">{{__('ui.componetsFooter_3')}}</a>
                                     </li>
                                     @auth
                                     
                                     <li class="nav-item dropdown my-li z-1">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <b class="text-warning">Benvenuto {{ Auth::user()->name }}
+                                        <b class="text-warning">{{__('ui.componetsNavbar')}} {{ Auth::user()->name }}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                             <path
@@ -56,7 +55,7 @@
                                 <ul class="dropdown-menu bg-warning">
                                     
                                     <li><a class="dropdown-item" aria-current="page"
-                                        href="{{ route('profile.index') }}">Profilo</a>
+                                        href="{{ route('profile.index') }}">{{__('ui.componetsNavbar_2')}}</a>
                                     </li>
                                     
                                     <li>
@@ -64,7 +63,7 @@
                                     </li>
                                     
                                     <li><a class="dropdown-item" aria-current="page"
-                                        href="{{ route('announcement.create') }}">Inserisci annuncio</a>
+                                        href="{{ route('announcement.create') }}">{{__('ui.componetsFooter_4')}}</a>
                                     </li>
                                     
                                     @if (Auth::user()->is_revisor)
@@ -73,13 +72,12 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item" aria-current="page"
-                                        href="{{ route('revisor.index') }}">Annunci
-                                        da revisionare
+                                        href="{{ route('revisor.index') }}">{{__('ui.componetsNavbar_3')}}
                                         <span
                                         class="position-absolute top-75 start-75 translate-middle badge rounded-pill bg-danger">
                                         {{ App\Models\Announcement::toBeRevisionedCount() }}
                                         <span class="visually-hidden">
-                                            Messaggi non letti
+                                            {{__('ui.componetsNavbar_4')}}
                                         </span>
                                     </span>
                                 </a>
@@ -109,8 +107,8 @@
                         </svg>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                        <li><a class="dropdown-item" href="{{ route('login') }}">{{__('ui.authLogin_2')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('register') }}">{{__('ui.authRegister')}}</a></li>
                     </ul>
                 </li>
                 @endauth

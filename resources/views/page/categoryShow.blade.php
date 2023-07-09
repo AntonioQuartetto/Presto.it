@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <p class="h2 my-2 fw-bold">
-                    Annunci per la cateogria {{ $category->name }}
+                    {{__('ui.pageCategory')}} {{ $category->name }}
                 </p>
                 <div class="row">
                     @forelse($category->announcements as $announcement)
@@ -12,9 +12,8 @@
                         @endif
                     @empty
                         <div class="col-12">
-                            <p class="h1">Non sono presenti Annunci</p>
-                            <p class="h2">Pubblicane uno: <a href="{{ route('announcement.create') }}">Inserisci
-                                    Annuncio</a></p>
+                            <p class="h1">{{__('ui.announcementSearch_2')}}</p>
+                            <p class="h2">{{__('ui.announcementSearch_3')}} <a href="{{ route('announcement.create') }}">{{__('ui.announcementSearch_4')}}</a></p>
                         </div>
                     @endforelse
 

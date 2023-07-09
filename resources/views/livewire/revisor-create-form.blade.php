@@ -2,7 +2,7 @@
 
 
     <div class="container text-center mb-4">
-        <h2>I vantaggi del Team di Presto</h2>
+        <h2>{{__('ui.livewireRevisor')}}</h2>
     </div>
     <div class="row p-3">
         <div class="col-12 col-md-6">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-9">
                     <h4>Smartworking</h4>
-                    <p>Ci piace essere smart e poter scegliere il posto migliore da cui connetterci e lavorare!</p>
+                    <p>{{__('ui.livewireRevisor_2')}}</p>
                 </div>
             </div>
         </div>
@@ -32,9 +32,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>Flessibilità oraria</h4>
-                    <p>Il worklife balance è importante per noi! Offriamo a tutti una flessibilità oraria che possa
-                        andare incontro alle nostre esigenze di tutti i giorni.</p>
+                    <h4>{{__('ui.livewireRevisor_3')}}</h4>
+                    <p>{{__('ui.livewireRevisor_4')}}</p>
                 </div>
             </div>
         </div>
@@ -48,9 +47,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>Welcome on board</h4>
-                    <p>Siamo un Team in continua espansione! Quando arriva un nuovo collega lo accompagniamo nell’avvio
-                        delle nuove attività.</p>
+                    <h4>{{__('ui.livewireRevisor_5')}}</h4>
+                    <p>{{__('ui.livewireRevisor_6')}}</p>
                 </div>
             </div>
         </div>
@@ -64,15 +62,14 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>Budget formativo dedicato</h4>
-                    <p>Crediamo nel miglioramento continuo e investiamo sulla crescita delle persone. Amplia i tuoi
-                        orizzonti con corsi, conferenze e aggiornamenti.</p>
+                    <h4>{{__('ui.livewireRevisor_7')}}</h4>
+                    <p>{{__('ui.livewireRevisor_8')}}</p>
                 </div>
             </div>
         </div>
 
     </div>
     <div class="mt-5 text-center">
-        <a class="btn-request" href="{{ route('become.revisor') }}">Invia richiesta</a>
+        <a class="btn-request" href="{{ route('become.revisor') }}">{{__('ui.livewireRevisor_9')}}</a>
     </div>
 </div>
