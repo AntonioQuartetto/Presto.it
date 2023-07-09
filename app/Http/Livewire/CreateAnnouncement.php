@@ -14,16 +14,19 @@ class CreateAnnouncement extends Component
     public $title;
     public $body;
     public $price;
-    // public $image;
     public $category;
-    public $photo;
+    public $images = [];
+    public $temporary_images;
+    public $announcement;
     
+
     protected $rules=[
         'title'=>'required|min:4',
         'body'=>'required|min:8',
         'price'=>'required|numeric',
         'category'=>'required',
-        // 'image' => 'mimes:bmp,png,jpeg, jpg',
+        'images.*' => 'image|max:1024',
+        'temporary_images.*' => 'image|max1024'
     ];
     
     protected $messages=[
@@ -33,41 +36,73 @@ class CreateAnnouncement extends Component
         'body.min' => 'Caratteri insufficienti',
         'price.required' => 'Prezzo obbligatorio',
         'price.numeric' => 'Solo numeri consentiti',
-        'category.required' => 'Categoria obbligatoria' 
+        'category.required' => 'Categoria obbligatoria',
+        'temporary_image.*.image' => 'I file devono essere immagini',
+        'temporary_image.*.max' => 'L\'immagine dev\'essere massimo 1mb',
+        'images.*.image' => 'I file devono essere immagini',
+        'images.*.max' => 'L\'immagine dev\'essere massimo 1mb'
     ];
     
 
+    public function updatedTemporaryImages(){
+
+        if($this->validate(['temporary_images.*' => 'image|max:1024'])){
+
+            foreach($this->temporary_images as $image){
+
+                $this->images[] = $image;
+            }
+        }
+        
+    }
+
+    public function removeImage($key){
+
+        if(in_array($key, array_keys($this->images))){
+
+            unset($this->images[$key]);
+        }
+
+    }
+
 
     public function store() {
-        // dd($request);
 
-        $this->validate(
-            
-            // ['image' => 'mimes:png,jpg,pdf',]
-    );
- 
-               
 
-        // $path_image='';
-        // if ($request->hasFile('image') && $request->file('image')->isValid()){
-        //     $path_name = $request->file('image')->getClientOriginalName();
-        //     //$path_extension = $request->file('image')->getClientOriginalExtension();
-        //     $path_image = $request->file('image')->storeAs('public/images' , $path_name);
-        // }
-  
+        $this->validate();
 
         $category=Category::find($this->category); 
         $announcement=$category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,
             'price' => $this->price,
-            // 'image'=>$photo,
         ]); 
+
+        if(count($this->images)){
+            foreach($this->images as $image){
+                $this->announcement->images()->create([
+                    'path' => $image->store('images', 'public') //controllare percorso
+                ]);
+            }
+        }
+
+     
         Auth::user()->announcements()->save($announcement);     
-        session()->flash('message','Annuncio inserito con successo!');
+        session()->flash('message','Annuncio inserito con successo, sarà pubblicato dopo la revisione!');
         $this->clear();
 
         
+       
+    }
+
+    public function clear(){
+        $this->title='';
+        $this->body='';
+        $this->price='';
+        $this->category='';
+        $this->images = [];
+        $this->temporary_images = [];
+
     }
     
     public function updated($propertyName){
@@ -75,13 +110,7 @@ class CreateAnnouncement extends Component
         $this->validateOnly($propertyName);
     }
     
-    public function clear(){
-        $this->title='';
-        $this->body='';
-        $this->price='';
-        $this->category='';
-        // $this->photo->store('images');
-    }
+   
     
     public function render()
     {
