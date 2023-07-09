@@ -37,8 +37,8 @@ class CreateAnnouncement extends Component
         'price.required' => 'Prezzo obbligatorio',
         'price.numeric' => 'Solo numeri consentiti',
         'category.required' => 'Categoria obbligatoria',
-        'temporary_image.*.image' => 'I file devono essere immagini',
-        'temporary_image.*.max' => 'L\'immagine dev\'essere massimo 1mb',
+        'temporary_images.*.image' => 'I file devono essere immagini',
+        'temporary_images.*.max' => 'L\'immagine dev\'essere massimo 1mb',
         'images.*.image' => 'I file devono essere immagini',
         'images.*.max' => 'L\'immagine dev\'essere massimo 1mb'
     ];
@@ -46,7 +46,11 @@ class CreateAnnouncement extends Component
 
     public function updatedTemporaryImages(){
 
-        if($this->validate(['temporary_images.*' => 'image|max:1024'])){
+        if($this->validate([
+            
+            'temporary_images.*' => 'image|max:1024',
+            
+            ])){
 
             foreach($this->temporary_images as $image){
 
@@ -72,8 +76,8 @@ class CreateAnnouncement extends Component
         $this->validate();
 
         $category=Category::find($this->category); 
-        $this->announcement->user()->associate(Auth::user());
-        $this->announcement->save();
+        // $this->announcement->user()->associate(Auth::user());
+        // $this->announcement->save();
         $announcement=$category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,
@@ -82,7 +86,7 @@ class CreateAnnouncement extends Component
 
         if(count($this->images)){
             foreach($this->images as $image){
-                $this->announcement->images()->create([
+                $announcement->images()->create([
                     'path' => $image->store('images', 'public') //controllare percorso
                 ]);
             }

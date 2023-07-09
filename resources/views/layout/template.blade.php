@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Presto.it</title>
-    @livewireStyles
     @vite(['resources\css\app.css', 'resources\js\app.js'])
+
+    @livewireStyles
+</head>
 
 <body class="body-custom">
 
 
     <x-navbar />
     @if (Route::currentRouteName() == 'page.homepage')
-        
         <x-header />
-        
     @endif
 
 
@@ -26,16 +26,15 @@
                 Route::currentRouteName() != 'register' &&
                 Route::currentRouteName() != 'revisor.create' &&
                 Route::currentRouteName() != 'revisor.index' &&
-                Route::currentRouteName() != 'profile.index'
-                )
-                
+                Route::currentRouteName() != 'profile.index')
             <x-filters />
         @endif
         {{ $slot }}
     </main>
 
-    
+
     <x-footer />
     @livewireScripts
 </body>
+
 </html>
