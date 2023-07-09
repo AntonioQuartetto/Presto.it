@@ -1,5 +1,5 @@
 <div>
-    <h1>{{__('ui.livewireCreate-announcaments')}}</h1>
+    <h1>Inserisci il tuo annuncio!</h1>
     @if (session()->has('message'))
         <div>
             {{ session('message') }}
@@ -17,10 +17,8 @@
             </div>
         @endif
         <div class="form-group">
-
             <label for="exampleFormControlInput1">{{__('ui.livewireCreate-announcaments_2')}}</label>
             <input wire:model.debounce.1200ms="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_3')}}">
-
             @error('title')
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
@@ -30,15 +28,16 @@
             <label for="exampleFormControlInput1">{{__('ui.announcementShow')}}</label>
             <input wire:model.debounce.1200ms="price" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_4')}}">
 
+
+            <label for="exampleFormControlInput1">{{__('ui.announcementShow')}}</label>
+            <input wire:model.debounce.1200ms="price" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_4')}}">
             @error('price')
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
         <div class="form-group mt-4">
-
             <label for="exampleFormControlTextarea1">{{__('ui.livewireCreate-announcaments_5')}}</label>
             <textarea wire:model.debounce.1200ms="body" type="text" class="form-control @error('body') is-invalid @enderror" rows="3"></textarea>
-
             @error('body')
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
@@ -83,11 +82,9 @@
                 @endforeach
             </div>
         </div>
-
     </div>
 @endif
 
 <button type="submit" class="btn btn-warning">{{__('ui.componetsFooter_4')}}</button>
 </form>
-
 </div>
