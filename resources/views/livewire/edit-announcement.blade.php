@@ -17,23 +17,23 @@
         </div>
         @endif
         <div class="form-group">
-            <label for="exampleFormControlInput1">Titolo</label>
+            <label for="exampleFormControlInput1">{{__('ui.livewireCreate-announcaments_2')}}</label>
             <input wire:model.lazy="title" type="text" class="form-control @error('title') is-invalid @enderror"
-            placeholder="Inserisci il titolo">
+            placeholder="{{__('ui.livewireCreate-announcaments_3')}}">
             @error('title')
             <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
         <div class="form-group mt-3">
-            <label for="exampleFormControlInput1">Prezzo</label>
+            <label for="exampleFormControlInput1">{{__('ui.announcementShow')}}</label>
             <input wire:model.lazy="price" type="number" step="0.5"
-            class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
+            class="form-control @error('price') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_4')}}">
             @error('price')
             <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
         <div class="form-group mt-4">
-            <label for="exampleFormControlTextarea1">Inserisci descrizione</label>
+            <label for="exampleFormControlTextarea1">{{__('ui.livewireCreate-announcaments_5')}}</label>
             <textarea wire:model.lazy="body" type="text" class="form-control @error('body') is-invalid @enderror"
             rows="3"></textarea>
             @error('body')
@@ -41,9 +41,9 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="category">Categoria {{ $announcement->category_id }}</label>
+            <label for="category">{{__('ui.announcementShow_3')}} {{ $announcement->category_id }}</label>
             <select wire:model.defer="category" id="category" class="form-control">
-                <option selected>Seleziona Categoria</option>
+                <option selected>{{__('ui.livewireCreate-announcaments_6')}}</option>
                 @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
@@ -53,6 +53,6 @@
             @enderror
         </div>
     </div>
-    <button type="submit" class="btn btn-warning">Modifica</button>
+    <button type="submit" class="btn btn-warning">{{__('ui.livewireEdit-announcaments')}}</button>
 </form>
 </div>

@@ -1,5 +1,5 @@
 <div>
-    <h1>Inserisci il tuo annuncio!</h1>
+    <h1>{{__('ui.livewireCreate-announcaments')}}</h1>
     @if (session()->has('message'))
         <div>
             {{ session('message') }}
@@ -17,33 +17,48 @@
             </div>
         @endif
         <div class="form-group">
+<<<<<<< HEAD
+            <label for="exampleFormControlInput1">{{__('ui.livewireCreate-announcaments_2')}}</label>
+            <input wire:model.debounce.1200ms="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_3')}}">
+=======
             <label for="exampleFormControlInput1">Titolo</label>
             <input wire:model.debounce.1200ms="title" type="text"
                 class="form-control @error('title') is-invalid @enderror" placeholder="Inserisci il titolo">
+>>>>>>> c502fb53bd954a23bbb5b8dbdf4d8af624fb7671
             @error('title')
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
         <div class="form-group mt-3">
+<<<<<<< HEAD
+            <label for="exampleFormControlInput1">{{__('ui.announcementShow')}}</label>
+            <input wire:model.debounce.1200ms="price" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" placeholder="{{__('ui.livewireCreate-announcaments_4')}}Inserisci il prezzo">
+=======
             <label for="exampleFormControlInput1">Prezzo</label>
             <input wire:model.debounce.1200ms="price" type="number" step="0.01"
                 class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo">
+>>>>>>> c502fb53bd954a23bbb5b8dbdf4d8af624fb7671
             @error('price')
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
         <div class="form-group mt-4">
+<<<<<<< HEAD
+            <label for="exampleFormControlTextarea1">{{__('ui.livewireCreate-announcaments_5')}}</label>
+            <textarea wire:model.debounce.1200ms="body" type="text" class="form-control @error('body') is-invalid @enderror" rows="3"></textarea>
+=======
             <label for="exampleFormControlTextarea1">Inserisci descrizione</label>
             <textarea wire:model.debounce.1200ms="body" type="text" class="form-control @error('body') is-invalid @enderror"
                 rows="3"></textarea>
+>>>>>>> c502fb53bd954a23bbb5b8dbdf4d8af624fb7671
             @error('body')
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
         <div class="mb-3">
-            <label for="category">Categoria</label>
+            <label for="category">{{__('ui.announcementShow_3')}}</label>
             <select wire:model.defer="category" id="category" class="form-control">
-                <option value="">Scegli la categoria</option>
+                <option value="">{{__('ui.livewireCreate-announcaments_6')}}</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
@@ -80,9 +95,14 @@
                 @endforeach
             </div>
         </div>
+<<<<<<< HEAD
+        <button type="submit" class="btn btn-warning">{{__('ui.componetsFooter_4')}}</button>    
+    </form>
+=======
     </div>
 @endif
 
 <button type="submit" class="btn btn-warning">Inserisci annuncio</button>
 </form>
+>>>>>>> c502fb53bd954a23bbb5b8dbdf4d8af624fb7671
 </div>

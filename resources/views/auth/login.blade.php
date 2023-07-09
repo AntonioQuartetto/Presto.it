@@ -4,7 +4,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="section-custom">
                     <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5"><b>Accedi</b></h5>
+                        <h5 class="card-title text-center mb-5 fw-light fs-5"><b>{{__('ui.authLogin')}}</b></h5>
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             @method('POST')
@@ -38,11 +38,11 @@
                                 </div>
                             </div>
                             <div class="d-grid my-3">
-                                <button class="btn-user fw-bold py-2" type="submit">Accedi</button>
+                                <button class="btn-user fw-bold py-2" type="submit">{{__('ui.authLogin_2')}}</button>
                             </div>
                             <div class="d-grid my-2">
                                 <a href="{{ route('register') }}" class="btn-user fw-bold py-2 text-center"
-                                    type="submit">Non sei registrato?</a>
+                                    type="submit">{{__('ui.authLogin_3')}}</a>
                             </div>
                         </form>
                     </div>

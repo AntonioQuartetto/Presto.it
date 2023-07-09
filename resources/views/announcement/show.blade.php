@@ -47,15 +47,15 @@
                 <div class="col-md-6">
                   <a>
                     <h1 class="display-5 fw-bolder">{{$announcement->title}}</h1>
-                    <p><b>Prezzo</b>:<span>€ {{$announcement->price}}</span></p>
-                    <p><b>Descrizione</b>: {{$announcement->body}}</p>
-                    <p><b>Categoria</b>: {{$announcement->category->name}}</p>
-                    <p><b>Pubblicato il</b>: {{$announcement->created_at->format('d-m-Y')}}</p>
-                    <p><b>Aggiunto da</b>: {{$announcement->user->name}}</p>
-                    <a href="{{ route('announcement.index') }}" class="btn btn-dark">Torna Indietro</a>
+                    <p><b>{{__('ui.announcementShow')}}</b>:<span>€ {{$announcement->price}}</span></p>
+                    <p><b>{{__('ui.announcementShow_2')}}</b>: {{$announcement->body}}</p>
+                    <p><b>{{__('ui.announcementShow_3')}}</b>: {{$announcement->category->name}}</p>
+                    <p><b>{{__('ui.announcementShow_4')}}</b>: {{$announcement->created_at->format('d-m-Y')}}</p>
+                    <p><b>{{__('ui.announcementShow_5')}}</b>: {{$announcement->user->name}}</p>
+                    <a href="{{ route('announcement.index') }}" class="btn btn-dark">{{__('ui.announcementShow_6')}}</a>
                     @auth
                     @if (Auth::user()->id == $announcement->user_id)
-                     <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">Modifica Annuncio</a> 
+                     <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">{{__('ui.announcementShow_7')}}</a> 
                     @endif
                         
                     @endauth

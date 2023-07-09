@@ -1,8 +1,7 @@
 <x-template>
-    <h2 class="text-center">{{__('ui.allAnnouncements')}}</h2>
     <div class="container my-3">
         <div class="text-center mb-2">
-            <h2>Ultimi Annunci</h2>
+            <h2>{{__('ui.pageHomepage')}}</h2>
         </div>
         <div class="row">
             @foreach ($announcements as $announcement)
@@ -17,7 +16,7 @@
    
 <div class="container">
     <div class="text-center my-4 p-3">
-        <h3>Esplora le nostre sezioni</h3>
+        <h3>{{__('ui.pageHomepage_2')}}</h3>
     </div>
     <div>
         <x-categories />

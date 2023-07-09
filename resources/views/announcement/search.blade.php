@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col-12 text-center">
                 <p class="h2 my-2 fw-bold">
-                    Annunci
+                    {{__('ui.announcemntSearch')}}
                 </p>
                 <div class="row">
                     @forelse($announcements as $announcement)
                     <x-card :$announcement/>
                     @empty 
                     <div class="col-12">
-                        <p class="h1">Non sono presenti Annunci</p>
-                        <p class="h2">Pubblicane uno: <a href="{{route('announcement.create')}}">Inserisci  Annuncio</a></p>
+                        <p class="h1"> {{__('ui.announcemntSearch_2')}}</p>
+                        <p class="h2"> {{__('ui.announcemntSearch_3')}} <a href="{{route('announcement.create')}}">{{__('ui.announcemntSearch_4')}} Inserisci  Annuncio</a></p>
                     </div>
                     @endforelse
                     
