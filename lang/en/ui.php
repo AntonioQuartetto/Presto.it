@@ -41,6 +41,7 @@ return [
     'livewireCreate-announcaments_4' => 'Enter price',
     'livewireCreate-announcaments_5' => 'Enter description',
     'livewireCreate-announcaments_6' => 'Choose category',
+    'livewireCreate-announcaments_7' => 'Delete',
     'livewire Edit-announcements' => 'Edit',
     'livewireRevisor' => 'The Presto Team benefits',
     'livewireRevisor_2' => 'We like being smart and being able to choose the best place to connect and work from!',

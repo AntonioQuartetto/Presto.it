@@ -41,6 +41,7 @@ return [
     'livewireCreate-announcaments_4' => 'Inserisci il prezzo',
     'livewireCreate-announcaments_5' => 'Inserisci descrizione',
     'livewireCreate-announcaments_6' => 'Scegli la categoria',
+    'livewireCreate-announcaments_7' => 'Cancella',
     'livewireEdit-announcaments' => 'Modifica',
     'livewireRevisor' => 'I vantaggi del Team di Presto',
     'livewireRevisor_2' => 'Ci piace essere smart e poter scegliere il posto migliore da cui connetterci e lavorare!',

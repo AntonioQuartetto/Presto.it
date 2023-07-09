@@ -41,6 +41,7 @@ return [
     'livewireCreate-announcaments_4' => 'Ingrese el precio',
     'livewireCreate-announcaments_5' => 'Ingrese descripción',
     'livewireCreate-announcaments_6' => 'Elegir categoría',
+    'livewireCreate-announcaments_7' => 'Delete',
     'livewire Edit-announcements' => 'Editar',
     'livewireRevisor' => 'Los beneficios del equipo Presto',
     'livewireRevisor_2' => '¡Nos gusta ser inteligentes y poder elegir el mejor lugar para conectarnos y trabajar!',

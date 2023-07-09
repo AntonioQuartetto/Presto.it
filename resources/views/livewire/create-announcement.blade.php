@@ -76,7 +76,7 @@
                     <div class="col my-3">
 
                         <img src="{{ $image->temporaryUrl() }}" alt="img">
-                            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire::click="removeImage({{$key}})">Cancella</button>
+                            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire::click="removeImage({{$key}})">{{__('ui.livewireCreate-announcaments_7')}}</button>
 
                     </div>
                 @endforeach
