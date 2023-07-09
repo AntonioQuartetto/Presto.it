@@ -61,7 +61,7 @@
 {{-- x-on:livewire-upload-progress="progress = $event.detail.progress" --}}
 
 <div class="mb-3">
- <label for="images">Immagini</label>
+    <label for="images">Immagini</label>
     <input wire:model="temporary_images" type="file" name="images" multiple
         class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="img">
     @error('temporary_images.*')
@@ -77,8 +77,9 @@
             <div class="row border border-4 border-info rounded shadow py-4">
                 @foreach ($images as $key => $image)
                     <div class="col my-3">
-
-                        <img src="{{ $image->temporaryUrl() }}" alt="img">
+                        <div class="img-preview shadow mx-auto rounded"
+                            style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                        {{-- <img src="{{ $image->temporaryUrl() }}" alt="img" class="img-preview"> --}}
                         <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
                             wire::click="removeImage({{ $key }})">{{ __('ui.livewireCreate-announcaments_7') }}</button>
 

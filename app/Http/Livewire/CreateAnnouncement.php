@@ -39,8 +39,8 @@ class CreateAnnouncement extends Component
         'category.required' => 'Categoria obbligatoria',
         'temporary_images.*.image' => 'I file devono essere immagini',
         'temporary_images.*.max' => 'L\'immagine dev\'essere massimo 1mb',
-        'images.*.image' => 'I file devono essere immagini',
-        'images.*.max' => 'L\'immagine dev\'essere massimo 1mb'
+        'images.image' => 'I file devono essere immagini',
+        'images.max' => 'L\'immagine dev\'essere massimo 1mb'
     ];
     
 
@@ -86,15 +86,17 @@ class CreateAnnouncement extends Component
 
         if(count($this->images)){
             foreach($this->images as $image){
-                $announcement->images()->create([
+                $this->announcement->images()->create([
                     'path' => $image->store('images', 'public') //controllare percorso
                 ]);
             }
             
         }
        
+        $this->announcement->user()->associate(Auth::user());
+        $this->announcement->save();
      
-        Auth::user()->announcements()->save($announcement);     
+        // Auth::user()->announcements()->save($announcement);     
         session()->flash('message','Annuncio inserito con successo, sarà pubblicato dopo la revisione!');
         $this->clear();
 
