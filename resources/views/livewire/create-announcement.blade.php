@@ -6,7 +6,6 @@
         </div>
     @endif
     <form wire:submit.prevent="store" class="mt-4 ">
-        @csrf
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -57,7 +56,6 @@
             @enderror
 
         </div>
-</div>
 {{-- x-on:livewire-upload-progress="progress = $event.detail.progress" --}}
 
 <div class="mb-3">
