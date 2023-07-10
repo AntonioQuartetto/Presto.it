@@ -37,6 +37,10 @@
                                 <li class="nav-item my-li">
                                     <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif" aria-current="page" href="{{ route('revisor.create') }}">{{__('ui.componetsFooter_3')}}</a>
                                     </li>
+                                     <li class="nav-item my-li">
+                                     <a class="nav-link  @if (Route::currentRouteName() == 'announcement.create') active text-warning @endif" aria-current="page"
+                                        href="{{ route('announcement.create') }}">{{__('ui.componetsFooter_4')}}</a>
+                                    </li>
                                     @auth
                                     
                                     <li class="nav-item dropdown my-li z-1">
@@ -58,13 +62,8 @@
                                         href="{{ route('profile.index') }}">{{__('ui.componetsNavbar_2')}}</a>
                                     </li>
                                     
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
                                     
-                                    <li><a class="dropdown-item" aria-current="page"
-                                        href="{{ route('announcement.create') }}">{{__('ui.componetsFooter_4')}}</a>
-                                    </li>
+                                   
                                     
                                     @if (Auth::user()->is_revisor)
                                     <li>
