@@ -26,7 +26,7 @@ class CreateAnnouncement extends Component
         'price'=>'required|numeric',
         'category'=>'required',
         'images.*' => 'image|max:1024',
-        'temporary_images' => 'required|image|max:1024'
+        //'temporary_images' => 'required|image|max:1024'
     ];
     
     protected $messages=[
@@ -96,7 +96,11 @@ class CreateAnnouncement extends Component
     public function store() {
 
         $this->validate();
-        $this->announcement=Category::find($this->category)->announcements()->create($this->validate());
+        $this->announcement=Category::find($this->category)->announcements()->create([
+                    'title' => $this->title,
+                    'body' => $this->body,
+                    'price' => $this->price,
+                ]);
 
        
         if(count($this->images)){
@@ -111,7 +115,7 @@ class CreateAnnouncement extends Component
         // $this->announcement->user()->associate(Auth::user());
         // $this->announcement->save();
      
-        Auth::user()->announcements()->save($announcement);     
+        Auth::user()->announcements()->save($this->announcement);     
         session()->flash('message','Annuncio inserito con successo, sarà pubblicato dopo la revisione!');
         $this->cleanForm();
 
