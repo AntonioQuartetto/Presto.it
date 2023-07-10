@@ -26,7 +26,7 @@ class CreateAnnouncement extends Component
         'price'=>'required|numeric',
         'category'=>'required',
         'images.*' => 'image|max:1024',
-        'temporary_images.*' => 'image|max:1024'
+        'temporary_images' => 'required|image|max:1024'
     ];
     
     protected $messages=[
@@ -42,20 +42,22 @@ class CreateAnnouncement extends Component
         'images.image' => 'I file devono essere immagini',
         'images.max' => 'L\'immagine dev\'essere massimo 1mb'
     ];
-    
+   
 
     public function updatedTemporaryImages(){
-
-        if($this->validate([
+       
+        // if($this->validate([
             
-            'temporary_images.*' => 'image|max:1024',
             
-            ])){
-
+            // 'temporary_images.*' => 'image|max:1024',
+            
+            // ])){
+                {
+          
+            }
             foreach($this->temporary_images as $image){
 
                 $this->images[] = $image;
-            }
         }
         
     }
@@ -94,6 +96,7 @@ class CreateAnnouncement extends Component
     //     }
     public function store() {
 
+
         $this->validate();
         $this->announcement=Category::find($this->category)->announcements()->create($this->validate());
 
@@ -107,18 +110,18 @@ class CreateAnnouncement extends Component
             
         }
        
-        $this->announcement->user()->associate(Auth::user());
-        $this->announcement->save();
+        // $this->announcement->user()->associate(Auth::user());
+        // $this->announcement->save();
      
-        // Auth::user()->announcements()->save($announcement);     
+        Auth::user()->announcements()->save($announcement);     
         session()->flash('message','Annuncio inserito con successo, sarà pubblicato dopo la revisione!');
-        $this->clear();
+        $this->cleanForm();
 
         
        
     }
 
-    public function clear(){
+    public function cleanForm(){
         $this->title='';
         $this->body='';
         $this->price='';
@@ -129,8 +132,8 @@ class CreateAnnouncement extends Component
     }
     
     public function updated($propertyName){
-        
         $this->validateOnly($propertyName);
+        
     }
     
    
