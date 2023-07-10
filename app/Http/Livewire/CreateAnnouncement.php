@@ -26,7 +26,7 @@ class CreateAnnouncement extends Component
         'price'=>'required|numeric',
         'category'=>'required',
         'images.*' => 'image|max:1024',
-        // 'temporary_images' => 'required|image|max:1024'
+        'temporary_images' => 'required|image|max:1024'
     ];
     
     protected $messages=[
@@ -71,19 +71,34 @@ class CreateAnnouncement extends Component
     }
 
 
+    // public function store() {
+
+
+    //     $this->validate();
+
+    //     $category=Category::find($this->category); 
+    //     // $this->announcement->user()->associate(Auth::user());
+    //     // $this->announcement->save();
+    //     $announcement=$category->announcements()->create([
+    //         'title' => $this->title,
+    //         'body' => $this->body,
+    //         'price' => $this->price,
+    //     ]); 
+
+    //     if(count($this->images)){
+    //         foreach($this->images as $image){
+    //             $this->announcement->images()->create([
+    //                 'path' => $image->store('images', 'public') //controllare percorso
+    //             ]);
+    //         }
+            
+    //     }
     public function store() {
 
         $this->validate();
+        $this->announcement=Category::find($this->category)->announcements()->create($this->validate());
 
-        $category=Category::find($this->category); 
-        // $this->announcement->user()->associate(Auth::user());
-        // $this->announcement->save();
-        $announcement=$category->announcements()->create([
-            'title' => $this->title,
-            'body' => $this->body,
-            'price' => $this->price,
-        ]); 
-
+       
         if(count($this->images)){
             foreach($this->images as $image){
                 $this->announcement->images()->create([

@@ -27,7 +27,7 @@ return [
     'componetsFooter_3' => 'Lavora con Noi',
     'componetsFooter_4' => 'Inserisci Annuncio',
     'componetsFooter_5' => 'Chi Siamo',
-    'componetsHeader' => 'Explore, discover and connect: our classifieds site brings you the best offers and opportunities. Find everything you\'re looking for in one place, from used items to job vacancies, and from local services to must-have bargains. We\'re here to help you do business and connect buyers and sellers. Start your search today and be amazed by the endless possibilities our site offers you.',
+    'componetsHeader' => 'Esplora, scopri e connettiti: il nostro sito di annunci ti offre le migliori offerte e opportunità. Trova tutto ciò che cerchi in un unico posto, dagli oggetti usati alle offerte di lavoro, dai servizi locali alle occasioni imperdibili. Siamo qui per aiutarti a fare affari e collegare acquirenti e venditori. Inizia oggi la tua ricerca e lasciati stupire dalle infinite possibilità che il nostro sito ti offre.',
     'componetsNavbar' => 'Benvenuto',
     'componetsNavbar_2' => 'Profilo',
     'componetsNavbar_3' => 'Annunci da revisionare',

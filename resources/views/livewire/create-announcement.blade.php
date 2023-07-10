@@ -56,6 +56,7 @@
             @enderror
 
         </div>
+
 {{-- x-on:livewire-upload-progress="progress = $event.detail.progress" --}}
 
 <div class="mb-3">
