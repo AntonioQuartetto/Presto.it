@@ -46,21 +46,20 @@ class CreateAnnouncement extends Component
 
     public function updatedTemporaryImages(){
        
-        // if($this->validate([
+        if($this->validate([
             
+            'temporary_images.*' => 'image|max:1024',
             
-            // 'temporary_images.*' => 'image|max:1024',
-            
-            // ])){
+            ])){
                 {
-          
-            }
-            foreach($this->temporary_images as $image){
+                    foreach($this->temporary_images as $image){
 
-                $this->images[] = $image;
+                        $this->images[] = $image;
+            }
+           
         }
         
-    }
+    }}
 
     public function removeImage($key){
 
@@ -73,7 +72,6 @@ class CreateAnnouncement extends Component
 
 
     public function store() {
-dd($this->temporary_images);
 
         $this->validate();
 
