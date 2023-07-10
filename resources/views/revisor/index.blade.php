@@ -3,7 +3,7 @@
   <div class="container-fluid p-5 bg-gradient my-bg shadow">
     <div class="row">
       <div class="col-12 text-light p-1 fs-3 text-center ">
-        {{$announcement_to_check ? '{{__('ui.revisorindex')}} ' : '{{__('ui.revisorindex_2')}}'}}
+        {{$announcement_to_check ? 'Annunci da revisionare' : 'Nessun annuncio da revisionare'}}
       </div>
     </div>
   </div>
