@@ -3,9 +3,9 @@
   <div class="container-fluid p-5 bg-gradient my-bg shadow">
     <div class="row">
       <div class="col-12 text-light p-1 fs-3 text-center ">
-
+        
         {{$announcement_to_check ? 'Annunci da revisionare' : 'Nessun annuncio da revisionare'}}
-
+        
       </div>
     </div>
   </div>
@@ -37,74 +37,74 @@
               </div>
               @if ($announcement_to_check->images)
               <div class="carousel-inner">
-              @foreach ($announcement_to_check->images as $image)
+                @foreach ($announcement_to_check->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
-                  <img src="{{Storage::url($image->path)}}"  class="img-fluid p-3 rounded" alt="">
+                  <img src="{{$image->getUrl(400,300)}}"  class="img-fluid p-3 rounded" alt="">
                 </div>
-             @endforeach
-             @else
-             <div class="carousel-inner">
-                <div class="carousel-item " data-bs-interval="10000">
-                  <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="">
-                  <div class="carousel-caption d-none d-md-block">
-                    {{-- <h5>First slide label</h5>
-                      <p>Some representative placeholder content for the first slide.</p> --}}
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="...">
+                @endforeach
+                @else
+                <div class="carousel-inner">
+                  <div class="carousel-item " data-bs-interval="10000">
+                    <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                      {{-- <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p> --}}
+                      {{-- <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p> --}}
                       </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-bs-interval="2000">
                       <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block">
-                        {{-- <h5>Third slide label</h5>
-                          <p>Some representative placeholder content for the third slide.</p> --}}
+                        {{-- <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p> --}}
                         </div>
                       </div>
+                      <div class="carousel-item">
+                        <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          {{-- <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p> --}}
+                          </div>
+                        </div>
+                      </div>
+                      @endif
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
                     </div>
-                    @endif
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <a>
-                    <h1 class="display-5 fw-bolder">{{$announcement_to_check->title}}</h1>
-                    <p><b>{{__('ui.announcementShow')}}</b>:<span>€ {{$announcement_to_check->price}}</span></p>
-                    <p><b>{{__('ui.announcementShow_2')}}</b>: {{$announcement_to_check->body}}</p>
-                    <p><b>{{__('ui.announcementShow_3')}}</b>: {{$announcement_to_check->category->name}}</p>
-                    <p><b>{{__('ui.announcementShow_4')}} </b>: {{$announcement_to_check->created_at->format('d-m-Y')}}</p>
-                    
-                    <div class="row mt-5">
-                      <div class="col-12 col-md-6 text-center">
-                        <form action="{{route('revisor.accept_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
-                          @csrf
-                          @method('PATCH')
-                          <button type="submit" class="btn btn-success shadow">{{__('ui.revisorindex_11')}}</button>
-                        </div> 
-                        <div class="col-12 col-md-6">
+                  
+                  <div class="col-md-6">
+                    <a>
+                      <h1 class="display-5 fw-bolder">{{$announcement_to_check->title}}</h1>
+                      <p><b>{{__('ui.announcementShow')}}</b>:<span>€ {{$announcement_to_check->price}}</span></p>
+                      <p><b>{{__('ui.announcementShow_2')}}</b>: {{$announcement_to_check->body}}</p>
+                      <p><b>{{__('ui.announcementShow_3')}}</b>: {{$announcement_to_check->category->name}}</p>
+                      <p><b>{{__('ui.announcementShow_4')}} </b>: {{$announcement_to_check->created_at->format('d-m-Y')}}</p>
+                      
+                      <div class="row mt-5">
+                        <div class="col-12 col-md-6 text-center">
+                          <form action="{{route('revisor.accept_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-success shadow">{{__('ui.revisorindex_11')}}</button>
+                          </div> 
+                          <div class="col-12 col-md-6">
+                          </form>
+                          <form action="{{route('revisor.reject_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-danger shadow">{{__('ui.revisorindex_12')}}</button>
+                          </div> 
                         </form>
-                        <form action="{{route('revisor.reject_announcements', ['announcement'=> $announcement_to_check])}}" method="POST">
-                          @csrf
-                          @method('PATCH')
-                          <button type="submit" class="btn btn-danger shadow">{{__('ui.revisorindex_12')}}</button>
-                        </div> 
-                      </form></div>
-                      
-                      
+                      </div>  
                     </div>
-                    
                   </div>
+                  
                 </section>
               </div>       
               @endif  
