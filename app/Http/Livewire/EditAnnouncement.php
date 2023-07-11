@@ -31,7 +31,7 @@ class EditAnnouncement extends Component
         'body.required' => 'Descrizione obbligatoria',
         'body.min' => 'Caratteri insufficienti',
         'price.required' => 'Prezzo obbligatorio',
-        'price.integer' => 'Solo numeri consentiti',
+        'price.float' => 'Solo numeri consentiti',
         'category.required' => 'Categoria obbligatoria' 
     ];
 
