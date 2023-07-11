@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Announcement;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -67,8 +68,15 @@ public function __construct(){
         return view('announcement.edit', compact('announcement'));
     }
     public function destroy(Announcement $announcement) {
-        
-        // $announcement->detach();
+            $images = Image::all();
+            foreach($images as $image){
+
+                if($announcement->id == $image->announcement_id){
+                   
+                    $image->delete();
+                }         
+            }
+       
         $announcement->delete();
         return redirect()->route('announcement.index')->with('success', 'Cancellazione avvenuta con successo!');
 
