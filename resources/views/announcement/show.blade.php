@@ -11,6 +11,14 @@
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
+              @if ($announcement->images)
+              <div class="carousel-inner">
+              @foreach ($announcement->images as $image)
+                <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
+                  <img src="{{Storage::url($image->path)}}"  class="img-fluid p-3 rounded" alt="">
+                </div>
+             @endforeach
+             @else
               <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
                   <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="">
@@ -34,6 +42,7 @@
                         </div>
                       </div>
                     </div>
+                    @endif
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
@@ -55,7 +64,12 @@
                     <a href="{{ route('announcement.index') }}" class="btn btn-dark">{{__('ui.announcementShow_6')}}</a>
                     @auth
                     @if (Auth::user()->id == $announcement->user_id)
-                     <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">{{__('ui.announcementShow_7')}}</a> 
+                    <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}" class="btn btn-warning">{{__('ui.announcementShow_7')}}</a> 
+                    <form action="{{route('announcement.destroy' , ['announcement' => $announcement->id])}}" method="POST">
+                      @method('DELETE')
+                      @csrf
+                      <button type="submit" class="btn btn-danger">Cancella Annuncio</button>
+                  </form>
                     @endif
                         
                     @endauth

@@ -33,6 +33,7 @@ Route::get('/annuncio/crea',[AnnouncementController::class, 'create'])->name('an
 Route::get('/annuncio/{announcement}/dettagli',[AnnouncementController::class, 'show'])->name('announcement.show');
 Route::get('/annuncio/{announcement}/edit',[AnnouncementController::class, 'edit'])->name('announcement.edit');
 Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->name('announcement.search');
+Route::delete('/elimina/{announcement}', [PageController::class, 'destroy'])->name('announcement.destroy');
 
 
 /*--Route Rewiewers--*/

@@ -60,9 +60,19 @@ public function __construct(){
         if(!(Auth::user()->id == $announcement->user_id)){
             abort(401);
         };
+
+        // $announcement->detach();
+        // $announcement->attach($announcement);
         
         return view('announcement.edit', compact('announcement'));
     }
-  
+    public function destroy(Announcement $announcement) {
+        
+        // $announcement->detach();
+        $announcement->delete();
+        return redirect()->route('announcement.index')->with('success', 'Cancellazione avvenuta con successo!');
+
+    }
+
 
 }

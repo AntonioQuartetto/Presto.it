@@ -42,7 +42,7 @@
                   <img src="{{Storage::url($image->path)}}"  class="img-fluid p-3 rounded" alt="">
                 </div>
              @endforeach
-             @endif
+             @else
              <div class="carousel-inner">
                 <div class="carousel-item " data-bs-interval="10000">
                   <img src="{{Storage::url('\images\dafaultimage.png')}}" class="d-block w-100" alt="">
@@ -66,6 +66,7 @@
                         </div>
                       </div>
                     </div>
+                    @endif
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
