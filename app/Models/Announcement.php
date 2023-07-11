@@ -11,7 +11,7 @@ class Announcement extends Model
 {
     use HasFactory, Searchable;
 
-    protected $fillable = ['title','body','price','image', 'category_id'];
+    protected $fillable = ['title','body','price','category_id'];
     protected $casts = [
         'price' => 'decimal:2'
     ];

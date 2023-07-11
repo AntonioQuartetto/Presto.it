@@ -66,7 +66,7 @@ class EditAnnouncement extends Component
 
         return redirect()->route('announcement.show', ['announcement' => $this->announcement->id]);
     }
-
+   
     public function render()
     {
         return view('livewire.edit-announcement');

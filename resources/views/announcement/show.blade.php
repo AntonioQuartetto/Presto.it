@@ -1,5 +1,10 @@
 <x-template>
     <div class="container">
+        @if (session('success'))
+            <span class="badge text-bg-success">
+                {{ session('success') }}
+            </span>
+        @endif
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row ">
@@ -79,11 +84,16 @@
                         @if (Auth::user()->id == $announcement->user_id)
                             <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
                                 class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a>
-                            <form action="{{ route('announcement.destroy', ['announcement' => $announcement->id]) }}"
+
+                            <a class="btn btn-danger"
+                                onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">Elimina Annuncio</a>
+
+                            <form class="d-none" id="form-delete-{{$announcement->id}}"
+                                action="{{ route('announcement.destroy', ['announcement' => $announcement]) }}"
                                 method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Cancella Annuncio</button>
+                                {{-- <button type="submit" class="btn btn-danger">Cancella Annuncio</button> --}}
                             </form>
                         @endif
 
