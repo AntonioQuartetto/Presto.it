@@ -11,7 +11,7 @@
             </div>            
             <div class="col-12 col-md-9">
                 <div class="info">
-                    <h2>{{ $user->name }}                 
+                    <h2>{{ $user->name}} {{$user->surname}}                
                         @if (Auth::user()->is_revisor)
                         <span class="translate-middle badge rounded-pill bg-danger">
                             Revisor

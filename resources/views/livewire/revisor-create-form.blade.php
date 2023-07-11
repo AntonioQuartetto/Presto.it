@@ -2,7 +2,7 @@
 
 
     <div class="container text-center mb-4">
-        <h2>{{__('ui.livewireRevisor')}}</h2>
+        <h2>{{ __('ui.livewireRevisor') }}</h2>
     </div>
     <div class="row p-3">
         <div class="col-12 col-md-6">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-9">
                     <h4>Smartworking</h4>
-                    <p>{{__('ui.livewireRevisor_2')}}</p>
+                    <p>{{ __('ui.livewireRevisor_2') }}</p>
                 </div>
             </div>
         </div>
@@ -32,8 +32,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>{{__('ui.livewireRevisor_3')}}</h4>
-                    <p>{{__('ui.livewireRevisor_4')}}</p>
+                    <h4>{{ __('ui.livewireRevisor_3') }}</h4>
+                    <p>{{ __('ui.livewireRevisor_4') }}</p>
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>{{__('ui.livewireRevisor_5')}}</h4>
-                    <p>{{__('ui.livewireRevisor_6')}}</p>
+                    <h4>{{ __('ui.livewireRevisor_5') }}</h4>
+                    <p>{{ __('ui.livewireRevisor_6') }}</p>
                 </div>
             </div>
         </div>
@@ -62,14 +62,93 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>{{__('ui.livewireRevisor_7')}}</h4>
-                    <p>{{__('ui.livewireRevisor_8')}}</p>
+                    <h4>{{ __('ui.livewireRevisor_7') }}</h4>
+                    <p>{{ __('ui.livewireRevisor_8') }}</p>
                 </div>
             </div>
         </div>
 
     </div>
+
+    {{-- FORM --}}
+    <div class="card-body p-md-5 my-5">
+        <div class="row justify-content-center p-5 ">
+            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mt-4">Inserici i tuoi dati</p>
+                <form action="" method="POST">
+                    @csrf
+                    @method('POST')
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    {{-- Input Name  --}}
+                    <div class="container align-items-center mb-4">
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="name">Nome</label>
+                            <input type="text" name="name" id="name" class="form-control"
+                                value="{{ old('name') }}" placeholder="Mario Rossi">
+                            <div class="form-notch">
+                                <div class="form-notch-leading"></div>
+                                <div class="form-notch-middle"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+                        @error('name')
+                            <span class="small text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                     {{-- Input Surname  --}}
+                    <div class="container align-items-center mb-4">
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="surname">Cognome</label>
+                            <input type="text" name="name" id="surname" class="form-control"
+                                value="{{ old('surname') }}" placeholder="Mario Rossi">
+                            <div class="form-notch">
+                                <div class="form-notch-leading"></div>
+                                <div class="form-notch-middle"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+                        @error('surname')
+                            <span class="small text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    {{-- Input Message --}}
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example3c">Dicci la motivazione per cui vuoi lavorare con noi</label>
+                            <textarea type="text-area" name="message" id="message" class="form-control"
+                                placeholder="Messaggio"></textarea>
+                            <div class="form-notch">
+                                <div class="form-notch-leading"></div>
+                                <div class="form-notch-middle"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+                        @error('message')
+                            <span class="small text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    
+                    <div class="container">
+                        <div class="d-grid my-3">
+                            <button type="submit" class="btn-user fw-bold py-2"
+                                style="">INVIA</button>
+                        </div>
+                       
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
     <div class="mt-5 text-center">
-        <a class="btn-request" href="{{ route('become.revisor') }}">{{__('ui.livewireRevisor_9')}}</a>
+        <a class="btn-request" href="{{ route('become.revisor') }}">{{ __('ui.livewireRevisor_9') }}</a>
     </div>
 </div>
