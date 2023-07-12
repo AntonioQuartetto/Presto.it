@@ -24,7 +24,7 @@
                                     @foreach ($announcement->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif"
                                             data-bs-interval="10000">
-                                            <img src="{{ $image->getUrl(400,300) }}" class="img-fluid p-3 rounded"
+                                            <img src="{{ $image->getUrl(550,400) }}" class="img-fluid p-3 rounded"
                                                 alt="">
                                         </div>
                                     @endforeach

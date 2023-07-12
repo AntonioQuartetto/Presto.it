@@ -39,7 +39,7 @@
               <div class="carousel-inner">
                 @foreach ($announcement_to_check->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
-                  <img src="{{$image->getUrl(400,300)}}"  class="img-fluid p-3 rounded" alt="">
+                  <img src="{{$image->getUrl(550,400)}}"  class="img-fluid p-3 rounded" alt="">
                 </div>
                 @endforeach
                 @else
