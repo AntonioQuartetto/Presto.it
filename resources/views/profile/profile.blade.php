@@ -11,14 +11,14 @@
             </div>            
             <div class="col-12 col-md-9">
                 <div class="info">
-                    <h2>{{ $user->name}} {{$user->surname}}                
+                    <h1>{{ $user->name}} {{$user->surname}}                
                         @if (Auth::user()->is_revisor)
-                        <span class="translate-middle badge rounded-pill bg-danger">
+                        <div class=" badge rounded-pill bg-danger fs-6" >
                             Revisor
                             <span class="visually-hidden">unread messages</span>
-                        </span>
+                        </div>
                         @endif                 
-                    </h2>              
+                    </h1>              
                     <p>Email: {{ $user->email }}</p>
                     <p>{{__('ui.profileProfile')}}</p>
                     <p>{{__('ui.profileProfile_2')}}</p>

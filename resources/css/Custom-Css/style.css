@@ -107,8 +107,8 @@ header {
 
 .card {
   background: none;
-  width: 200px;
-  height: 200px;
+  width: 17rem;
+  height: 16rem;
   perspective: 1000px; /* Definisce la prospettiva per l'effetto 3D */
 }
 

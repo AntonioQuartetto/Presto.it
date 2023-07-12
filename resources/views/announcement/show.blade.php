@@ -39,7 +39,6 @@
 
                                     </div>
                                 </div>
-
                                 <div class="carousel-item" data-bs-interval="2000">
                                     <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-100"
                                         alt="...">

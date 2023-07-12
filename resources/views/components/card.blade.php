@@ -1,6 +1,6 @@
-<div class="col-12 col-md-4 my-4 d-flex justify-content-center">
+<div class="col-12 col-md-3 my-4 d-flex justify-content-center  ">
     <a href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-        <div class="card">
+        <div class="card ">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400,300) : Storage::url('\images\dafaultimage.png') }}" alt=""
