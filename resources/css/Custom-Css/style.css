@@ -213,3 +213,8 @@ header {
   background-position: center;
   background-size: cover;
 }
+
+.description_font {
+  font-family: 'Merriweather', serif !important;
+  
+}
