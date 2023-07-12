@@ -13,6 +13,7 @@ return [
     'announcementShow_5' => 'Aggiunto da',
     'announcementShow_6' => 'Torna Indietro',
     'announcementShow_7' => 'Modifica Annuncio',
+    'announcementShow_8' => 'Elimina Annuncio',
     'authLogin'=> 'Accedi',
     'authLogin_2'=> 'Accedi',
     'authLogin_3'=> 'Non sei registrato?',

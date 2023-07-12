@@ -85,7 +85,7 @@
                                 class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a>
 
                             <a class="btn btn-danger"
-                                onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">Elimina Annuncio</a>
+                                onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }}</a>
 
                             <form class="d-none" id="form-delete-{{$announcement->id}}"
                                 action="{{ route('announcement.destroy', ['announcement' => $announcement]) }}"
