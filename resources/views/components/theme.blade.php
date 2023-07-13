@@ -1,7 +1,5 @@
-<div>
-    <div class="theme">
-        <div class="toggle">
-            <i class="fa-solid fa-sun"></i>
-        </div>
-
+<div class="theme">
+    <div class="toggle">
+        <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
     </div>
+</div>

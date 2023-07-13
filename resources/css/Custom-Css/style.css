@@ -21,7 +21,7 @@
 }
 
 .light-theme{
-  background-color: white;
+  background-image: url('/storage/app/public/images/invert-modern-black-friday-super-sale-background-with-shop-icons_1361-1799.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -32,47 +32,22 @@
 
 /*-- BUTTON THEME --*/
 
-*{
-  margin: 0;
-  padding: 0;
-}
-
 
 .toggle{
   color: #000;
-  font-size: 30px;
-  height: 80px;
-  width: 80px;
+  font-size: 15px;
+  height: 30px;
+  width: 30px;
   background-color: #fff;
   border-radius: 80px;
   box-shadow: 0px 0px 50px 5px #000;
   margin-left: 50%;
   margin-right: 50%;
-  margin-top: 120px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
-.toggle h2{
-  font-size: 50px;
-  margin-top: 150px;
-  margin-left: 20px;
-}
-
-.toggle p{
-  font-size: 10px;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-.toggle h4{
-  margin-top: 40px;
-  margin-left: 45%;
-  font-size: 20px;
-}
-
 
 .toggle.active{
   color: #fff;
@@ -148,7 +123,6 @@ header {
 /*CARD CATEGORIES*/
 
 .card_categories{
-
   border-radius: 50%;
   background-color: var(--orange-hub);
   padding: 50px;
@@ -170,6 +144,7 @@ header {
 
 .card {
   background: none;
+  border-style: hidden;
   width: 17rem;
   height: 16rem;
   perspective: 1000px; /* Definisce la prospettiva per l'effetto 3D */
@@ -200,6 +175,7 @@ header {
   background-color: var(--orange-hub);
   overflow: hidden;
   height: 75%;
+  
 }
 
 .card-back {

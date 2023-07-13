@@ -3,21 +3,20 @@
 console.log('JS CARICATO !!!');
 
 
-const toggle = document.querySelector('.fa-solid');
-const ctoggle= document.querySelector('.toggle')
-const theme = document.querySelector('.theme')
+const themeIcon = document.getElementById('theme-icon');
+const ctoggle= document.querySelector('.toggle');
+const theme = document.querySelector('.dark-theme');
 
-toggle.addEventListener('click', function() {
-  if (toggle.classList.contains('fa-sun')) {
-    toggle.classList.replace('fa-sun', 'fa-moon');
+themeIcon.addEventListener('click', function(e) {
+    e.preventDefault();
+  if (themeIcon.classList.contains('bi-moon-stars-fill')) {
+    themeIcon.classList.replace('bi-moon-stars-fill', 'bi-brightness-high-fill');
     ctoggle.classList.add("active");
-    theme.classList.add("active");
-    document.querySelector('body').style.backgroundColor = '#222';
+    theme.classList.replace('dark-theme','light-theme');
 
   } else {
-    toggle.classList.replace('fa-moon', 'fa-sun');
+    themeIcon.classList.replace('bi-brightness-high-fill', 'bi-moon-stars-fill');
     ctoggle.classList.remove("active");
-    theme.classList.remove("active");
-    document.querySelector('body').style.backgroundColor = '#fff';
+    theme.classList.replace('light-theme', 'dark-theme');
   }
 });

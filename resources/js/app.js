@@ -1,2 +1,2 @@
 import 'bootstrap';
-import './Custom-JS/index'
+import './Custom-JS/index';
