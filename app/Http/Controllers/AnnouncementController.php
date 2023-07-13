@@ -21,7 +21,7 @@ public function __construct(){
     public function index(){
 
              //$announcements= Announcement::take(6)->get()->sortByDesc('created_at');
-     $announcements= Announcement::orderBy('created_at', 'desc')->paginate(9);
+     $announcements= Announcement::orderBy('created_at', 'desc')->paginate(8);
      //$pagination = Announcement::paginate(6);
     return view('announcement.index', compact('announcements'));
     }
