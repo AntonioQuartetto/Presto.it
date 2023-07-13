@@ -2,6 +2,7 @@
     <div class="container">
         <a class="navbar-brand animate__animated animate__slideInLeft" href="{{ route('page.homepage') }}">
             <x-logo />
+           <x-theme/>
         </a>
         <div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -9,7 +10,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            
+
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item  my-li">
