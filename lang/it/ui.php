@@ -44,14 +44,13 @@ return [
     'livewireCreate-announcaments_6' => 'Scegli la categoria',
     'livewireCreate-announcaments_7' => 'Cancella',
     'livewireEdit-announcaments' => 'Modifica',
-    'livewireRevisor' => 'I vantaggi del Team di Presto',
+    'livewireRevisor' => 'I vantaggi del Team di Presto.it!',
     'livewireRevisor_2' => 'Ci piace essere smart e poter scegliere il posto migliore da cui connetterci e lavorare!',
     'livewireRevisor_3' => 'Flessibilità oraria',
     'livewireRevisor_4' => 'Il worklife balance è importante per noi! Offriamo a tutti una flessibilità oraria che possa
     andare incontro alle nostre esigenze di tutti i giorni.',
-    'livewireRevisor_5' => 'Welcome on board',
-    'livewireRevisor_6' => 'Siamo un Team in continua espansione! Quando arriva un nuovo collega lo accompagniamo nell\’avvio
-    delle nuove attività.',
+    'livewireRevisor_5' => 'Welcome on board!',
+    'livewireRevisor_6' => 'Siamo un Team in continua espansione! Quando arriva un nuovo collega lo accompagniamo nell’avvio delle nuove attività.',
     'livewireRevisor_7' => 'Budget formativo dedicato',
     'livewireRevisor_8' => 'Crediamo nel miglioramento continuo e investiamo sulla crescita delle persone. Amplia i tuoi
     orizzonti con corsi, conferenze e aggiornamenti.',
@@ -75,4 +74,8 @@ return [
     'revisorindex_10' => 'Accetta solamente se sei sicuro che tutto il resto venga rispettato.',
     'revisorindex_11' => 'Accetta',
     'revisorindex_12' => 'Rifiuta',
+    'formRevisor_1'   => 'Inserisci i tuoi dati!',
+    'formRevisor_2'   => 'Nome',
+    'formRevisor_3'   => 'Cognome',
+    'formRevisor_4'   => 'Esponici in poche righe il perchè ti piacerebbe entrare nel team di Presto!',
 ];

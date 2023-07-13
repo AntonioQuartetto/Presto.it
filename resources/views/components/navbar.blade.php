@@ -5,56 +5,46 @@
         </a>
         <div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
-            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarsExample07">
-            <div class="dropdown">
-                <li class="nav-item my-li button "><x-_locale lang="it" nation="it" /></li>
-                <div class="dropdown-content">
-                    <ul>
-                        <li class="nav-item my-li">
-                            <x-_locale lang="es" nation="es" />
-                        </li>
-                        <li class="nav-item my-li">
-                            <x-_locale lang="en" nation="gb" />
-                        </li>
-                        <li class="nav-item  my-li">
-                            <x-_locale lang="it" nation="it" />
-                        </li>
-                    </ul>
-                </div>
-            </div>    
-            {{-- <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item  my-li">
-                    <x-_locale lang="it" nation="it" />
-                </li>
-                <li class="nav-item my-li">
-                    <x-_locale lang="en" nation="gb" />
-                </li>
-                <li class="nav-item  my-li">
-                    <x-_locale lang="es" nation="es" />
-                </li>
-            </ul> --}}
-            <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="my-li nav-item ">
-                    <a class="nav-link @if (Route::currentRouteName() == 'announcement.index') active text-warning @endif"
-                    aria-current="page"
-                    href="{{ route('announcement.index') }}">{{ __('ui.announcementSearch') }}</a>
-                </li>
-                
-                <li class="nav-item dropdown my-li z-1">
-                    <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
-                    href="#" data-bs-toggle="dropdown"
-                    aria-expanded="false">{{ __('ui.componetsFilters_2') }}</a>
-                    <ul class="dropdown-menu">
-                        @foreach ($categories as $category)
-                        <li><a href="{{ route('categoryShow', compact('category')) }}"
-                            class="dropdown-item">{{ $category->name }}</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
+                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            
+            <div class="collapse navbar-collapse" id="navbarsExample07">
+                <div class="dropdown">
+                    <li class="nav-item my-li button "><x-_locale lang="it" nation="it" /></li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li class="nav-item my-li">
+                                <x-_locale lang="es" nation="es" />
                             </li>
+                            <li class="nav-item my-li">
+                                <x-_locale lang="en" nation="gb" />
+                            </li>
+                            <li class="nav-item  my-li">
+                                <x-_locale lang="it" nation="it" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>    
+                <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="my-li nav-item ">
+                        <a class="nav-link @if (Route::currentRouteName() == 'announcement.index') active text-warning @endif"
+                            aria-current="page"
+                            href="{{ route('announcement.index') }}">{{ __('ui.announcementSearch') }}</a>
+                    </li>
+
+                    <li class="nav-item dropdown my-li z-1">
+                        <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
+                            href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">{{ __('ui.componetsFilters_2') }}</a>
+                        <ul class="dropdown-menu bg-warning">
+                            @foreach ($categories as $category)
+                                <li><a href="{{ route('categoryShow', compact('category')) }}"
+                                        class="dropdown-item">{{ $category->name }}</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                             @endforeach
                         </ul>
                     </li>
