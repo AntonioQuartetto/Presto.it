@@ -32,7 +32,7 @@
                             </li>
                             @endforeach
                         </ul>
-                    </li>
+                    </li> 
                     @if (!Auth::user()->is_revisor)
                     <li class="nav-item my-li">
                         <a class="nav-link @if (Route::currentRouteName() == 'revisor.create') active text-warning @endif" aria-current="page" href="{{ route('revisor.create') }}">{{__('ui.componetsFooter_3')}}</a>
