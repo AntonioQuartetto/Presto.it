@@ -8,7 +8,7 @@
                 <div class="card-body p-md-5 my-5">
                     <div class="row justify-content-center p-5 ">
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                            <p class="text-center h1 fw-bold mb-5 mt-4">Inserici i tuoi dati</p>
+                            <p class="text-center h1 fw-bold mb-5 mt-4">{{ __('ui.formRevisor_1') }}</p>
                             <form action="{{ route('revisor.createform') }}" method="POST">
                                 @csrf
                                 @if ($errors->any())
@@ -23,7 +23,7 @@
                                 {{-- Input Name  --}}
                                 <div class="container align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <label class="form-label" for="name">Nome</label>
+                                        <label class="form-label description_font" for="name">{{ __('ui.formRevisor_2') }}</label>
                                         <input type="text" name="name" id="name" class="form-control"
                                             value="{{ $user->name }}" placeholder="Mario" disabled>
                                         <div class="form-notch">
@@ -39,7 +39,7 @@
                                 {{-- Input Surname  --}}
                                 <div class="container align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <label class="form-label" for="surname">Cognome</label>
+                                        <label class="form-label description_font" for="surname">{{ __('ui.formRevisor_3') }}</label>
                                         <input type="text" name="surname" id="surname" class="form-control"
                                             value="{{ $user->surname }}" placeholder="Rossi" disabled>
                                         <div class="form-notch">
@@ -55,9 +55,7 @@
                                 {{-- Input Message --}}
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <label class="form-label" for="form3Example3c">Dicci la motivazione per cui vuoi
-                                            lavorare
-                                            con noi</label>
+                                        <label class="form-label description_font" for="form3Example3c">{{ __('ui.formRevisor_4') }}</label>
                                         <textarea type="text-area" name="message" id="message" class="form-control" placeholder="Messaggio"></textarea>
                                         <div class="form-notch">
                                             <div class="form-notch-leading"></div>

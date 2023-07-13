@@ -244,6 +244,15 @@ header {
   border-color: black;
 }
 
+.description_font {
+  font-family: 'Noto Serif', serif !important;
+  font-size: 19px !important;
+}
+
+.revisor_color {
+   color: #ff8400;
+}
+
 
 
 
