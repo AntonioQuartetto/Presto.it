@@ -33,7 +33,7 @@
                         <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
                             href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ __('ui.componetsFilters_2') }}</a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu bg-warning">
                             @foreach ($categories as $category)
                                 <li><a href="{{ route('categoryShow', compact('category')) }}"
                                         class="dropdown-item">{{ $category->name }}</a></li>
