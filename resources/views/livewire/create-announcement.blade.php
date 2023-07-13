@@ -65,7 +65,7 @@
                         @error('temporary_images.*')
                             <p class="text-danger mt-1">*{{ $message }}</p>
                         @enderror
-                        {{-- <div wire:loading wire:target="temporary_images">Uploading...</div> --}}
+                        <div wire:loading wire:target="temporary_images">Uploading...</div>
                     </div>
 
                     <button type="submit" class="btn btn-warning">{{ __('ui.componetsFooter_4') }}</button>
@@ -89,7 +89,7 @@
                                 style="background-image: url({{ $image->temporaryUrl() }});"></div>
                             {{-- <img src="{{ $image->temporaryUrl() }}" alt="img" class="img-preview"> --}}
                             <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
-                                wire::click="removeImage({{ $key }})">{{ __('ui.livewireCreate-announcaments_7') }}</button>
+                                wire:click="removeImage({{ $key }})">{{ __('ui.livewireCreate-announcaments_7') }}</button>
                         </div>
                     @endforeach
                 </div>

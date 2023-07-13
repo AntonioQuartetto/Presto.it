@@ -2,7 +2,7 @@
 
 
     <div class="container text-center mb-4">
-        <h2>{{ __('ui.livewireRevisor') }}</h2>
+        <h2 class="revisor_color">{{ __('ui.livewireRevisor') }}</h2>
     </div>
     <div class="row p-3">
         <div class="col-12 col-md-6">
@@ -17,8 +17,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>Smartworking</h4>
-                    <p>{{ __('ui.livewireRevisor_2') }}</p>
+                    <h4 class="revisor_color">Smartworking</h4>
+                    <p class="description_font">{{ __('ui.livewireRevisor_2') }}</p>
                 </div>
             </div>
         </div>
@@ -32,8 +32,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>{{ __('ui.livewireRevisor_3') }}</h4>
-                    <p>{{ __('ui.livewireRevisor_4') }}</p>
+                    <h4 class="revisor_color">{{ __('ui.livewireRevisor_3') }}</h4>
+                    <p class="description_font">{{ __('ui.livewireRevisor_4') }}</p>
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>{{ __('ui.livewireRevisor_5') }}</h4>
-                    <p>{{ __('ui.livewireRevisor_6') }}</p>
+                    <h4 class="revisor_color">{{ __('ui.livewireRevisor_5') }}</h4>
+                    <p class="description_font">{{ __('ui.livewireRevisor_6') }}</p>
                 </div>
             </div>
         </div>
@@ -62,8 +62,8 @@
                     </svg>
                 </div>
                 <div class="col-9">
-                    <h4>{{ __('ui.livewireRevisor_7') }}</h4>
-                    <p>{{ __('ui.livewireRevisor_8') }}</p>
+                    <h4 class="revisor_color">{{ __('ui.livewireRevisor_7') }}</h4>
+                    <p class="description_font">{{ __('ui.livewireRevisor_8') }}</p>
                 </div>
             </div>
         </div>

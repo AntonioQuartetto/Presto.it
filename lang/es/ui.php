@@ -44,7 +44,7 @@ return [
     'livewireCreate-announcaments_6' => 'Elegir categoría',
     'livewireCreate-announcaments_7' => 'Delete',
     'livewire Edit-announcements' => 'Editar',
-    'livewireRevisor' => 'Los beneficios del equipo Presto',
+    'livewireRevisor' => 'Los beneficios del equipo Presto!',
     'livewireRevisor_2' => '¡Nos gusta ser inteligentes y poder elegir el mejor lugar para conectarnos y trabajar!',
     'livewireRevisor_3' => 'Flexibilidad horaria',
     'livewireRevisor_4' => '¡El equilibrio entre la vida laboral y personal es importante para nosotros! Ofrecemos a todos un horario flexible que puede
@@ -74,5 +74,9 @@ return [
     'revisorindex_9' => 'Rechazar anuncios donde no hay precio o título sensible;',
     'revisorindex_10' => 'Acepta solo si estás seguro de que se respeta todo lo demás.',
     'revisorindex_11' => 'Aceptar',
-    'revisorindex_12' => 'Rechazar',    
+    'revisorindex_12' => 'Rechazar', 
+    'formRevisor_1'   => 'Inserta tus datos!',
+    'formRevisor_2'   => 'Nombre',
+    'formRevisor_3'   => 'Apellidos',  
+    'formRevisor_4'   => '¡Cuéntanos en pocas líneas por qué te gustaría unirte al equipo de Presto!', 
 ];
