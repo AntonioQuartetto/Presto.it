@@ -44,7 +44,7 @@ return [
     'livewireCreate-announcaments_6' => 'Choose category',
     'livewireCreate-announcaments_7' => 'Delete',
     'livewire Edit-announcements' => 'Edit',
-    'livewireRevisor' => 'The Presto Team benefits',
+    'livewireRevisor' => 'Our Presto Team benefits!',
     'livewireRevisor_2' => 'We like being smart and being able to choose the best place to connect and work from!',
     'livewireRevisor_3' => 'Time flexibility',
     'livewireRevisor_4' => 'Worklife balance is important to us! We offer everyone a flexible schedule that can
@@ -75,5 +75,8 @@ return [
     'revisorindex_10' => 'Accept only if you are sure that everything else is respected.',
     'revisorindex_11' => 'Accept',
     'revisorindex_12' => 'Reject',
-    
+    'formRevisor_1'   => 'Insert your data!',
+    'formRevisor_2'   => 'Name',
+    'formRevisor_3'   => 'Surname',
+    'formRevisor_4'   => 'Tell us in a few lines why you would like to join the Presto team!',
 ];

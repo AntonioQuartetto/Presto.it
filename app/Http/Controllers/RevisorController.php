@@ -21,7 +21,7 @@ class RevisorController extends Controller
     $this->middleware('auth');
   }
   public function index() {
-    $announcement_to_check=Announcement::where('is_accepted',null)->first();
+    $announcement_to_check=Announcement::where('is_accepted', null)->where('user_id','!=',Auth::user()->id)->first();
     return view('revisor.index',compact('announcement_to_check'));
   }
   
