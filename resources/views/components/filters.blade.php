@@ -4,8 +4,8 @@
         {{__('ui.componetsFilters')}}
     </h2>
     <div class="row">
-        <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-            <a class="nav-link dropdown-toggle text-center rounded py-2 px-4 bg-white text-dark border border-black" href="#"
+        <div class="col-12 col-md-3 d-flex align-items-center justify-content-center" >
+            <a class="nav-link dropdown-toggle text-center rounded py-2 px-4 bg-white text-dark border border-black" style="width: 10rem" href="#"
                 data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.componetsFilters_2')}}</a>
             <ul class="dropdown-menu">
                 @foreach ($categories as $category)

@@ -8,8 +8,8 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-3">
                 <div class="row ">
-                    <div class="col-12 col-md-6">
-                        <img class="card-img-top mb-5 mb-md-0" src="" alt="">
+                    <div class="col-12 col-md-6" >
+                        
                             @if ($announcement->images->count()>0 )
                             <div id="carouselExampleDark" class="carousel carousel-dark slide">
                             <div class="carousel-indicators">
@@ -39,19 +39,17 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
+
+                    </div>
                     @else
                     <div >
                         <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-100"  alt="">  
-                    </div>
-                    
-                </div>
-                @endif
+                    </div>               
                 
+                @endif              
             </div>
-        </div>
-        
+              
         <div class="col-12 col-md-6">
-            
             <h1 class="display-5 fw-bolder">{{ $announcement->title }}</h1>
             <p><b>{{ __('ui.announcementShow') }}</b>:<span>€ {{ $announcement->price }}</span></p>
             <p><b>{{ __('ui.announcementShow_2') }}</b>: {{ $announcement->body }}</p>
@@ -64,11 +62,9 @@
                 @auth
                 @if (Auth::user()->id == $announcement->user_id)
                 <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
-                    class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a>
-                    
+                    class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a>    
                     <a class="btn btn-danger"
-                    onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }}</a>
-                    
+                    onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }}</a>     
                     <form class="d-none" id="form-delete-{{$announcement->id}}"
                         action="{{ route('announcement.destroy', ['announcement' => $announcement]) }}"
                         method="POST">
@@ -76,13 +72,10 @@
                         @csrf
                         {{-- <button type="submit" class="btn btn-danger">Cancella Annuncio</button> --}}
                     </form>
-                    @endif
-                    
-                    @endauth
-                    
+                    @endif   
+                    @endauth    
                 </div>
-                
-                
+             </div>    
             </div>
         </div>
     </section>
