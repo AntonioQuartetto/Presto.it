@@ -42,7 +42,8 @@
                                 </li>
                             @endforeach
                         </ul>
-                    </li>
+                    </li> 
+                    @if (!Auth::user()->is_revisor)
                     <li class="nav-item my-li">
                         <a class="nav-link  @if (Route::currentRouteName() == 'announcement.create') active text-warning @endif"
                             aria-current="page"
