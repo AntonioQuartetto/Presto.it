@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark " aria-label="Eighth navbar example">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " aria-label="Eighth navbar example" id="navbar">
     <div class="container">
         <a class="navbar-brand animate__animated animate__slideInLeft" href="{{ route('page.homepage') }}">
             <x-logo />

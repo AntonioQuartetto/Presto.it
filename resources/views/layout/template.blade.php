@@ -10,7 +10,7 @@
     @livewireStyles
 </head>
 
-<body class="dark-theme">
+<body class="dark-theme" id="dark-theme">
 
 
     <x-navbar />
