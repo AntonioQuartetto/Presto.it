@@ -55,7 +55,7 @@ return [
     'livewireRevisor_8' => 'Crediamo nel miglioramento continuo e investiamo sulla crescita delle persone. Amplia i tuoi
     orizzonti con corsi, conferenze e aggiornamenti.',
     'livewireRevisor_9' => 'Invia richiesta',
-    'pageCategory' => 'Annunci per la cateogria',
+    'pageCategory' => 'Annunci per la categoria',
     'pageHomepage' => 'Ultimi Annunci',
     'pageHomepage_2' => 'Esplora le nostre sezioni',
     'profileProfile' => 'Data di nascita: 01/01/1990',
@@ -66,7 +66,7 @@ return [
     'revisorindex_2' => 'Nessun annuncio da revisionare',
     'revisorindex_3' => 'Vuoi annullare il tuo annuncio? Clicca qui!',
     'revisorindex_4' => 'Annulla',
-    'revisorindex_5' => 'Ricordati solamente alcune regole:',
+    'revisorindex_5' => 'Alcune regole da seguire:',
     'revisorindex_6' => 'Sii il meno soggettivo possibile;',
     'revisorindex_7' => 'Rifiuta se nell\'annuncio è presente un linguaggio inappropiato;',
     'revisorindex_8' => 'Rifiuta se non viene rispettata la nostra policy o la legge;',

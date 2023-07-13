@@ -1,6 +1,6 @@
 <x-template>
     
-    <div class="container-fluid p-5 bg-gradient my-bg shadow">
+    <div class="container-fluid p-5 bg-gradient my-bg shadow ">
         <div class="row">
             <div class="col-12 text-light p-1 fs-3 text-center ">
                 
@@ -112,11 +112,11 @@
         @endif
         <ul>
             <h3>{{ __('ui.revisorindex_5') }}</h3>
-            <li>{{ __('ui.revisorindex_6') }}</li>
-            <li>{{ __('ui.revisorindex_7') }}</li>
-            <li>{{ __('ui.revisorindex_8') }}</li>
-            <li>{{ __('ui.revisorindex_9') }}</li>
-            <li>{{ __('ui.revisorindex_10') }}</li>
+            <li class="description_font">{{ __('ui.revisorindex_6') }}</li>
+            <li class="description_font">{{ __('ui.revisorindex_7') }}</li>
+            <li class="description_font">{{ __('ui.revisorindex_8') }}</li>
+            <li class="description_font">{{ __('ui.revisorindex_9') }}</li>
+            <li class="description_font">{{ __('ui.revisorindex_10') }}</li>
         </ul>  
     </div>
 </x-template>
