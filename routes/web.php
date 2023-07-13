@@ -36,7 +36,7 @@ Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->
 Route::delete('/elimina/{announcement}', [AnnouncementController::class, 'destroy'])->name('announcement.destroy');
 
 
-/*--Route Rewiewers--*/
+/*--Route Revisors--*/
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 Route::get('/lavora-con-noi', [RevisorController::class, 'create'])->name('revisor.create');
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncements'])->middleware('isRevisor')->name('revisor.accept_announcements');
@@ -45,6 +45,8 @@ Route::patch('/annulla/annuncio', [RevisorController::class, 'rewindAnnouncement
 Route::get('/revisor/richiesta', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
+/*-- Route form Revisor --*/
+Route::post('/lavora-con-noi/send', [RevisorController::class, 'sendRequest'])->name('revisor.createform');
 
 // rotta lingue
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
