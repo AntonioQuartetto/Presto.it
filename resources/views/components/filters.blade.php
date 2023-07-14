@@ -10,7 +10,7 @@
             <ul class="dropdown-menu">
                 @foreach ($categories as $category)
                     <li><a href="{{ route('categoryShow', compact('category')) }}"
-                            class="dropdown-item">{{ $category->name }}</a></li>
+                            class="dropdown-item">{{__('ui.'. $category->name) }}</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>

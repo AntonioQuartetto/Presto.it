@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-5 me-5">
             <div>
-                <h1>Inserisci il tuo annuncio!</h1>
+                <h1>{{ __('ui.componetsFooter_4') }}</h1>
                 @if (session()->has('message'))
                     <div>
                         {{ session('message') }}

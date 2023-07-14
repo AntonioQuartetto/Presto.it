@@ -78,4 +78,15 @@ return [
     'formRevisor_2'   => 'Nome',
     'formRevisor_3'   => 'Cognome',
     'formRevisor_4'   => 'Esponici in poche righe il perchè ti piacerebbe entrare nel team di Presto!',
+    'Motori'=> 'Motori',
+    'Informatica'=> 'Informatica',
+    'Elettrodomestici'=> 'Elettronica',
+    'Libri'=> 'Libri',
+    'Giochi'=> 'Giochi',
+    'Sport'=> 'Sport',
+    'Immobili'=> 'Immobili',
+    'Telefoni'=> 'Telefoni',
+    'Arredamento'=> 'Arredamento',
+    'Accessori'=> 'Accessori',
+
 ];

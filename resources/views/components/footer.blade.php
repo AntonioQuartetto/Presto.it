@@ -17,7 +17,7 @@
                 <div class="row">
                     @foreach ($categories as $category)
                         <div class="col-12"><a href="{{ route('categoryShow', compact('category')) }}"
-                                class="text-decoration-none">{{ $category->name }}</a></div>
+                                class="text-decoration-none">{{__('ui.'. $category->name) }}</a></div>
                     @endforeach
                 </div>
 
