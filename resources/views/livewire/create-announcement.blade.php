@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-5 me-5">
             <div>
-                <h1>Inserisci il tuo annuncio!</h1>
+                <h1>{{ __('ui.livewireCreate-announcaments_1') }}</h1>
                 @if (session()->has('message'))
                     <div>
                         {{ session('message') }}
@@ -58,14 +58,14 @@
                     </div>
                     {{-- x-on:livewire-upload-progress="progress = $event.detail.progress" --}}
                     <div class="mb-3">
-                        <label for="images">Immagini</label>
+                        <label for="images">{{ __('ui.livewireCreate-announcaments_8') }}</label>
                         <input wire:model="temporary_images" type="file" name="images" multiple
                             class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
                             placeholder="img">
                         @error('temporary_images.*')
                             <p class="text-danger mt-1">*{{ $message }}</p>
                         @enderror
-                        <div wire:loading wire:target="temporary_images">Uploading...</div>
+                        <div wire:loading wire:target="temporary_images">{{ __('ui.livewireCreate-announcaments_9') }}</div>
                     </div>
 
                     <button type="submit" class="btn btn-warning">{{ __('ui.componetsFooter_4') }}</button>
