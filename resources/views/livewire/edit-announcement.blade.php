@@ -1,7 +1,7 @@
 <div>
     <h1>Modifica il tuo annuncio!</h1>
     @if (session('success')) 
-    <span class="badge text-bg-success">
+    <span class="badge text-bg-success ">
         {{session('success')}}
     </span>
     @endif
