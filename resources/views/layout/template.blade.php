@@ -20,7 +20,7 @@
 
 
 
-    <main class="controller main_custom">
+    <main class="controller main_custom_dark" id="main-custom">
         @if (Route::currentRouteName() != 'announcement.create' &&
                 Route::currentRouteName() != 'login' &&
                 Route::currentRouteName() != 'register' &&

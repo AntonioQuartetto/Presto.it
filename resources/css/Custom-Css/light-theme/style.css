@@ -10,3 +10,19 @@
     color: white;
     font-family:Georgia, 'Times New Roman', Times, serif ;
 }
+
+/* .navbar-light{
+
+    background-color: rgba(255, 255, 255, 0.692) !important;
+    color: black;
+} */
+
+
+
+.main_custom_light{
+    background-color: rgba(255, 255, 255, 0.687);
+    box-shadow: 1px -1px 10px var(--orange-hub);
+    border-radius: 15px;
+    margin: 30px;
+    padding: 20px;
+  }
