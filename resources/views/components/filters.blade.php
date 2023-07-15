@@ -18,7 +18,7 @@
             </ul>
         </div>
         <div class="col-12 col-md-9">
-            <form action="{{ route('announcement.search') }}" method="GET" class="row p-2">
+            <form action="{{ route('announcement.filters') }}" method="GET" class="row p-2">
                 <input type="number" class="rounded p-2 me-2 col-12 col-md-3" id="price-min" placeholder="Price Min."
                     name="priceMin">
                 <input type="number" class="rounded p-2 me-2 col-12 col-md-3" id="price-max" placeholder="Price Max."

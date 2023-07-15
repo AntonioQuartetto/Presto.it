@@ -70,34 +70,21 @@ class PageController extends Controller
     {
         //
     }
-    
-    public function searchAnnouncaments(Request $request){
+
+    public function searchAnnouncements(Request $request){
         
 
-//     $prezzoMinimo = $request->priceMin ? $request->priceMin : 0; // Imposta il prezzo minimo desiderato
-//     $prezzoMassimo = $request->priceMax ? $request->priceMax : PHP_INT_MAX; // Imposta il prezzo massimo desiderato
-// // // dd($prezzoMinimo);
-// if (empty ($request->searched)){
-// $announcements= Announcement::search($request->searched)->paginate(10);
-// $listaannunci = collect([]);
-// foreach ($announcements->getCollection() as $annuncio) {
-// if ($annuncio->price<=$prezzoMassimo && $annuncio->price>=$prezzoMinimo) {
-// $listaannunci->add($annuncio);
-// }};
-// $announcements->setCollection($listaannunci);
 
-//         }
-//     else{
-//         $announcements= Announcement::where($request->searched)
-//         ->where('prezzo', '>=', $prezzoMinimo)
-//         ->where('prezzo', '<=', $prezzoMassimo);
-//     }
-
-
-
-//          return view('announcement.search', compact('announcements'));
+        if (!empty ($request->searched)){
+        $announcements= Announcement::search($request->searched)->paginate(10);
+        }
 
         
+        return view('announcement.search', compact('announcements'));
+    }
+
+    public function searchFilters(Request $request){
+
         $prezzoMinimo = $request->priceMin ? $request->priceMin : 0; 
         $prezzoMassimo = $request->priceMax ? $request->priceMax : PHP_INT_MAX;
         $parolaCercata = $request->searched; 
@@ -105,10 +92,11 @@ class PageController extends Controller
         $announcements = Announcement::query('announcements')
         ->where('price', '>=', $prezzoMinimo)
         ->where('price', '<=', $prezzoMassimo)
-        ->where('title', 'LIKE', '%' . $parolaCercata . '%')->get();
+        ->where('title', 'LIKE', '%' . $parolaCercata . '%')->orderBy('created_at', 'desc')->get();
         
         
         return view('announcement.search', compact('announcements'));
+
     }
 
     public function setLanguage($lang){
