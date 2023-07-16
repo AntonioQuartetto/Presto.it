@@ -131,8 +131,8 @@
                     @endauth
                     {{-- <li class="nav-item">
                         <x-theme />
-                    </li> --}}
-                </ul>
+                    </li>
+                </ul> --}}
                 <div class="dropdown">
 
                     @if (Lang::locale() == 'en')
