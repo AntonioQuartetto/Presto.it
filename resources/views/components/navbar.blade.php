@@ -14,57 +14,6 @@
 
 
             <div class="collapse navbar-collapse" id="navbarsExample07">
-                <div class="dropdown">
-
-                    @if (Lang::locale() == 'en')
-                        <li class="nav-item my-li button">
-                            <x-_locale lang="en" nation="gb" />
-                        </li>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li class="nav-item my-li">
-                                    <x-_locale lang="es" nation="es" />
-                                </li>
-                                <li class="nav-item  my-li">
-                                    <x-_locale lang="it" nation="it" />
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
-                    @if (Lang::locale() == 'it')
-                        <li class="nav-item my-li button">
-                            <x-_locale lang="it" nation="it" />
-                        </li>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li class="nav-item my-li">
-                                    <x-_locale lang="es" nation="es" />
-                                </li>
-                                <li class="nav-item my-li">
-                                    <x-_locale lang="en" nation="gb" />
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
-                    @if (Lang::locale() == 'es')
-                        <li class="nav-item my-li button">
-                            <x-_locale lang="es" nation="es" />
-                        </li>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li class="nav-item my-li">
-                                    <x-_locale lang="en" nation="gb" />
-                                </li>
-                                <li class="nav-item  my-li">
-                                    <x-_locale lang="it" nation="it" />
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
-
-
-
-                </div>
                 <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
@@ -184,6 +133,57 @@
                         <x-theme />
                     </li> --}}
                 </ul>
+                <div class="dropdown">
+
+                    @if (Lang::locale() == 'en')
+                        <li class="nav-item my-li button">
+                            <x-_locale lang="en" nation="gb" />
+                        </li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li class="nav-item my-li">
+                                    <x-_locale lang="es" nation="es" />
+                                </li>
+                                <li class="nav-item  my-li">
+                                    <x-_locale lang="it" nation="it" />
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
+                    @if (Lang::locale() == 'it')
+                        <li class="nav-item my-li button">
+                            <x-_locale lang="it" nation="it" />
+                        </li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li class="nav-item my-li">
+                                    <x-_locale lang="es" nation="es" />
+                                </li>
+                                <li class="nav-item my-li">
+                                    <x-_locale lang="en" nation="gb" />
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
+                    @if (Lang::locale() == 'es')
+                        <li class="nav-item my-li button">
+                            <x-_locale lang="es" nation="es" />
+                        </li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li class="nav-item my-li">
+                                    <x-_locale lang="en" nation="gb" />
+                                </li>
+                                <li class="nav-item  my-li">
+                                    <x-_locale lang="it" nation="it" />
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
+
+
+
+                </div>
             </div>
         </div>
 
