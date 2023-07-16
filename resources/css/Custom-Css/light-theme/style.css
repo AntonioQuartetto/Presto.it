@@ -9,6 +9,7 @@
     background-size: cover;
     color: white;
     font-family:Georgia, 'Times New Roman', Times, serif ;
+    
 }
 
 /* .navbar-light{
@@ -20,11 +21,12 @@
 
 
 .main_custom_light{
-    background-color: rgba(255, 255, 255, 0.687);
+    background-color: rgba(255, 255, 255, 0.427);
     box-shadow: 1px -1px 10px var(--orange-hub);
     border-radius: 15px;
     margin: 30px;
     padding: 20px;
     font-family: 'Noto Serif', serif !important;
     font-size: 20px !important;
+    color: black !important;
   }
