@@ -30,6 +30,11 @@
             <div class="container">
                 <div class="text-center mb-2">
                     <h2>{{ __('ui.profileProfile_3') }}</h2>
+                    @if (session('success'))
+                        <span class="badge text-bg-success">
+                            {{ session('success') }}
+                        </span>
+                    @endif
                 </div>
                 <div class="row">
                     @forelse ($announcements as $announcement)
