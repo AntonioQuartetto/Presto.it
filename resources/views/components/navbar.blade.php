@@ -133,10 +133,10 @@
                             
                         </li>
                     @endauth
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <x-theme />
                     </li>
-                    
+                     --}}
                 </ul>
                 <div class="dropdown">
 
