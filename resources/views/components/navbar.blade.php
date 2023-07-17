@@ -136,7 +136,8 @@
                     {{-- <li class="nav-item">
                         <x-theme />
                     </li>
-                </ul> --}}
+                     --}}
+                </ul>
                 <div class="dropdown">
 
                     @if (Lang::locale() == 'en')

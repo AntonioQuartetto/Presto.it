@@ -37,18 +37,20 @@
                     @endif
                 </div>
                 <div class="row">
-                    @forelse ($announcements as $announcement)
+                    @foreach ($announcements as $announcement)
                         @if ($announcement->is_accepted)
                             <x-card :$announcement />
-                        @endif
-                    @empty
-                        <div class="col-12">
+                            @else
+                            <hr>
+                            <div class="container text-center">
                             <p class="h1">{{ __('ui.profileProfile_4') }}</p>
-                            <p class="h2">{{ __('ui.announcementSearch_3') }} <a
+                            <p class="h2">{{ __('ui.announcementSearch_3') }} <a class="btn-request"
                                     href="{{ route('announcement.create') }}">{{ __('ui.announcementSearch_4') }}</a>
                             </p>
                         </div>
-                    @endforelse
+                        @endif
+                        
+                    @endforeach
                 </div>
             </div>
         </div>
