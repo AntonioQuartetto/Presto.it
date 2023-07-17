@@ -78,7 +78,7 @@ public function __construct(){
             }
        
         $announcement->delete();
-        return redirect()->route('announcement.index')->with('success', 'Cancellazione avvenuta con successo!');
+        return redirect()->route('profile.index')->with('success', 'Cancellazione avvenuta con successo!');
 
     }
 

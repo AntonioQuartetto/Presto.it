@@ -70,7 +70,7 @@
 
     </div>
 
-    <div class="mt-5 text-center">
+    <div class="mt-5 text-center" id="btn-revisor">
         <a class="btn-request" href="{{ route('become.revisor') }}">{{ __('ui.livewireRevisor_9') }}</a>
     </div>
 </div>

@@ -32,7 +32,8 @@ Route::get('/annuncio',[AnnouncementController::class, 'index'])->name('announce
 Route::get('/annuncio/crea',[AnnouncementController::class, 'create'])->name('announcement.create');
 Route::get('/annuncio/{announcement}/dettagli',[AnnouncementController::class, 'show'])->name('announcement.show');
 Route::get('/annuncio/{announcement}/edit',[AnnouncementController::class, 'edit'])->name('announcement.edit');
-Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncaments'])->name('announcement.search');
+Route::get('/ricerca/annuncio',[PageController::class, 'searchAnnouncements'])->name('announcement.search');
+Route::get('/ricerca/annunci-filtrati',[PageController::class, 'searchFilters'])->name('announcement.filters');
 Route::delete('/elimina/{announcement}', [AnnouncementController::class, 'destroy'])->name('announcement.destroy');
 
 

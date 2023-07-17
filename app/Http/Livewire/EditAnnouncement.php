@@ -63,8 +63,11 @@ class EditAnnouncement extends Component
             'category_id' => $this->category
             
         ]);
+        $this->announcement->save();
+        $this->announcement->setAccepted(null);
 
-        return redirect()->route('announcement.show', ['announcement' => $this->announcement->id]);
+        
+        return redirect()->route('profile.index')->with('success', 'Modifica avvenuta con successo, sarà ripu');
     }
    
     public function render()

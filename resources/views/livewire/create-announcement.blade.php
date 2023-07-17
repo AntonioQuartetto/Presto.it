@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-5 me-5">
+        <div class="col-12 col-sm-12 col-md-5">
             <div>
 
                 <h1>{{ __('ui.componetsFooter_4') }}</h1>
@@ -70,11 +70,11 @@
                         <div wire:loading wire:target="temporary_images">{{ __('ui.livewireCreate-announcaments_9') }}</div>
                     </div>
 
-                    <button type="submit" class="btn btn-warning">{{ __('ui.componetsFooter_4') }}</button>
+                    <button type="submit" class="btn btn-warning mt-2 mb-2">{{ __('ui.componetsFooter_4') }}</button>
                 </form>
             </div>
         </div>
-        <div class="col-12 col-md-6 ms-5 d-flex align-items-center order-1 order-lg-2">
+        <div class="col-12 col-sm-12 col-md-7  d-flex align-items-center order-1 order-lg-2">
             <img src="{{ Storage::url('\images\blog-006_realizzare-ecommerce.jpg') }}"class="img-fluid border border-2 border-dark rounded"
                 alt="">
         </div>

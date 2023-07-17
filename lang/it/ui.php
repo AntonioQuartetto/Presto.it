@@ -80,6 +80,12 @@ return [
     'formRevisor_2'   => 'Nome',
     'formRevisor_3'   => 'Cognome',
     'formRevisor_4'   => 'Esponici in poche righe il perchè ti piacerebbe entrare nel team di Presto!',
+    'formRevisor_5' => 'Benvenuti nella nostra sezione Lavora con Noi! Siamo un azienda dinamica e all\' avanguardia nel settore degli annunci, e siamo alla ricerca di talenti come te per unirti al nostro team!Siamo
+    convinti che il successo di un\' azienda risieda nelle persone che la compongono, e per questo
+    siamo impegnati a creare un ambiente di lavoro stimolante, inclusivo e gratificante.',
+    'formRevisor_6' => 'La nostra missione è quella di fornire un servizio di annunci di alta qualità che soddisfi le esigenze dei nostri clienti. Siamo alla costante ricerca di persone motivate, appassionate e creative, che condividano la nostra visione e ci aiutino a raggiungere i nostri obiettivi.',
+    //'formRevisor_7' => '"Se sei alla ricerca di un lavoro gratificante, stimolante e pieno di opportunità di crescita, inserici, <b><a href="#form-revisor" class="text-warning">nel form sottostante</a></b>,  il perchè ti piacerebbe entrare nel team di Presto; oppure <b><a href="#btn-revisor" class="text-warning">clicca il pulsante sopra</a></b> per un invio della mail in automatico."',//
+    'formRevisor_8'=> 'Siamo ansiosi di conoscerti e di costruire insieme il futuro di questa azienda!',
     'Motori'=> 'Motori',
     'Informatica'=> 'Informatica',
     'Elettrodomestici'=> 'Elettronica',
