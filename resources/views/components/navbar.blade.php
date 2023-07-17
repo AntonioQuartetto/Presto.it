@@ -29,7 +29,7 @@
                             href="{{ route('announcement.index') }}">{{ __('ui.announcementSearch') }}</a>
                     </li>
 
-                    <li class="nav-item dropdown my-li z-1">
+                    {{-- <li class="nav-item dropdown my-li z-1">
                         <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
                             href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ __('ui.componetsFilters_2') }}</a>
@@ -44,7 +44,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item my-li">
                         <a class="nav-link  @if (Route::currentRouteName() == 'announcement.create') active text-warning @endif"
                             aria-current="page"
