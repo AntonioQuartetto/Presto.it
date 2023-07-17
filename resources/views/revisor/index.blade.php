@@ -91,12 +91,12 @@
                                 @endif
                             </div>
                             <div class="card-body">
-                                <h5 class="tc-accent">Revisione Immagini</h5>
-                                <p><b>Adulti:</b> <span class="{{ $image->adult }}"></span></p>
-                                <p><b>Satira:</b> <span class="{{ $image->spoof }}"></span></p>
-                                <p><b>Medicina:</b> <span class="{{ $image->medical }}"></span></p>
-                                <p><b>Violenza:</b> <span class="{{ $image->violence }}"></span></p>
-                                <p><b>Contenuto Ammiccante:</b> <span class="{{ $image->racy }}"></span></p>
+                                <h5 class="tc-accent">{{ __('ui.revisorindex_13') }}</h5>
+                                <p><b>{{ __('ui.revisorindex_14') }}</b> <span class="{{ $image->adult }}"></span></p>
+                                <p><b>{{ __('ui.revisorindex_15') }}</b> <span class="{{ $image->spoof }}"></span></p>
+                                <p><b>{{ __('ui.revisorindex_16') }}</b> <span class="{{ $image->medical }}"></span></p>
+                                <p><b>{{ __('ui.revisorindex_17') }}</b> <span class="{{ $image->violence }}"></span></p>
+                                <p><b>{{ __('ui.revisorindex_18') }}</b> <span class="{{ $image->racy }}"></span></p>
                             </div>
                         </div>
 
