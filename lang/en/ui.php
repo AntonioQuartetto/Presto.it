@@ -81,6 +81,11 @@ return [
     'formRevisor_2'   => 'Name',
     'formRevisor_3'   => 'Surname',
     'formRevisor_4'   => 'Tell us in a few lines why you would like to join the Presto team!',
+    'formRevisor_5' => 'Welcome to our Work with Us section! We are a dynamic and cutting-edge company in the advertising sector, and we are looking for talent like you to join our team! We are
+    convinced that the success of a company lies in the people who make it up, and for this reason
+    we are committed to creating an inspiring, inclusive and rewarding work environment.',
+    'formRevisor_6' => 'Our mission is to provide a high quality classifieds service that meets the needs of our customers. We are constantly looking for motivated, passionate and creative people who share our vision and help us achieve our goals.',
+    'formRevisor_8'=> 'We look forward to meeting you and building the future of this company together!',
     'Motori'=> 'Motor',
     'Informatica'=> 'Informatics',
     'Elettrodomestici'=> 'Elettronics',

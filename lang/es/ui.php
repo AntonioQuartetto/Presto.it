@@ -81,6 +81,11 @@ return [
     'formRevisor_2'   => 'Nombre',
     'formRevisor_3'   => 'Apellidos',  
     'formRevisor_4'   => '¡Cuéntanos en pocas líneas por qué te gustaría unirte al equipo de Presto!', 
+    'formRevisor_5' => '¡Bienvenido a nuestra sección Trabaja con Nosotros! Somos una empresa dinámica y vanguardista en el sector publicitario, ¡y buscamos talento como tú para formar parte de nuestro equipo! Somos
+    convencidos de que el éxito de una empresa reside en las personas que la componen, y por ello
+    estamos comprometidos a crear un ambiente de trabajo inspirador, inclusivo y gratificante.',
+    'formRevisor_6' => 'Nuestra misión es brindar un servicio de clasificados de alta calidad que satisfaga las necesidades de nuestros clientes. Buscamos constantemente personas motivadas, apasionadas y creativas que compartan nuestra visión y nos ayuden a lograr nuestros objetivos.',
+    'formRevisor_8'=> '¡Esperamos conocerte y construir juntos el futuro de esta empresa!',
     'Motori'=> 'Motores',
     'Informatica'=> 'Informatica',
     'Elettrodomestici'=> 'Electrònica',

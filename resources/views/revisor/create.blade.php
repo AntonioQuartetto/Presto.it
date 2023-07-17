@@ -5,18 +5,15 @@
 
                 <livewire:revisor-create-form />
                 <div class="container text-center">
-                    <p>"Benvenuti nella nostra sezione 'Lavora con Noi'! Siamo un'azienda dinamica e all'avanguardia nel
-                        settore degli annunci, e siamo alla ricerca di talenti come te per unirti al nostro team. Siamo
-                        convinti che il successo di un'azienda risieda nelle persone che la compongono, e per questo
-                        siamo impegnati a creare un ambiente di lavoro stimolante, inclusivo e gratificante.</p>
-                        <p>
-                            La nostra missione è quella di fornire un servizio di annunci di alta qualità che soddisfi le esigenze dei nostri clienti. Siamo alla costante ricerca di persone motivate, appassionate e creative, che condividano la nostra visione e ci aiutino a raggiungere i nostri obiettivi.
+                    <p class="description_font">{{ __('ui.formRevisor_5') }}</p>
+                        <p class="description_font">
+                            {{ __('ui.formRevisor_6') }}
                         </p>
                         <p>
                             Se sei alla ricerca di un lavoro gratificante, stimolante e pieno di opportunità di crescita, inserici, <b><a href="#form-revisor" class="text-warning">nel form sottostante</a></b>,  il perchè ti piacerebbe entrare nel team di Presto; oppure <b><a href="#btn-revisor" class="text-warning">clicca il pulsante sopra</a></b> per un invio della mail in automatico."
                         </p>
 
-                        <p><h4><b>Siamo ansiosi di conoscerti e di costruire insieme il futuro di questa azienda!</b></h4></p>
+                        <p class="description_font"><h4><b> {{ __('ui.formRevisor_8') }}</b></h4></p>
                 </div>
                 {{-- FORM --}}
                 <div class="card-body my-4" id="form-revisor">
