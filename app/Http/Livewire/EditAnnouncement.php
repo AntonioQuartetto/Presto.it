@@ -67,7 +67,7 @@ class EditAnnouncement extends Component
         $this->announcement->setAccepted(null);
 
         
-        return redirect()->route('profile.index')->with('success', 'Modifica avvenuta con successo, sarà ripu');
+        return redirect()->route('profile.index')->with('success', 'Modifica avvenuta con successo, sarà ripubblicato dopo un ulteriore revisione da parte del team di Presto.it!');
     }
    
     public function render()
