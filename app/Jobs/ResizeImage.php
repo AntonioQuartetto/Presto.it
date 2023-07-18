@@ -44,7 +44,7 @@ class ResizeImage implements ShouldQueue
         $croppedImage = Image::load($srcPath)
 
                      ->crop(Manipulations::CROP_CENTER,$w,$h)
-                     ->watermark(base_path('resources\img\logo-provvisorio.JPG'))
+                     ->watermark(base_path('resources\img\logo.png'))
                      ->watermarkOpacity(60)
                      ->watermarkPosition(Manipulations::POSITION_TOP_RIGHT)
                      ->watermarkFit(Manipulations::FIT_CROP)
