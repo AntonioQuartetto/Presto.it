@@ -8,7 +8,7 @@
                 <div class="row">
                     @foreach ($category->announcements as $announcement)
                         @if ($announcement->is_accepted)
-                            <x-card :$announcement />
+                            <x-card :$announcement/>
                         @else
                             <div class="col-12">
                                 <p class="h1">{{ __('ui.announcementSearch_2') }}</p>
