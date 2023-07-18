@@ -45,116 +45,108 @@
                                 <button type="button" data-bs-target="#carouselExampleDark"
                                 data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
-                            <div class="card-body">
-                                <h5 class="tc-accent">{{ __('ui.revisorindex_13') }}</h5>
-                                <p><b>{{ __('ui.revisorindex_14') }}</b> <span class="{{ $image->adult }}"></span></p>
-                                <p><b>{{ __('ui.revisorindex_15') }}</b> <span class="{{ $image->spoof }}"></span></p>
-                                <p><b>{{ __('ui.revisorindex_16') }}</b> <span class="{{ $image->medical }}"></span></p>
-                                <p><b>{{ __('ui.revisorindex_17') }}</b> <span class="{{ $image->violence }}"></span></p>
-                                <p><b>{{ __('ui.revisorindex_18') }}</b> <span class="{{ $image->racy }}"></span></p>
-                            </div>
+                           
                         </div>
-
                         <div class="col-12 text-center">
-
                             <h1 class="display-5 fw-bolder">{{ $announcement_to_check->title }}</h1>
-                            <p><b>{{ __('ui.announcementShow') }}</b>:<span>€{{ $announcement_to_check->price }}</span>
-                            </p>
+                            <p><b>{{ __('ui.announcementShow') }}</b>:<span>€{{ $announcement_to_check->price }}</span></p>
                             <p><b>{{ __('ui.announcementShow_2') }}</b>: {{ $announcement_to_check->body }}</p>
-                            <p><b>{{ __('ui.announcementShow_3') }}</b>: {{ $announcement_to_check->category->name }}
-                            </p>
-                            <p><b>{{ __('ui.announcementShow_4') }} </b>:
-                                {{ $announcement_to_check->created_at->format('d-m-Y') }}</p>
-
+                            <p><b>{{ __('ui.announcementShow_3') }}</b>: {{ $announcement_to_check->category->name }}</p>
+                            <p><b>{{ __('ui.announcementShow_4') }} </b>: {{ $announcement_to_check->created_at->format('d-m-Y') }}</p>
                             <div class="row mt-4 d-flex justify-content-center">
                                 <div class="col-12 col-md-2 m-1">
                                     <form
-                                        action="{{ route('revisor.accept_announcements', ['announcement' => $announcement_to_check]) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button type="submit"
-                                            class="btn btn-success shadow">{{ __('ui.revisorindex_11') }}</button>
-                                    </form>
-                                </div>
-                                <div class="col-12 col-md-2 m-1">
-
-                                    <form
-                                        action="{{ route('revisor.reject_announcements', ['announcement' => $announcement_to_check]) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button type="submit"
-                                            class="btn btn-danger shadow">{{ __('ui.revisorindex_12') }}</button>
-
-                                    </form>
-                                </div>
+                                    action="{{ route('revisor.accept_announcements', ['announcement' => $announcement_to_check]) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit"
+                                    class="btn btn-success shadow">{{ __('ui.revisorindex_11') }}</button>
+                                </form>
                             </div>
+                            <div class="col-12 col-md-2 m-1">
+                                <form
+                                action="{{ route('revisor.reject_announcements', ['announcement' => $announcement_to_check]) }}"
+                                method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit"
+                                class="btn btn-danger shadow">{{ __('ui.revisorindex_12') }}</button>
+                            </form>
                         </div>
-
-
-
-
                     </div>
-                </div>              
-                @else
-                <div>  
-                    <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-100"
-                    alt="">
                 </div>
-                @endif
-            </div>       
-            <div class="col-12 col-md-6">
-                <h5 class="tc-accent mt-3">Tags</h5>
-                <div class="p-2">
-                    @if ($image->labels)
-                    @foreach ($image->labels as $label)
-                    <p class="d-inline">{{ $label }} /</p>
-                    @endforeach
-                    @endif
-                </div>
-                <div class="card-body">
-                    <h5 class="tc-accent">Revisione Immagini</h5>
-                    <p><b>Adulti:</b> <span class="{{ $image->adult }}"></span></p>
-                    <p><b>Satira:</b> <span class="{{ $image->spoof }}"></span></p>
-                    <p><b>Medicina:</b> <span class="{{ $image->medical }}"></span></p>
-                    <p><b>Violenza:</b> <span class="{{ $image->violence }}"></span></p>
-                    <p><b>Contenuto Ammiccante:</b> <span class="{{ $image->racy }}"></span></p>
-                </div>
-            </div>     
-            <div class="col-12 text-center">    
-                <h1 class="display-5 fw-bolder">{{ $announcement_to_check->title }}</h1>
-                <p><b>{{ __('ui.announcementShow') }}</b>:<span>€{{ $announcement_to_check->price }}</span>
-                </p>
-                <p><b>{{ __('ui.announcementShow_2') }}</b>: {{ $announcement_to_check->body }}</p>
-                <p><b>{{ __('ui.announcementShow_3') }}</b>: {{ $announcement_to_check->category->name }}
-                </p>
-                <p><b>{{ __('ui.announcementShow_4') }} </b>:
-                    {{ $announcement_to_check->created_at->format('d-m-Y') }}</p>                  
-                </div>    
-            </div> 
-            <div class="row mt-4 d-flex justify-content-center">
-                <div class="col-12 col-md-2 m-1">
-                    <form
-                    action="{{ route('revisor.accept_announcements', ['announcement' => $announcement_to_check]) }}"
-                    method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit"
-                    class="btn btn-success shadow">{{ __('ui.revisorindex_11') }}</button>
-                </form>
             </div>
-            <div class="col-12 col-md-2 m-1">    
-                <form
-                action="{{ route('revisor.reject_announcements', ['announcement' => $announcement_to_check]) }}"
-                method="POST">
-                @csrf
-                @method('PATCH')
-                <button type="submit"
-                class="btn btn-danger shadow">{{ __('ui.revisorindex_12') }}</button>
-            </form>
+        </div>              
+        @else
+        <div>  
+            <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-100"
+            alt="">
         </div>
+        @endif
+    </div>       
+    <div class="col-12 col-md-6">
+        <h5 class="tc-accent mt-3">Tags</h5>
+        <div class="p-2">
+            {{-- @if ($image->labels) --}}
+            @foreach ($announcement_to_check->images as $image)
+            @foreach ($image->labels as $label)
+                <p class="d-inline">{{ $label}} /</p>
+            @endforeach
+
+            <div class="card-body">
+                <h5 class="tc-accent">{{ __('ui.revisorindex_13') }}</h5>
+                <p><b>{{ __('ui.revisorindex_14') }}</b> <span class="{{ $image->adult }}"></span></p>
+                <p><b>{{ __('ui.revisorindex_15') }}</b> <span class="{{ $image->spoof }}"></span></p>
+                <p><b>{{ __('ui.revisorindex_16') }}</b> <span class="{{ $image->medical }}"></span></p>
+                <p><b>{{ __('ui.revisorindex_17') }}</b> <span class="{{ $image->violence }}"></span></p>
+                <p><b>{{ __('ui.revisorindex_18') }}</b> <span class="{{ $image->racy }}"></span></p>
+            </div>
+            @endforeach
+            {{-- @endif --}}
+        </div>
+        <div class="card-body">
+            <h5 class="tc-accent">Revisione Immagini</h5>
+            <p><b>Adulti:</b> <span class="{{ $image->adult }}"></span></p>
+            <p><b>Satira:</b> <span class="{{ $image->spoof }}"></span></p>
+            <p><b>Medicina:</b> <span class="{{ $image->medical }}"></span></p>
+            <p><b>Violenza:</b> <span class="{{ $image->violence }}"></span></p>
+            <p><b>Contenuto Ammiccante:</b> <span class="{{ $image->racy }}"></span></p>
+        </div>
+    </div>     
+    <div class="col-12 text-center">    
+        <h1 class="display-5 fw-bolder">{{ $announcement_to_check->title }}</h1>
+        <p><b>{{ __('ui.announcementShow') }}</b>:<span>€{{ $announcement_to_check->price }}</span>
+        </p>
+        <p><b>{{ __('ui.announcementShow_2') }}</b>: {{ $announcement_to_check->body }}</p>
+        <p><b>{{ __('ui.announcementShow_3') }}</b>: {{ $announcement_to_check->category->name }}
+        </p>
+        <p><b>{{ __('ui.announcementShow_4') }} </b>:
+            {{ $announcement_to_check->created_at->format('d-m-Y') }}</p>                  
+        </div>    
+    </div> 
+    <div class="row mt-4 d-flex justify-content-center">
+        <div class="col-12 col-md-2 m-1">
+            <form
+            action="{{ route('revisor.accept_announcements', ['announcement' => $announcement_to_check]) }}"
+            method="POST">
+            @csrf
+            @method('PATCH')
+            <button type="submit"
+            class="btn btn-success shadow">{{ __('ui.revisorindex_11') }}</button>
+        </form>
     </div>
+    <div class="col-12 col-md-2 m-1">    
+        <form
+        action="{{ route('revisor.reject_announcements', ['announcement' => $announcement_to_check]) }}"
+        method="POST">
+        @csrf
+        @method('PATCH')
+        <button type="submit"
+        class="btn btn-danger shadow">{{ __('ui.revisorindex_12') }}</button>
+    </form>
+</div>
+</div>
 </div>
 </section>
 </div>

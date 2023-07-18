@@ -2,37 +2,26 @@
     <div class="container">
         <a class="navbar-brand animate__animated animate__slideInLeft" href="{{ route('page.homepage') }}">
             <x-logo />
-
         </a>
-
         <div>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
                 aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
-
                     <li class="nav-item">
                         <form action="{{ route('announcement.search') }}" method="GET" class="form-inline d-flex">
                             <input class="form-control" type="search" id="cerca-per-nome" name="searched"
                                 placeholder="Cerca un articolo">
-<<<<<<< HEAD
-                            <button class="btn btn-outline-warning ms-3" type="submit">Cerca</button>
-=======
                             <button class="btn btn-outline-warning ms-2" type="submit">Cerca</button>
->>>>>>> b10a74fd8acb1181249de835ed04673232b20f15
                         </form>
                     </li>
-
                     <li class="my-li nav-item ">
                         <a class="nav-link @if (Route::currentRouteName() == 'announcement.index') active text-warning @endif"
                             aria-current="page"
                             href="{{ route('announcement.index') }}">{{ __('ui.announcementSearch') }}</a>
                     </li>
-
                     {{-- <li class="nav-item dropdown my-li z-1">
                         <a class="nav-link dropdown-toggle text-center @if (Route::currentRouteName() == 'categoryShow') active text-warning @endif"
                             href="#" data-bs-toggle="dropdown"
@@ -72,35 +61,25 @@
                                             d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                                     </svg>
                                 </b>
-
-
                             </a>
                             <ul class="dropdown-menu bg-warning">
-
                                 <li><a class="dropdown-item" aria-current="page"
                                         href="{{ route('profile.index') }}">{{ __('ui.componetsNavbar_2') }}</a>
                                 </li>
-
-
-
-
                                 @if (Auth::user()->is_revisor)
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
                                         <a class="dropdown-item" aria-current="page"
-                                            href="{{ route('revisor.index') }}">{{ __('ui.componetsNavbar_3') }}
-                                           
+                                            href="{{ route('revisor.index') }}">{{ __('ui.componetsNavbar_3') }}    
                                             <span
                                                 class="position-absolute top-75 start-75 translate-middle badge rounded-pill bg-danger">
                                                 {{ App\Models\Announcement::toBeRevisionedCount() }}
                                                 <span class="visually-hidden">
                                                     {{ __('ui.componetsNavbar_4') }}
                                                 </span>
-                                            </span>     
-                                           
-                                           
+                                            </span>                                                               
                                         </a>
                                     </li>
                                 @endif
@@ -116,7 +95,6 @@
                                 </form>
                                 <li>
                             </ul>
-
                         </li>
                     @else
                         <li class="nav-item dropdown">
@@ -129,12 +107,14 @@
                                 </svg>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.authLogin_2') }}</a>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.authLogin_2') }}</a>
                                 </li>
-                                <li><a class="dropdown-item"
-                                        href="{{ route('register') }}">{{ __('ui.authRegister') }}</a></li>
-                            </ul>
-                            
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="{{ route('register') }}">{{ __('ui.authRegister') }}</a>
+                                    </li>
+                            </ul>              
                         </li>
                     @endauth
                     {{-- <li class="nav-item">
@@ -143,7 +123,6 @@
                      --}}
                 </ul>
                 <div class="dropdown ms-3">
-
                     @if (Lang::locale() == 'en')
                         <li class="nav-item button">
                             <x-_locale lang="en" nation="gb" />
@@ -189,9 +168,6 @@
                             </ul>
                         </div>
                     @endif
-
-
-
                 </div>
             </div>
         </div>
