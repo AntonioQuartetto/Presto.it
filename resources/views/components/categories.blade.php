@@ -96,7 +96,7 @@
                 @endswitch
                 <div>
                     <a href="{{ route('categoryShow', compact('category')) }}"
-                        class="dropdown-item">{{ $category->name }}</a>
+                        class="dropdown-item">{{ __('ui.' . $category->name) }}</a>
                 </div>
                 </div>
             </div>

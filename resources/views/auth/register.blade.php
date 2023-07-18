@@ -18,7 +18,7 @@
                     {{-- Input Name  --}}
                     <div class="d-flex flex-row align-items-center mb-4">
                         <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="name">Nome</label>
+                            <label class="form-label" for="name">{{ __('ui.authRegister_6') }}</label>
                             <input type="text" name="name" id="name" class="form-control"
                                 value="{{ old('name') }}" placeholder="Mario">
                             <div class="form-notch">
@@ -34,7 +34,7 @@
                       {{-- Input Surname  --}}
                     <div class="d-flex flex-row align-items-center mb-4">
                         <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="surname">Cognome</label>
+                            <label class="form-label" for="surname">{{ __('ui.authRegister_5') }}</label>
                             <input type="text" name="surname" id="surname" class="form-control"
                                 value="{{ old('surname') }}" placeholder=" Rossi">
                             <div class="form-notch">

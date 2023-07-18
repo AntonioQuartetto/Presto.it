@@ -255,7 +255,7 @@ header {
   transition: .3s;
 }
 .my-ul:hover .my-li{
-  filter: blur(2px);
+  filter: blur(1px);
 }
 .my-ul .my-li:hover {
   filter: blur(0px);

@@ -21,6 +21,8 @@ return [
     'authRegister_2'=> 'Nome e Cognome',
     'authRegister_3'=> 'Conferma la Password',
     'authRegister_4'=> 'Sei già registrato?',
+    'authRegister_5'=> 'Cognome',
+    'authRegister_6'=> 'Nome',
     'componetsFilters' => 'Filtri',
     'componetsFilters_2' => 'Categorie',
     'componetsFilters_3' => 'Cerca',
@@ -104,7 +106,7 @@ return [
     'Sport'=> 'Sport',
     'Immobili'=> 'Immobili',
     'Telefoni'=> 'Telefoni',
-    'Arredamento'=> 'Arredamento',
+    'Arredamento'=> 'Arredo',
     'Accessori'=> 'Accessori',
 
 ];
