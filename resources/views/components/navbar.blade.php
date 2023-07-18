@@ -19,7 +19,11 @@
                         <form action="{{ route('announcement.search') }}" method="GET" class="form-inline d-flex">
                             <input class="form-control" type="search" id="cerca-per-nome" name="searched"
                                 placeholder="Cerca un articolo">
+<<<<<<< HEAD
                             <button class="btn btn-outline-warning ms-3" type="submit">Cerca</button>
+=======
+                            <button class="btn btn-outline-warning ms-2" type="submit">Cerca</button>
+>>>>>>> b10a74fd8acb1181249de835ed04673232b20f15
                         </form>
                     </li>
 
@@ -136,8 +140,9 @@
                     {{-- <li class="nav-item">
                         <x-theme />
                     </li>
-                </ul> --}}
-                <div class="dropdown">
+                     --}}
+                </ul>
+                <div class="dropdown ms-3">
 
                     @if (Lang::locale() == 'en')
                         <li class="nav-item button">
