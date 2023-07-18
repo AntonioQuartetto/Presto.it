@@ -37,21 +37,25 @@
                     @endif
                 </div>
                 <div class="row">
-                @if ($announcements->count() < 1)
-                     <hr>
-                    <div class="container text-center">
-                        <p class="h1">{{ __('ui.profileProfile_4') }}</p>
-                        <p class="h2">{{ __('ui.announcementSearch_3') }} <a class="btn-request"
-                                href="{{ route('announcement.create') }}">{{ __('ui.announcementSearch_4') }}</a>
-                        </p>
-                    </div>
-                @endif
-                    @foreach ($announcements as $announcement)
-                        @if ($announcement->is_accepted)
-                            <x-card :$announcement />
-                        @endif
-                    @endforeach
-                   
+                    @if (Auth::user()->announcements->count() == 0)
+                        <hr>
+                        <div class="container text-center">
+                            <p class="h1">{{ __('ui.profileProfile_4') }}</p>
+                            <p class="h2">{{ __('ui.announcementSearch_3') }} <a class="btn-request"
+                                    href="{{ route('announcement.create') }}">{{ __('ui.announcementSearch_4') }}</a>
+                            </p>
+                        </div>
+                    @else
+                        @foreach ($announcements as $announcement)
+                            @if ($announcement->is_accepted)
+                                <x-card :$announcement />
+                            @endif
+                        @endforeach
+                    @endif
+
+
+
+
                 </div>
             </div>
         </div>

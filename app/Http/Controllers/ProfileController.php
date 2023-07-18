@@ -19,6 +19,6 @@ class ProfileController extends Controller
         $user = Auth::user();
         $announcements = Announcement::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
-        return view('profile.profile', compact('user', 'announcements'));
+        return view('profile.profile', compact('user', 'announcements', 'announcement_to_check'));
     }
 }
