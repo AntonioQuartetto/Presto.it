@@ -74,20 +74,14 @@
                 <livewire:revisor-create-form />
                 <div class="container text-center">
                     <p class="description_font">{{ __('ui.formRevisor_5') }}</p>
-                    <p class="description_font">
-                        {{ __('ui.formRevisor_6') }}
-                    </p>
-                    <p>
-                        Se sei alla ricerca di un lavoro gratificante, stimolante e pieno di opportunità di crescita,
-                        inserici, <b><a href="#form-revisor" class="text-warning">nel form sottostante</a></b>, il
-                        perchè ti piacerebbe entrare nel team di Presto; oppure <b><a href="#btn-revisor"
-                                class="text-warning">clicca il pulsante sopra</a></b> per un invio della mail in
-                        automatico."
-                    </p>
+                        <p class="description_font">
+                            {{ __('ui.formRevisor_6') }}
+                        </p>
+                        <p>
+                            {{ __('ui.formRevisor_7') }}<b><a href="#form-revisor" class="text-warning"> {{ __('ui.formRevisor_8') }}</a></b>,{{ __('ui.formRevisor_9') }}<b><a href="#btn-revisor" class="text-warning">{{ __('ui.formRevisor_10') }}</a></b>{{ __('ui.formRevisor_11') }}
+                        </p>
 
-                    <p class="description_font">
-                    <h4><b> {{ __('ui.formRevisor_8') }}</b></h4>
-                    </p>
+                        <p class="description_font"><h4><b> {{ __('ui.formRevisor_12') }}</b></h4></p>
                 </div>
                 {{-- FORM --}}
                 <div class="card-body my-4" id="form-revisor">
