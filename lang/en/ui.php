@@ -21,6 +21,8 @@ return [
     'authRegister_2'=> 'Name and Surname',
     'authRegister_3'=> 'Confirm Password',
     'authRegister_4'=> 'Are you already registered?',
+    'authRegister_5'=> 'Surname',
+    'authRegister_6'=> 'Name',
     'componetsFilters' => 'Filters',
     'componetsFilters_2' => 'Categories',
     'componetsFilters_3' => 'Search',

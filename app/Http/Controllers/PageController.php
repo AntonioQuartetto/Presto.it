@@ -15,7 +15,7 @@ class PageController extends Controller
     
     public function index()
     {
-        $announcements= Announcement::orderBy('created_at', 'desc')->paginate(6);
+        $announcements= Announcement::orderBy('created_at', 'desc')->paginate(8);
         
         return view('page.homepage', compact('announcements'));
  
@@ -76,7 +76,7 @@ class PageController extends Controller
 
 
         if (!empty ($request->searched)){
-        $announcements= Announcement::search($request->searched)->paginate(10);
+        $announcements= Announcement::search($request->searched)->paginate(8);
         }
 
         
