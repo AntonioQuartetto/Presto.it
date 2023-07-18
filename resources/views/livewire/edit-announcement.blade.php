@@ -43,9 +43,11 @@
         <div class="mb-3">
             <label for="category">{{__('ui.announcementShow_3')}} {{ $announcement->category->name }}</label>
             <select wire:model.defer="category" id="category" class="form-control">
-                <option selected>{{__('ui.livewireCreate-announcaments_6')}}</option>
+                <option disabled>{{__('ui.livewireCreate-announcaments_6')}}</option>
                 @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                <option value="{{ $category->id }}"
+                @if ($category->id == $announcement->category->id) selected @endif
+                >{{ $category->name }}</option>
                 @endforeach
             </select>
             @error('category')

@@ -50,7 +50,7 @@
             </div>
               
         <div class="col-12 col-md-6">
-            <h1 class="display-5 fw-bolder">{{ $announcement->title }}</h1>
+            <h2 class="display-5 fw-bold text-warning">{{ $announcement->title }}</h2>
             <p><b>{{ __('ui.announcementShow') }}</b>:<span>€ {{ $announcement->price }}</span></p>
             <p><b>{{ __('ui.announcementShow_2') }}</b>: {{ $announcement->body }}</p>
             <p><b>{{ __('ui.announcementShow_3') }}</b>: {{ $announcement->category->name }}</p>

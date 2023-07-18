@@ -16,8 +16,8 @@
                 @endif
             @endforeach
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-2">
+                <div class="d-flex align-items-center justify-content-center">
+                    <div>
                         {{ $announcements->links() }}
                     </div>
                 </div>

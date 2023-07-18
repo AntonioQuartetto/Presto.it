@@ -48,7 +48,8 @@ class EditAnnouncement extends Component
         $this->body = $this->announcement->body;
         $this->price = $this->announcement->price;
         $this->originalCategory = $this->announcement->category;
-        
+        $this->category = $this->announcement->category_id;
+
     }
 
     
