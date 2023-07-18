@@ -29,24 +29,85 @@
     </form>
     @endif 
     @if ($announcement_to_check)
-    <div class="container">
-        <section class="py-3">
-            <div class="container px-4 px-lg-5 my-2">
-                <div class="row gx-4 gx-lg-5 align-items-center">                
-                    <div class="col-12 col-md-6">
-                        @if ($announcement_to_check->images->count() > 0)            
-                        <div id="carouselExampleDark" class="carousel carousel-dark slide">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleDark"
-                                data-bs-slide-to="0" class="active" aria-current="true"
-                                aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark"
-                                data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark"
-                                data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                           
+        <div class="container">
+            <section class="py-3">
+                <div class="container px-4 px-lg-5 my-2">
+                    <div class="row gx-4 gx-lg-5 align-items-center">
+
+                        <div class="col -12col-md-6">
+                            @if ($announcement_to_check->images->count() > 0)
+
+
+                                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleDark"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark"
+                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark"
+                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        @foreach ($announcement_to_check->images as $image)
+                                            <div class="carousel-item @if ($loop->first) active @endif"
+                                                data-bs-interval="10000">
+                                                <img src="{{ $image->getUrl(550, 400) }}" class="img-fluid p-3 rounded"
+                                                    alt="">
+                                            </div>
+                                        @endforeach
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            @else
+                                <div>
+                                    <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-25"
+                                        alt="">
+                                </div>
+                            @endif
                         </div>
+
+                        @if ($announcement_to_check->images->count() > 0)
+                            @if ($announcement_to_check->images)
+                                <div class="col-12 col-md-6">
+                                    <h5 class="tc-accent mt-3">Tags</h5>
+                                    <div class="p-2">
+                                        @if ($image->labels)
+                                            @foreach ($image->labels as $label)
+                                                <p class="d-inline">{{ $label }}</p>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="tc-accent">{{ __('ui.revisorindex_13') }}</h5>
+                                        <p><b>{{ __('ui.revisorindex_14') }}</b> <span
+                                                class="{{ $image->adult }}"></span></p>
+                                        <p><b>{{ __('ui.revisorindex_15') }}</b> <span
+                                                class="{{ $image->spoof }}"></span></p>
+                                        <p><b>{{ __('ui.revisorindex_16') }}</b> <span
+                                                class="{{ $image->medical }}"></span></p>
+                                        <p><b>{{ __('ui.revisorindex_17') }}</b> <span
+                                                class="{{ $image->violence }}"></span></p>
+                                        <p><b>{{ __('ui.revisorindex_18') }}</b> <span
+                                                class="{{ $image->racy }}"></span></p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
+
+
+
+
+
                         <div class="col-12 text-center">
                             <h1 class="display-5 fw-bolder">{{ $announcement_to_check->title }}</h1>
                             <p><b>{{ __('ui.announcementShow') }}</b>:<span>€{{ $announcement_to_check->price }}</span></p>
