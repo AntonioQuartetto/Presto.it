@@ -20,11 +20,11 @@
                                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
                             </div>
-                            <div class="carousel-inner">
+                            <div class="carousel-inner my-4">
                                 @foreach ($announcement->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif"
                                     data-bs-interval="10000">
-                                    <img src="{{ $image->getUrl(550,400) }}" class="img-fluid p-3 rounded"
+                                    <img src="{{ $image->getUrl(400,300) }}" class="img-fluid w-100"
                                     alt="">
                                 </div>
                                 @endforeach

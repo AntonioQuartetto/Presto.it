@@ -1,9 +1,9 @@
-<div class="col-12 col-md-3 my-4 d-flex justify-content-center  ">
+<div class="col-12 col-md-6 col-lg-4 my-4 d-flex justify-content-center  p-3">
     <a href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-        <div class="card ">
+        <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(550,400) : Storage::url('\images\dafaultimage.png') }}" alt=""
+                    <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400,300) : Storage::url('\images\dafaultimage.png') }}" alt=""
                     class="card-img-top  rounded">
                     {{-- <img src="{{Storage::url('\images\dafaultimage.png')}}" alt=""
                     class="card-img-top  rounded"> --}}
