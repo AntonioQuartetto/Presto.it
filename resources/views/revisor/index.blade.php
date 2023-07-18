@@ -75,31 +75,33 @@
                                 </div>
                             @else
                                 <div>
-                                    <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-100"
+                                    <img src="{{ Storage::url('\images\dafaultimage.png') }}" class="d-block w-25"
                                         alt="">
                                 </div>
                             @endif
                         </div>
-
-                        <div class="col-12 col-md-6">
-                            <h5 class="tc-accent mt-3">Tags</h5>
-                            <div class="p-2">
-                                @if ($image->labels)
-                                    @foreach ($image->labels as $label)
-                                        <p class="d-inline">{{ $label }}</p>
-                                    @endforeach
-                                @endif
-                            </div>
-                            <div class="card-body">
-                                <h5 class="tc-accent">Revisione Immagini</h5>
-                                <p><b>Adulti:</b> <span class="{{ $image->adult }}"></span></p>
-                                <p><b>Satira:</b> <span class="{{ $image->spoof }}"></span></p>
-                                <p><b>Medicina:</b> <span class="{{ $image->medical }}"></span></p>
-                                <p><b>Violenza:</b> <span class="{{ $image->violence }}"></span></p>
-                                <p><b>Contenuto Ammiccante:</b> <span class="{{ $image->racy }}"></span></p>
-                            </div>
-                        </div>
-
+                        @if ($announcement_to_check->images->count() > 0)
+                            @if ($announcement_to_check->images)
+                                <div class="col-12 col-md-6">
+                                    <h5 class="tc-accent mt-3">Tags</h5>
+                                    <div class="p-2">
+                                        @if ($image->labels)
+                                            @foreach ($image->labels as $label)
+                                                <p class="d-inline">{{ $label }}</p>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="tc-accent">Revisione Immagini</h5>
+                                        <p><b>Adulti:</b> <span class="{{ $image->adult }}"></span></p>
+                                        <p><b>Satira:</b> <span class="{{ $image->spoof }}"></span></p>
+                                        <p><b>Medicina:</b> <span class="{{ $image->medical }}"></span></p>
+                                        <p><b>Violenza:</b> <span class="{{ $image->violence }}"></span></p>
+                                        <p><b>Contenuto Ammiccante:</b> <span class="{{ $image->racy }}"></span></p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
                         <div class="col-12 text-center">
 
                             <h1 class="display-5 fw-bolder">{{ $announcement_to_check->title }}</h1>
