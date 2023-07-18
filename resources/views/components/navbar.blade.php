@@ -19,7 +19,7 @@
                         <form action="{{ route('announcement.search') }}" method="GET" class="form-inline d-flex">
                             <input class="form-control" type="search" id="cerca-per-nome" name="searched"
                                 placeholder="Cerca un articolo">
-                            <button class="btn btn-outline-warning" type="submit">Cerca</button>
+                            <button class="btn btn-outline-warning ms-3" type="submit">Cerca</button>
                         </form>
                     </li>
 
@@ -140,45 +140,45 @@
                 <div class="dropdown">
 
                     @if (Lang::locale() == 'en')
-                        <li class="nav-item my-li button">
+                        <li class="nav-item button">
                             <x-_locale lang="en" nation="gb" />
                         </li>
                         <div class="dropdown-content">
                             <ul>
-                                <li class="nav-item my-li">
+                                <li class="nav-item">
                                     <x-_locale lang="es" nation="es" />
                                 </li>
-                                <li class="nav-item  my-li">
+                                <li class="nav-item ">
                                     <x-_locale lang="it" nation="it" />
                                 </li>
                             </ul>
                         </div>
                     @endif
                     @if (Lang::locale() == 'it')
-                        <li class="nav-item my-li button">
+                        <li class="nav-item button">
                             <x-_locale lang="it" nation="it" />
                         </li>
                         <div class="dropdown-content">
                             <ul>
-                                <li class="nav-item my-li">
+                                <li class="nav-item">
                                     <x-_locale lang="es" nation="es" />
                                 </li>
-                                <li class="nav-item my-li">
+                                <li class="nav-item">
                                     <x-_locale lang="en" nation="gb" />
                                 </li>
                             </ul>
                         </div>
                     @endif
                     @if (Lang::locale() == 'es')
-                        <li class="nav-item my-li button">
+                        <li class="nav-item button">
                             <x-_locale lang="es" nation="es" />
                         </li>
                         <div class="dropdown-content">
                             <ul>
-                                <li class="nav-item my-li">
+                                <li class="nav-item">
                                     <x-_locale lang="en" nation="gb" />
                                 </li>
-                                <li class="nav-item  my-li">
+                                <li class="nav-item ">
                                     <x-_locale lang="it" nation="it" />
                                 </li>
                             </ul>
