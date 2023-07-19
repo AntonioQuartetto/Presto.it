@@ -38,19 +38,15 @@ class Announcement extends Model
 
         return $this->hasMany(Image::class);
     }
-
-
     public function user(){
 
         return $this->belongsTo(User::class);
     }
-
     public function setAccepted($value){
         $this->is_accepted=$value;
         $this->save();
         return true;
-    }
-    
+    } 
     public static function toBeRevisionedCount(){
         return Announcement::where('is_accepted',null)
         ->where('user_id', "!=", Auth::user()->id)
