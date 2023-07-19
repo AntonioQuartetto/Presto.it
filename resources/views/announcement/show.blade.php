@@ -19,12 +19,18 @@
                                         aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                                         aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark"
+                                        data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark"
+                                        data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark"
+                                        data-bs-slide-to="5" aria-label="Slide 6"></button>
                                 </div>
                                 <div class="carousel-inner my-4">
                                     @foreach ($announcement->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif"
                                             data-bs-interval="10000">
-                                            <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid w-100"
+                                            <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid p-3 rounded w-100"
                                                 alt="">
                                         </div>
                                     @endforeach

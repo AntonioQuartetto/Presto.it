@@ -30,9 +30,9 @@
     @endif
     @if ($announcement_to_check)
     <div class="container">
-        <section class="py-3">
-            <div class="container px-4 px-lg-5 my-2">
-                <div class="row gx-4 gx-lg-5 align-items-center">
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-3">
+                <div class="row ">
                     <div class="col -12col-md-6">
                         @if ($announcement_to_check->images->count() > 0)
                         <div id="carouselExampleDark" class="carousel carousel-dark slide">
@@ -44,12 +44,16 @@
                                 data-bs-slide-to="1" aria-label="Slide 2"></button>
                                 <button type="button" data-bs-target="#carouselExampleDark"
                                 data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide-to="4" aria-label="Slide 5"></button>
                             </div>
                             <div class="carousel-inner">
                                 @foreach ($announcement_to_check->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif"
                                     data-bs-interval="10000">
-                                    <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid p-3 rounded"
+                                    <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid p-3 rounded w-100"
                                     alt="">
                                 </div>
                                 @endforeach
