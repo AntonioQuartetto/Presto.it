@@ -48,6 +48,7 @@ return [
     'livewireCreate-announcaments_8' => 'Imágenes',
     'livewireCreate-announcaments_9' => 'Cargando...',
     'livewire Edit-announcements' => 'Editar',
+    'livewireEdit-announcaments_2' => '¡Edita tu anuncio!',
     'livewireRevisor' => 'Los beneficios del equipo Presto!',
     'livewireRevisor_2' => '¡Nos gusta ser inteligentes y poder elegir el mejor lugar para conectarnos y trabajar!',
     'livewireRevisor_3' => 'Flexibilidad horaria',

@@ -1,5 +1,5 @@
 <div>
-    <h1>Modifica il tuo annuncio!</h1>
+    <h1>{{__('ui.livewireEdit-announcaments_2')}}</h1>
     @if (session('success')) 
     <span class="badge text-bg-success ">
         {{session('success')}}

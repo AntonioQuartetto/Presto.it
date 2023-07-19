@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark " aria-label="Eighth navbar example" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example" id="navbar">
     <div class="container">
         <a class="navbar-brand animate__animated animate__slideInLeft" href="{{ route('page.homepage') }}">
             <x-logo />
@@ -8,7 +8,7 @@
                 aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarsExample07">
+            <div class="collapse navbar-collapse " id="navbarsExample07">
                 <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <form action="{{ route('announcement.search') }}" method="GET" class="form-inline d-flex">
@@ -117,12 +117,7 @@
                             </ul>              
                         </li>
                     @endauth
-                    {{-- <li class="nav-item">
-                        <x-theme />
-                    </li>
-                     --}}
-                </ul>
-                <div class="dropdown ms-3">
+                <div class="dropdown mx-1">
                     @if (Lang::locale() == 'en')
                         <li class="nav-item button">
                             <x-_locale lang="en" nation="gb" />
@@ -169,8 +164,11 @@
                         </div>
                     @endif
                 </div>
+                <li class="nav-item p-1 ">
+                    <x-theme />
+                </li>
+            </ul>
             </div>
         </div>
-
     </div>
 </nav>

@@ -2,7 +2,6 @@
     <div class="container p-5">
         <div class="row">
             <div class="col-12">
-
                 <div class="container text-center mb-4">
                     <h2 class="revisor_color">{{ __('ui.livewireRevisor') }}</h2>
                 </div>
@@ -69,7 +68,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <livewire:revisor-create-form />
                 <div class="container text-center">
@@ -80,7 +78,6 @@
                         <p>
                             {{ __('ui.formRevisor_7') }}<b><a href="#form-revisor" class="text-warning"> {{ __('ui.formRevisor_8') }}</a></b>,{{ __('ui.formRevisor_9') }}<b><a href="#btn-revisor" class="text-warning">{{ __('ui.formRevisor_10') }}</a></b>{{ __('ui.formRevisor_11') }}
                         </p>
-
                         <p class="description_font"><h4><b> {{ __('ui.formRevisor_12') }}</b></h4></p>
                 </div>
                 {{-- FORM --}}
@@ -149,7 +146,6 @@
                                         <span class="small text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
                                 <div class="container">
                                     <div class="mt-5 text-center">
                                         <button type="submit" class="btn-request-form"
@@ -158,11 +154,9 @@
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </x-template>

@@ -48,6 +48,7 @@ return [
     'livewireCreate-announcaments_8' => 'Images',
     'livewireCreate-announcaments_9' => 'Uploading...',
     'livewire Edit-announcements' => 'Edit',
+    'livewireEdit-announcaments_2' => 'Modify your announcement!',
     'livewireRevisor' => 'Our Presto Team benefits!',
     'livewireRevisor_2' => 'We like being smart and being able to choose the best place to connect and work from!',
     'livewireRevisor_3' => 'Time flexibility',
