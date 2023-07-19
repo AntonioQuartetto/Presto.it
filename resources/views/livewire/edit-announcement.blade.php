@@ -86,7 +86,8 @@
                         {{-- <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
                                     class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a> --}}
                         <a class="btn btn-danger"
-                            onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }} <i class="bi bi-trash-fill"></i></a>
+                            onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }}
+                            <i class="bi bi-trash-fill"></i></a>
                         <form class="d-none" id="form-delete-{{ $announcement->id }}"
                             action="{{ route('announcement.destroy', ['announcement' => $announcement]) }}" method="POST">
                             @method('DELETE')

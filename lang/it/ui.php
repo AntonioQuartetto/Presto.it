@@ -48,6 +48,7 @@ return [
     'livewireCreate-announcaments_8' => 'Immagini',
     'livewireCreate-announcaments_9' => 'Caricamento...',
     'livewireEdit-announcaments' => 'Modifica',
+    'livewireEdit-announcaments_2' => 'Modifica il tuo annuncio!',
     'livewireRevisor' => 'I vantaggi del Team di Presto.it!',
     'livewireRevisor_2' => 'Ci piace essere smart e poter scegliere il posto migliore da cui connetterci e lavorare!',
     'livewireRevisor_3' => 'Flessibilità oraria',

@@ -9,21 +9,21 @@
                             @csrf
                             @method('POST')
                             @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                             @endif
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-lable"><b>Email</b></label>
                                     <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="name@example.com">
+                                    placeholder="name@example.com">
                                     @error('email')
-                                        <span class="small text-danger">{{ $message }}</span>
+                                    <span class="small text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -31,9 +31,9 @@
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-lable"><b>Password</b></label>
                                     <input type="password" name="password" class="form-control" id="password"
-                                        placeholder="**********">
+                                    placeholder="**********">
                                     @error('password')
-                                        <span class="small text-danger">{{ $message }}</span>
+                                    <span class="small text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="d-grid my-2">
                                 <a href="{{ route('register') }}" class="btn-user fw-bold py-2 text-center"
-                                    type="submit">{{__('ui.authLogin_3')}}</a>
+                                type="submit">{{__('ui.authLogin_3')}}</a>
                             </div>
                         </form>
                     </div>

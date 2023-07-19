@@ -351,7 +351,7 @@ header {
 .dropdown-content li:nth-child(1) {
   position: absolute;
   top: 50%;
-  right: 100%;
+  right: 50%;
   transform: translateY(-40%);
 }
 

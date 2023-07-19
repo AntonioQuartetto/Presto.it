@@ -75,20 +75,7 @@
                         <p><b>{{ __('ui.announcementShow_5') }}</b>: {{ $announcement->user->name }}</p>
                         <a href="{{ route('announcement.index') }}"
                             class="btn btn-dark">{{ __('ui.announcementShow_6') }}</a>
-                        {{-- @auth
-                            @if (Auth::user()->id == $announcement->user_id)
-                                <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
-                                    class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a>
-                                <a class="btn btn-danger"
-                                    onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }}</a>
-                                <form class="d-none" id="form-delete-{{ $announcement->id }}"
-                                    action="{{ route('announcement.destroy', ['announcement' => $announcement]) }}"
-                                    method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                </form>
-                            @endif
-                        @endauth --}}
+                        
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">

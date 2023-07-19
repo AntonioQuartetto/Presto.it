@@ -12,10 +12,7 @@
                     <div class="row">
                         <div class="col-12"><h5 class="card-title">{{ $announcement->title }}</h5></div>
                         <div class="col-12"><span class="badge bg-success"> € {{ $announcement->price }}</span></div>
-                    </div>
-                    
-                    
-                    
+                    </div> 
                     {{-- <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-succes">Categoria:{{$announcement->category->name ?? 'Nessuna Categoria'}}</a> --}}
                     {{-- <p class="card-footer">Pubblicato il:{{$announcement->created_at->format('d-m-Y')}}</p> --}}
                 </div>
