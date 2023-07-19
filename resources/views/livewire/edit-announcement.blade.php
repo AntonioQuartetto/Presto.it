@@ -54,6 +54,50 @@
                 <p class="text-danger mt-1">*{{ $message }}</p>
             @enderror
         </div>
+
+        <div class="mb-3">
+            <label for="images">{{ __('ui.livewireCreate-announcaments_8') }}</label>
+            <input wire:model="temporary_images" type="file" name="images" multiple
+                class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="img">
+            @error('temporary_images.*')
+                <p class="text-danger mt-1">*{{ $message }}</p>
+            @enderror
+            <div wire:loading wire:target="temporary_images">{{ __('ui.livewireCreate-announcaments_9') }}</div>
+        </div>
+
+        @if (!empty($images) || !empty($oldimages))
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <div class="row border border-4 border-info rounded shadow py-4">
+                        @foreach ($oldimages as $key => $oldimage)
+                            <div class="col my-3">
+                                <div class="img-preview shadow mx-auto rounded"
+                                    style="background-image: url({{ $oldimage->getUrl() }});"></div>
+                                {{-- <img src="{{ $image->temporaryUrl() }}" alt="img" class="img-preview"> --}}
+                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
+                                    wire:click="removeOldImage({{ $key }})">{{ __('ui.livewireCreate-announcaments_7') }}</button>
+                            </div>
+                        @endforeach
+                        @foreach ($images as $key => $image)
+                            <div class="col my-3">
+                                <div class="img-preview shadow mx-auto rounded"
+                                    style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                {{-- <img src="{{ $image->temporaryUrl() }}" alt="img" class="img-preview"> --}}
+                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
+                                    wire:click="removeImage({{ $key }})">{{ __('ui.livewireCreate-announcaments_7') }}</button>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
+        <button type="submit" class="btn btn-warning">{{ __('ui.livewireEdit-announcaments') }}</button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Elimina Annuncio
+        </button>
+    </form>
+</div>
 </div>
 <button type="submit" class="btn btn-warning">{{ __('ui.livewireEdit-announcaments') }}</button>
 <!-- Button trigger modal -->
@@ -63,9 +107,6 @@
 </form>
 
 </div>
-
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -84,7 +125,7 @@
                 @auth
                     @if (Auth::user()->id == $announcement->user_id)
                         {{-- <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
-                                    class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a> --}}
+                    class="btn btn-warning">{{ __('ui.announcementShow_7') }}</a> --}}
                         <a class="btn btn-danger"
                             onclick="event.preventDefault(); document.querySelector('#form-delete-{{ $announcement->id }}').submit();">{{ __('ui.announcementShow_8') }}
                             <i class="bi bi-trash-fill"></i></a>
