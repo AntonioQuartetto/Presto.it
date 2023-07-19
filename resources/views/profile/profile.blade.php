@@ -20,8 +20,6 @@
                         @endif
                     </h1>
                     <p>Email: {{ $user->email }}</p>
-                    <p>{{ __('ui.profileProfile') }}</p>
-                    <p>{{ __('ui.profileProfile_2') }}</p>
                 </div>
             </div>
         </div>
