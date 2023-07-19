@@ -58,7 +58,7 @@
 <button type="submit" class="btn btn-warning">{{ __('ui.livewireEdit-announcaments') }}</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Elimina Annuncio
+    Elimina Annuncio <i class="bi bi-trash-fill"></i>
 </button>
 </form>
 

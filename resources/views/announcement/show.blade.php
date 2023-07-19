@@ -7,6 +7,8 @@
         @endif
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-3">
+                <a href="{{ route('announcement.index') }}" class="btn btn-warning mb-3"><i
+                        class="bi bi-arrow-left-square text-white"></i></a>
                 <div class="row ">
                     <div class="col-12 col-md-6">
 
@@ -51,21 +53,24 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <h2 class="display-5 fw-bold text-warning">{{ $announcement->title }}
-                            @auth
-                                <span>
 
-                                    @if (Auth::user()->id == $announcement->user_id)
-                                        <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
-                                            class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                    @endif
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-12 col-md-9">
+                                <h2 class="display-5 fw-bold text-warning">{{ $announcement->title }}</h2>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                @auth
+                                    <span>
 
-                                </span>
-                            @endauth
+                                        @if (Auth::user()->id == $announcement->user_id)
+                                            <a href="{{ route('announcement.edit', ['announcement' => $announcement->id]) }}"
+                                                class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                        @endif
 
-
-                        </h2>
-
+                                    </span>
+                                @endauth
+                            </div>
+                        </div>
 
                         <p><b>{{ __('ui.announcementShow') }}</b>:<span>€ {{ $announcement->price }}</span></p>
                         <p><b>{{ __('ui.announcementShow_2') }}</b>: {{ $announcement->body }}</p>
@@ -73,11 +78,10 @@
                         <p><b>{{ __('ui.announcementShow_4') }}</b>:
                             {{ $announcement->created_at->format('d-m-Y') }}</p>
                         <p><b>{{ __('ui.announcementShow_5') }}</b>: {{ $announcement->user->name }}</p>
-                        <a href="{{ route('announcement.index') }}"
-                            class="btn btn-dark">{{ __('ui.announcementShow_6') }}</a>
-                        
+
+
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary py-2 px-5" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             Contatta il venditore <i class="bi bi-envelope"></i>
                         </button>
@@ -95,16 +99,126 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-dark">
+                    <h1 class="modal-title fs-5 text-warning" id="exampleModalLabel">Contatta il venditore!</h1>
+                    <button type="button" class="btn-close bg-warning" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-dark">
-                    QUI CI ANDRà IL FORM PER I CONTATTI !!!
+                <div class="modal-body text-dark bg-dark">
+                    {{-- FORM --}}
+                    <div class="card-body my-4" id="form-revisor">
+                        <div class="row justify-content-center">
+                            <div class="col-12 p-5">
+
+                                <form action="#" method="GET">
+                                    @csrf
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    {{-- Input Name  --}}
+                                    <div class="container align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label description_font text-warning"
+                                                for="name">{{ __('ui.formRevisor_2') }}</label>
+                                            <input type="text" name="name" id="name" class="form-control"
+                                                value="" placeholder="Mario">
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading"></div>
+                                                <div class="form-notch-middle"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
+                                        </div>
+                                        @error('name')
+                                            <span class="small text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- Input Surname  --}}
+                                    <div class="container align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label description_font text-warning"
+                                                for="surname">Cognome</label>
+                                            <input type="text" name="surname" id="surname" class="form-control"
+                                                value="" placeholder="Rossi">
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading"></div>
+                                                <div class="form-notch-middle"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
+                                        </div>
+                                        @error('surname')
+                                            <span class="small text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- Input Email  --}}
+                                    <div class="container align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label description_font text-warning"
+                                                for="email">E-mail</label>
+                                            <input type="e-mail" name="email" id="email" class="form-control"
+                                                value="" placeholder="email@mail.com">
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading"></div>
+                                                <div class="form-notch-middle"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
+                                        </div>
+                                        @error('email')
+                                            <span class="small text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- Input Number --}}
+                                    <div class="container align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label description_font text-warning"
+                                                for="surname">Cell./Tel.</label>
+                                            <input type="text" name="cell" id="cell" class="form-control"
+                                                value="" placeholder="+39 333.1234567">
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading"></div>
+                                                <div class="form-notch-middle"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
+                                        </div>
+                                        @error('surname')
+                                            <span class="small text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- Input Message --}}
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label description_font text-warning"
+                                                for="form3Example3c">Scrivi un messaggio al venditore</label>
+                                            <textarea type="text-area" name="message" id="message" class="form-control" placeholder="Messaggio"></textarea>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading"></div>
+                                                <div class="form-notch-middle"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
+                                        </div>
+                                        @error('message')
+                                            <span class="small text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="container">
+                                        <div class="mt-5 text-center">
+                                            <button type="submit" class="btn-request-form"
+                                                id="btn-request-work">Invia <i class="bi bi-envelope"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-footer bg-dark">
+                    {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> --}}
                 </div>
             </div>
         </div>
