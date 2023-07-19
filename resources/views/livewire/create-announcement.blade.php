@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-5">
+        <div class="col-12 col-sm-12 col-md-5 form-container">
             <div>
                 <h1>{{ __('ui.componetsFooter_4') }}</h1>
                 @if (session()->has('message'))
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="col-12 col-sm-12 col-md-7  d-flex align-items-center order-1 order-lg-2">
-            <img src="{{ Storage::url('\images\blog-006_realizzare-ecommerce.jpg') }}"class="img-fluid border border-2 border-dark rounded"
+            <img src="{{ Storage::url('\images\blog-006_realizzare-ecommerce.jpg') }}"class="img-fluid img-create-custom border border-2 border-dark rounded"
             alt="">
         </div>
     </div>
@@ -82,7 +82,7 @@
             <div class="row border border-4 border-info rounded shadow py-4">
                 @foreach ($images as $key => $image)
                 <div class="col my-3">
-                    <div class="img-preview shadow mx-auto rounded"
+                    <div class="img-preview img-fluid shadow mx-auto rounded"
                     style="background-image: url({{ $image->temporaryUrl() }});"></div>
                     {{-- <img src="{{ $image->temporaryUrl() }}" alt="img" class="img-preview"> --}}
                     <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto"

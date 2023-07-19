@@ -6,10 +6,10 @@
         </div>
         @endif
         <div class="profile row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3">
                 <img src="{{ Storage::url('\images\placeholder-profile.jpg') }}" alt="Avatar">
             </div>
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-9">
                 <div class="info">
                     <h1>{{ $user->name }} {{ $user->surname }}
                         @if (Auth::user()->is_revisor)

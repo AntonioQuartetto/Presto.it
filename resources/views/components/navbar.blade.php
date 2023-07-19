@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example" id="navbar">
     <div class="container">
-        <a class="navbar-brand animate__animated animate__slideInLeft" href="{{ route('page.homepage') }}">
+        <a class="navbar-brand animate__animated animate__slideInLeft me-5" href="{{ route('page.homepage') }}">
             <x-logo />
         </a>
-        <div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
-                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPresto"
+                aria-controls="navbarPresto" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarsExample07">
-                <ul class="my-ul navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse " id="navbarPresto">
+                <ul class="my-ul navbar-nav me-auto mt-4 mt-sm-2 mb-2 mb-lg-0">
                     <li class="nav-item">
                         <form action="{{ route('announcement.search') }}" method="GET" class="form-inline d-flex">
                             <input class="form-control" type="search" id="cerca-per-nome" name="searched"
@@ -169,6 +169,6 @@
                 </li>
             </ul>
             </div>
-        </div>
+        
     </div>
 </nav>
