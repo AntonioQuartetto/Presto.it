@@ -4,7 +4,7 @@
             <div class="col-12">
                 @if (session()->has('message'))
                 <div>         
-                    <div class="alert alert-primary" role="alert">
+                    <div class="alert alert-success mt-4" role="alert">
                         {{ session('message') }}
                     </div>
                 </div>

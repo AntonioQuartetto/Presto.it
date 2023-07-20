@@ -1,7 +1,7 @@
 <div>
     <h1 class="text-center">Modifica il tuo annuncio!</h1>
     @if (session('success'))
-        <span class="badge text-bg-success ">
+        <span class="alert alert-success mt-4">
             {{ session('success') }}
         </span>
     @endif
@@ -91,20 +91,12 @@
                 </div>
             </div>
         @endif
-        <button type="submit" class="btn btn-warning">{{ __('ui.livewireEdit-announcaments') }}</button>
+        <button type="submit" class="btn btn-warning mt-2">{{ __('ui.livewireEdit-announcaments') }}</button>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Elimina Annuncio
+        <button type="button" class="btn btn-danger mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Elimina Annuncio <i class="bi bi-trash-fill"></i>
         </button>
     </form>
-</div>
-</div>
-<button type="submit" class="btn btn-warning">{{ __('ui.livewireEdit-announcaments') }}</button>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Elimina Annuncio <i class="bi bi-trash-fill"></i>
-</button>
-</form>
 
 </div>
 

@@ -1,7 +1,7 @@
 <x-template>
     <!-- sezione annunci -->
     @if (session('success'))
-        <span class="badge text-bg-success">
+        <span class="alert alert-success mt-4">
             {{ session('success') }}
         </span>
     @endif

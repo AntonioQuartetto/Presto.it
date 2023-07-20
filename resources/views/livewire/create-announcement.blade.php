@@ -4,7 +4,7 @@
             <div>
                 <h1>{{ __('ui.componetsFooter_4') }}</h1>
                 @if (session()->has('message'))
-                <div>
+                <div class="alert alert-success mt-4" role="alert">
                     {{ session('message') }}
                 </div>
                 @endif

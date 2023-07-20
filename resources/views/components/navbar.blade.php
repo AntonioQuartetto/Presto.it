@@ -1,14 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Eighth navbar example" id="navbar">
     <div class="container">
         <a class="navbar-brand animate__animated animate__slideInLeft me-5" href="{{ route('page.homepage') }}">
             <x-logo />
         </a>
-        
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPresto"
-                aria-controls="navbarPresto" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarPresto">
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPresto"
+            aria-controls="navbarPresto" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarPresto">
+            <div>
                 <ul class="my-ul navbar-nav me-auto mt-4 mt-sm-2 mb-2 mb-lg-0">
                     <li class="nav-item">
                         <form action="{{ route('announcement.search') }}" method="GET" class="form-inline d-flex">
@@ -72,14 +74,14 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item" aria-current="page"
-                                            href="{{ route('revisor.index') }}">{{ __('ui.componetsNavbar_3') }}    
+                                            href="{{ route('revisor.index') }}">{{ __('ui.componetsNavbar_3') }}
                                             <span
                                                 class="position-absolute top-75 start-75 translate-middle badge rounded-pill bg-danger">
                                                 {{ App\Models\Announcement::toBeRevisionedCount() }}
                                                 <span class="visually-hidden">
                                                     {{ __('ui.componetsNavbar_4') }}
                                                 </span>
-                                            </span>                                                               
+                                            </span>
                                         </a>
                                     </li>
                                 @endif
@@ -106,69 +108,70 @@
                                         d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
                                 </svg>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu bg-warning">
                                 <li>
                                     <a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.authLogin_2') }}</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item"
                                         href="{{ route('register') }}">{{ __('ui.authRegister') }}</a>
-                                    </li>
-                            </ul>              
+                                </li>
+                            </ul>
                         </li>
                     @endauth
-                <div class="dropdown mx-1">
-                    @if (Lang::locale() == 'en')
-                        <li class="nav-item button">
-                            <x-_locale lang="en" nation="gb" />
-                        </li>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li class="nav-item">
-                                    <x-_locale lang="es" nation="es" />
-                                </li>
-                                <li class="nav-item ">
-                                    <x-_locale lang="it" nation="it" />
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
-                    @if (Lang::locale() == 'it')
-                        <li class="nav-item button">
-                            <x-_locale lang="it" nation="it" />
-                        </li>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li class="nav-item">
-                                    <x-_locale lang="es" nation="es" />
-                                </li>
-                                <li class="nav-item">
-                                    <x-_locale lang="en" nation="gb" />
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
-                    @if (Lang::locale() == 'es')
-                        <li class="nav-item button">
-                            <x-_locale lang="es" nation="es" />
-                        </li>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li class="nav-item">
-                                    <x-_locale lang="en" nation="gb" />
-                                </li>
-                                <li class="nav-item ">
-                                    <x-_locale lang="it" nation="it" />
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
-                </div>
-                <li class="nav-item p-1 ">
-                    <x-theme />
-                </li>
-            </ul>
+                    <div class="dropdown mx-1">
+                        @if (Lang::locale() == 'en')
+                            <li class="nav-item button">
+                                <x-_locale lang="en" nation="gb" />
+                            </li>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li class="nav-item">
+                                        <x-_locale lang="es" nation="es" />
+                                    </li>
+                                    <li class="nav-item ">
+                                        <x-_locale lang="it" nation="it" />
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
+                        @if (Lang::locale() == 'it')
+                            <li class="nav-item button">
+                                <x-_locale lang="it" nation="it" />
+                            </li>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li class="nav-item">
+                                        <x-_locale lang="es" nation="es" />
+                                    </li>
+                                    <li class="nav-item">
+                                        <x-_locale lang="en" nation="gb" />
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
+                        @if (Lang::locale() == 'es')
+                            <li class="nav-item button">
+                                <x-_locale lang="es" nation="es" />
+                            </li>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li class="nav-item">
+                                        <x-_locale lang="en" nation="gb" />
+                                    </li>
+                                    <li class="nav-item ">
+                                        <x-_locale lang="it" nation="it" />
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+                    <li class="nav-item">
+                        <x-theme />
+                    </li>
+                </ul>
             </div>
-        
+        </div>
+
     </div>
 </nav>

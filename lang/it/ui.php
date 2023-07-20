@@ -23,7 +23,7 @@ return [
     'authRegister_4'=> 'Sei già registrato?',
     'authRegister_5'=> 'Cognome',
     'authRegister_6'=> 'Nome',
-    'componetsFilters' => 'Cosa cerchi?',
+    'componetsFilters' => 'Ricerca avanzata',
     'componetsFilters_2' => 'Categorie',
     'componetsFilters_3' => 'Cerca',
     'componetsFooter_2' => 'Assistenza',

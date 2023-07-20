@@ -14,8 +14,13 @@ const mainTheme = localStorage.getItem('mainTheme');
 if (savedTheme && mainTheme) {
   themeElement.classList.add(savedTheme);
   mainCustom.classList.add(mainTheme);
-  themeIcon.classList.replace('bi-moon-stars-fill', 'bi-brightness-high-fill');
-  themeToggle.classList.add("active");
+  if (savedTheme === 'light-theme') {
+    themeIcon.classList.replace('bi-moon-stars-fill', 'bi-brightness-high-fill');
+    themeToggle.classList.add("active");
+  } else {
+    themeIcon.classList.replace('bi-brightness-high-fill', 'bi-moon-stars-fill');
+    themeToggle.classList.remove("active");
+  }
 }
 
 themeIcon.addEventListener('click', function(e) {

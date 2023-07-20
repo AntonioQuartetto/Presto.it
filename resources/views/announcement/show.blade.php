@@ -1,14 +1,14 @@
 <x-template>
     <div class="container">
         @if (session('success'))
-            <span class="badge text-bg-success">
+            <span class="alert alert-success mt-4">
                 {{ session('success') }}
             </span>
         @endif
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-3">
                 <a href="{{ route('announcement.index') }}" class="btn btn-warning mb-3"><i
-                        class="bi bi-arrow-left-square text-white"></i></a>
+                        class="bi bi-arrow-left-square"></i></a>
                 <div class="row ">
                     <div class="col-12 col-md-6">
 
@@ -21,19 +21,19 @@
                                         aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                                         aria-label="Slide 3"></button>
-                                        <button type="button" data-bs-target="#carouselExampleDark"
-                                        data-bs-slide-to="3" aria-label="Slide 4"></button>
-                                        <button type="button" data-bs-target="#carouselExampleDark"
-                                        data-bs-slide-to="4" aria-label="Slide 5"></button>
-                                        <button type="button" data-bs-target="#carouselExampleDark"
-                                        data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                        aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                        aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
+                                        aria-label="Slide 6"></button>
                                 </div>
                                 <div class="carousel-inner my-4">
                                     @foreach ($announcement->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif"
                                             data-bs-interval="10000">
-                                            <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid p-3 rounded w-100"
-                                                alt="">
+                                            <img src="{{ $image->getUrl(400, 300) }}"
+                                                class="img-fluid p-3 rounded w-100" alt="">
                                         </div>
                                     @endforeach
                                 </div>
@@ -64,7 +64,7 @@
                             <div class="col-12 col-md-9">
                                 <h2 class="display-5 fw-bold text-warning">{{ $announcement->title }}</h2>
                             </div>
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 col-md-3 p-0 pt-2">
                                 @auth
                                     <span>
 
@@ -85,17 +85,27 @@
                             {{ $announcement->created_at->format('d-m-Y') }}</p>
                         <p><b>{{ __('ui.announcementShow_5') }}</b>: {{ $announcement->user->name }}</p>
 
+                        @if (Auth::user() && $announcement->user_id != Auth::user()->id)
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary py-2 px-5" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Contatta il venditore <i class="bi bi-envelope"></i>
+                            </button>
+                        @elseif (!Auth::user())
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary py-2 px-5" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Contatta il venditore <i class="bi bi-envelope"></i>
+                            </button>
+                        @endif
 
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary py-2 px-5" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            Contatta il venditore <i class="bi bi-envelope"></i>
-                        </button>
+
                     </div>
                 </div>
             </div>
-    </div>
-    </section>
+
+        </section>
+
     </div>
 
 
@@ -106,6 +116,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-dark">
+                <div class="ms-2 me-4"><x-logo/></div>
                     <h1 class="modal-title fs-5 text-warning" id="exampleModalLabel">Contatta il venditore!</h1>
                     <button type="button" class="btn-close bg-warning" data-bs-dismiss="modal"
                         aria-label="Close"></button>
